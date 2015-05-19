@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  total: 1
+  issue_date: 2015-05-19 12:35:42
+  due_date: 2015-05-19 12:35:42
+
+two:
+  number: MyString
+  total: 1
+  issue_date: 2015-05-19 12:35:42
+  due_date: 2015-05-19 12:35:42
