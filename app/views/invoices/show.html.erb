@@ -1,0 +1,25 @@
+<div class="box">
+  <h1> Details of invoice : <%= @invoices.number %> </h1>
+
+
+  <table style="width:80%">
+    <thead>
+      <tr>
+        <th>number</th>
+        <th>issue date</th>
+        <th>due date</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+
+
+  <tr>
+    <td><%= @invoices.number %></td>
+    <td><%= @invoices.issue_date %></td>
+    <td><%= @invoices.due_date %></td>
+    <td><%= @invoices.total %></td>
+  </tr>
+  </table>
+
+</div>
+

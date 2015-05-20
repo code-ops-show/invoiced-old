@@ -1,0 +1,30 @@
+<div class="box">
+  <h1>Invoice list</h1>
+
+
+  <table style="width:80%">
+    <thead>
+      <tr >
+        <th>Invoice</th>
+        <th>issue date</th>
+        <th>due date</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+
+  <% @invoices.each do |invoice| %>
+  <tr >
+    <td><%= invoice.number %></td>
+    <td><%= invoice.issue_date %></td>
+    <td><%= invoice.due_date %></td>
+    <td><%= invoice.total %></td>
+    <td><%= link_to 'Show', local_path(invoice.id) %></td>
+    <td><%= link_to 'Edit'%></td>
+    <td><%= link_to 'Destroy'%></td>
+  </tr>
+  <% end %>
+
+  </table>
+
+</div>
+
