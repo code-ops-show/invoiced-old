@@ -19,7 +19,6 @@ class InvoicesController < ApplicationController
 
   def create
     @invoice = Invoice.new(invoice_params)
-    # @invoice = invoice_params
     if @invoice.save
       redirect_to invoices_path, :notice => "Your invoice was saved"
     else

@@ -3,34 +3,82 @@
     <li><%= link_to 'Index', root_path %></li>
     <li class="active">Details</li>
   </ol>
+  <div class="row">
+    <div class="col-md-8">
+    </div>
+    <div class="col-md-4">
+      <h3 class="right"><%= link_to 'Edit', edit_invoice_path(@invoice.id) %> |
+      <%= link_to 'Delete', @invoice, method: :delete, data: { confirm: "Are you sure?" } %></h3>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="row">
+      <div class="col-md-8">
+          <img class="resize" src="http://vignette3.wikia.nocookie.net/marvelmovies/images/8/8f/Stark_Industries_logo.png/revision/latest?cb=20131118043005" >
+          <address class="box">
+              123 West 43rd Street, New York,<br>
+              NY 10036, United States<br>
+              Phone: 45539132 Fax: 3420124<br>
+          </address>
+          <address class="box">
+            <strong>Custome:</strong><br>
+            Mr.Bruce Wayne<br>
+            NY 10036, United States<br>
+            Phone: 45539132 Fax: 3420124<br>
+          </address>
+      </div>
+      <div class="col-md-4">
+        <div class="rightBox">
+          <h1  style="color:red"><str>INVOICE</str></h1>
+          <address>
+            <h4 class="gray">INVOICE No. [<span  style="color:red"><%= @invoice.number %></span>]</h4>
+            <h4 class="gray">Issue Date: <%= @invoice.issue_date.to_date %></h4>
+            <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= @invoice.due_date.to_date %></span></h4>
+          </address>    
+        </div>    
+      </div>
+    </div>
 
-
-  <h1> Details of invoice : <%= @invoice.number %> </h1>
-
+    <table class="table table-striped" style="wrap-table">
+      <thead>
+        <tr>
+          <th class="center">DESCRIPTION</th>
+          <th class="center">QUANTITY</th>
+          <th class="center">UNIT PRICE</th>
+          <th class="center">AMOUNT</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="right"><h4>Sub Total</h4></td>
+          <td class="right"><h4><%= @invoice.total.round(2) %> Baht</h4></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="right"><h4>VAT 7%</h4></td>
+          <td class="right"><h4><%= vat = (@invoice.total * 0.07).round(2) %> Baht</h4></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="right"><h4>Total</h4></td>
+          <td class="right"><h4><%= @invoice.total + vat %> Baht</h4></td>
+        </tr>
+      </thead>
+    </table>
+  </div>
   <br />
-  <table style="width:80%">
-    <thead>
-      <tr>
-        <th>number</th>
-        <th>issue date</th>
-        <th>due date</th>
-        <th>Total</th>
-      </tr>
-    </thead>
 
-
-  <tr>
-    <td><%= @invoice.number %></td>
-    <td><%= @invoice.issue_date.to_date %></td>
-    <td><%= @invoice.due_date.to_date %></td>
-    <td><%= @invoice.total %></td>
-    <td><%= link_to 'Edit', edit_invoice_path(@invoice.id) %></td>
-    <td><%= link_to 'Delete', invoice, method: :delete, data: { confirm: "Are you sure?" } %></td>
-  </tr>
-  </table>
-
-  <br />
-  <%= link_to 'Back to index', root_path %>
+  <div class="row">
+      <h4><%= link_to 'Back to index', root_path %></h4>
+  </div>
 
 </div>
 

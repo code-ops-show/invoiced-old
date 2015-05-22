@@ -1,39 +1,39 @@
 <div class="box">
  <h1>Invoice list</h1>
- <ol class="breadcrumb">
+  <ol class="breadcrumb">
     <li><%= link_to 'Index', root_path %></li>
   </ol>
+  <div class="panel panel-default">
+    <table class="table table-striped">
+      <thead>
+        <tr >
+          <th>Invoice</th>
+          <th>issue date</th>
+          <th>due date</th>
+          <th>Total</th>
+          <th></th>
+        </tr>
+      </thead>
 
-
-
-  <table style="width:80%">
-    <thead>
-      <tr >
-        <th>Invoice</th>
-        <th>issue date</th>
-        <th>due date</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-
-  <% @invoices.each do |invoice| %>
-  <tr >
-    <td><%= invoice.number %></td>
-    <td><%= invoice.issue_date.to_date %></td>
-    <td><%= invoice.due_date.to_date %></td>
-    <td><%= invoice.total %></td>
-    <td><%= link_to 'Show', invoice_path(invoice.id) %></td>
-    <td><%= link_to 'Edit', edit_invoice_path(invoice.id) %></td>
-    <td><%= link_to 'Delete', invoice, method: :delete, data: { confirm: "Are you sure?" } %></td>
-  </tr>
-  <% end %>
-
-  </table>
-
+    <% @invoices.each do |invoice| %>
+    <tr >
+      <td><%= invoice.number %></td>
+      <td><%= invoice.issue_date.to_date %></td>
+      <td><%= invoice.due_date.to_date %></td>
+      <td><%= invoice.total %></td>
+      <td><%= link_to 'Show', invoice_path(invoice.id) %> &nbsp;&nbsp;
+      <%= link_to 'Edit', edit_invoice_path(invoice.id) %> &nbsp;&nbsp;
+      <%= link_to 'Delete', invoice, method: :delete, data: { confirm: "Are you sure?" } %></td>
+    </tr>
+    <% end %>
+    </table>
+  </div>
 </div>
 
 <div class="smallbox">
-  <div class="btn-group">
-    <%= link_to "Add new invoice", new_invoice_path, :class => "btn btn-primary btn-lg"%>
+  <div class="center">
+    <div class="btn-group">
+      <%= link_to "Add new invoice", new_invoice_path, :class => "btn btn-primary btn-lg"%>
+    </div>
   </div>
 </div>
