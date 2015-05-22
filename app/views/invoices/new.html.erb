@@ -1,52 +1,36 @@
 <div class="container-fluid">
 <h1>Add new invoice</h1>
-
-<form action="add_invoice">
-    <div class="row">
-      <div class="col-md-4">issue date</div>
-      <div class="col-md-8"><input type="text" name="issue" value=""></div>
-      <div class="col-md-4">due date</div>
-      <div class="col-md-8"><input type="text" name="due" value=""></div>
-      <div class="col-md-4">Total</div>
-      <div class="col-md-8"><input type="text" name="total" value=""></div>
-    </div>
-    <input type="submit" value="Submit">
-</form>
-</div>
-
+  <ol class="breadcrumb">
+    <li><%= link_to 'Index', root_path %></li>
+    <li class="active">New</li>
+  </ol>
 
 
 <div class="box">
-<form class="form-horizontal">
-  <div class="form-group">
-    <label for="inputIssue" class="col-sm-2 control-label">issue date</label>
-    <div class="col-sm-10">
-      <input class="form-control" id="inputIssue" placeholder="Email">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputDue" class="col-sm-2 control-label">due date</label>
-    <div class="col-sm-10">
-      <input class="form-control" id="inputDue" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputTotal" class="col-sm-2 control-label">Total</label>
-    <div class="col-sm-10">
-      <input class="form-control" id="inputTotal" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
+  <%= form_for @invoice do |form| %>
+    <fieldset class="fields">
+      <div class="field">
+        <%= form.label "Invoice number" %>
+        <%= form.text_field :number %>
+      </div>
+      
+      <div class="field">
+        <%= form.label "issue date"  %>
+        <%= form.date_select(:issue_date) %> 
+      </div>
+      <div class="field">
+        <%= form.label "due date"  %>
+        <%= form.date_select(:due_date) %>  
+      </div>
+      <div class="field">
+        <%= form.label "total"  %>
+        <%= form.text_field :total %>
+      </div>
+        <%= form.submit "Add new invoice" %>    
+  <% end %>
 
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Submit</button>
-    </div>
-  </div>
-</form>
+  <br /><br /><br />
+  <%= link_to 'Back to index', root_path %>
+
 </div>
-
 

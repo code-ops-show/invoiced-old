@@ -1,7 +1,13 @@
 <div class="box">
-  <h1> Details of invoice : <%= @invoices.number %> </h1>
+  <ol class="breadcrumb">
+    <li><%= link_to 'Index', root_path %></li>
+    <li class="active">Details</li>
+  </ol>
 
 
+  <h1> Details of invoice : <%= @invoice.number %> </h1>
+
+  <br />
   <table style="width:80%">
     <thead>
       <tr>
@@ -14,12 +20,20 @@
 
 
   <tr>
-    <td><%= @invoices.number %></td>
-    <td><%= @invoices.issue_date %></td>
-    <td><%= @invoices.due_date %></td>
-    <td><%= @invoices.total %></td>
+    <td><%= @invoice.number %></td>
+    <td><%= @invoice.issue_date.to_date %></td>
+    <td><%= @invoice.due_date.to_date %></td>
+    <td><%= @invoice.total %></td>
+    <td><%= link_to 'Edit', edit_invoice_path(@invoice.id) %></td>
+    <td><%= link_to 'Delete', invoice, method: :delete, data: { confirm: "Are you sure?" } %></td>
   </tr>
   </table>
 
+  <br />
+  <%= link_to 'Back to index', root_path %>
+
 </div>
+
+
+
 
