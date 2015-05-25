@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  number: MyString
+  invoice_id: 1
   item: MyString
   quantity: 1
-  price: 1
+  unit_price: 1
   invoice_id: 
 
 two:
-  number: MyString
+  invoice_id: 1
   item: MyString
   quantity: 1
-  price: 1
+  unit_price: 1
   invoice_id: 

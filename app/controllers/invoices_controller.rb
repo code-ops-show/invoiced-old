@@ -10,7 +10,7 @@ class InvoicesController < ApplicationController
 
   def new
     @invoice = Invoice.new
-
+    @line_items = @invoice.line_items.build
   end
 
   def edit
@@ -48,7 +48,8 @@ class InvoicesController < ApplicationController
 
  private
     def invoice_params
-      params.require(:invoice).permit(:number, :issue_date, :due_date, :total)
+      params.require(:invoice).permit(:number, :issue_date, :due_date, :total, line_items_attributes:[:item, :quantity, :unit_price, :amount, :invoice_id])
     end  
 
 end
+
