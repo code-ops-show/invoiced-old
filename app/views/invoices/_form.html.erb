@@ -1,0 +1,71 @@
+  <div class="panel panel-default">
+    <%= form_for @invoice do |f| %>  
+    <div class="row">
+      <div class="col-md-8">
+          <img class="resize" src="http://vignette3.wikia.nocookie.net/marvelmovies/images/8/8f/Stark_Industries_logo.png/revision/latest?cb=20131118043005" >
+          <address class="box">
+              123 West 43rd Street, New York,<br>
+              NY 10036, United States<br>
+              Phone: 45539132 Fax: 3420124<br>
+          </address>
+          <address class="box">
+            <strong>Custome:</strong><br>
+            Mr.Bruce Wayne<br>
+            NY 10036, United States<br>
+            Phone: 45539132 Fax: 3420124<br>
+          </address>
+      </div>
+      <div class="col-md-4">
+        <div class="rightBox">
+          <h1  style="color:red"><str>INVOICE</str></h1>
+          <address>
+            <h4 class="gray">INVOICE No.<%= f.text_field :number , readonly: true %></h4>
+            <h4 class="gray">Issue Date:<%= f.date_select(:issue_date) %> </h4>
+            <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= f.date_select(:due_date) %>  </span></h4>
+          </address>    
+        </div>    
+      </div>
+    </div>     
+
+        <table class="table table-striped" style="wrap-table">
+          <thead>
+            <tr>
+              <th class="center">DESCRIPTION</th>
+              <th class="center">QUANTITY</th>
+              <th class="center">UNIT PRICE</th>
+              <th class="center">AMOUNT</th>
+              <th></th>
+            </tr>
+          </thead>
+          <%= f.fields_for :line_items do |builder| %>
+            <tr>
+              <td class="center"><%= builder.text_field :item %></td>
+              <td class="center"><%= builder.text_field :quantity %></td>
+              <td class="center"><%= builder.text_field :unit_price %></td>
+              <td class="center"><%= builder.text_field :amount %></td> 
+            </tr>
+          <% end %>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="right"><h4>Sub Total</h4></td>
+            <td class="right"><h4><%= @invoice.total%> Baht</h4></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="right"><h4>VAT 7%</h4></td>
+            <td class="right"><h4> Baht</h4></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="right"><h4>Total</h4></td>
+            <td class="right"><h4> Baht</h4></td>
+          </tr>
+        </table>
+      <%= f.submit "Submit"%>
+    <% end %>
+  </div>
+  <br /><br /><br />
+<%= link_to 'Back to index', root_path %>

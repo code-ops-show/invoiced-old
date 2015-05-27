@@ -1,0 +1,9 @@
+<tr >
+  <td><%= invoice.number %></td>
+  <td><%= invoice.issue_date.to_date %></td>
+  <td><%= invoice.due_date.to_date %></td>
+  <td><%= invoice.total %></td>
+  <td><%= link_to 'Show', invoice_path(invoice.id) %> &nbsp;&nbsp;
+  <%= link_to 'Edit', edit_invoice_path(invoice.id) %> &nbsp;&nbsp;
+  <%= link_to 'Delete', invoice, method: :delete, data: { confirm: "Are you sure?" } %></td>
+</tr>

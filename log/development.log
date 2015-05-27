@@ -63668,3 +63668,1469 @@ Processing by InvoicesController#edit as HTML
   [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."invoice_id" = $1  [["invoice_id", 53]]
   Rendered invoices/edit.html.erb within layouts/application (6.0ms)
 Completed 200 OK in 94ms (Views: 92.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 17:04:17 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 195ms (Views: 194.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:04:18 +0700
+Processing by InvoicesController#new as HTML
+  Rendered invoices/new.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `numbes' for #<Invoice:0x007fb780e1f930>):
+    26:         <div class="rightBox">
+    27:           <h1  style="color:red"><str>INVOICE</str></h1>
+    28:           <address>
+    29:             <h4 class="gray">INVOICE No.<%= f.text_field :number.succ %></h4>
+    30:             <h4 class="gray">Issue Date:<%= f.date_select(:issue_date) %> </h4>
+    31:             <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= f.date_select(:due_date) %>  </span></h4>
+    32:           </address>    
+  app/views/invoices/new.html.erb:29:in `block in _app_views_invoices_new_html_erb__3831242689154796585_70213058987580'
+  app/views/invoices/new.html.erb:9:in `_app_views_invoices_new_html_erb__3831242689154796585_70213058987580'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (66.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (152.5ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:04:19 +0700
+Processing by InvoicesController#new as HTML
+  Rendered invoices/new.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `numbes' for #<Invoice:0x007fb780d09348>):
+    26:         <div class="rightBox">
+    27:           <h1  style="color:red"><str>INVOICE</str></h1>
+    28:           <address>
+    29:             <h4 class="gray">INVOICE No.<%= f.text_field :number.succ %></h4>
+    30:             <h4 class="gray">Issue Date:<%= f.date_select(:issue_date) %> </h4>
+    31:             <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= f.date_select(:due_date) %>  </span></h4>
+    32:           </address>    
+  app/views/invoices/new.html.erb:29:in `block in _app_views_invoices_new_html_erb__3831242689154796585_70213058352560'
+  app/views/invoices/new.html.erb:9:in `_app_views_invoices_new_html_erb__3831242689154796585_70213058352560'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.1ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (56.9ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (130.0ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:04:58 +0700
+Processing by InvoicesController#new as HTML
+  Rendered invoices/new.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `number' for #<ActionView::Helpers::FormBuilder:0x007fb77fe57f98>):
+    26:         <div class="rightBox">
+    27:           <h1  style="color:red"><str>INVOICE</str></h1>
+    28:           <address>
+    29:             <h4 class="gray">INVOICE No.<%= f.text_field f.number.succ %></h4>
+    30:             <h4 class="gray">Issue Date:<%= f.date_select(:issue_date) %> </h4>
+    31:             <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= f.date_select(:due_date) %>  </span></h4>
+    32:           </address>    
+  app/views/invoices/new.html.erb:29:in `block in _app_views_invoices_new_html_erb__3831242689154796585_70213072935620'
+  app/views/invoices/new.html.erb:9:in `_app_views_invoices_new_html_erb__3831242689154796585_70213072935620'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (76.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (61.5ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (135.6ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:05:16 +0700
+Processing by InvoicesController#new as HTML
+  Rendered invoices/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 93ms (Views: 91.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 17:05:16 +0700
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:05:40 +0700
+Processing by InvoicesController#new as HTML
+  Rendered invoices/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/tdm/Repositories/invoiced/app/views/invoices/new.html.erb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+...nd=( f.text_field :number value="1" );@output_buffer.safe_ap...
+...                               ^):
+  app/views/invoices/new.html.erb:29: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.1ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (60.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (135.2ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:05:50 +0700
+Processing by InvoicesController#new as HTML
+  Rendered invoices/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 95ms (Views: 93.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 17:05:50 +0700
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:08:13 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.7ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.8ms)
+
+NoMethodError (undefined method `succ' for #<Invoice:0x007fb780fb1d20>):
+  app/controllers/invoices_controller.rb:13:in `new'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.7ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (59.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (133.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:08:26 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 126ms (Views: 93.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 17:08:26 +0700
+
+
+Started GET "/" for ::1 at 2015-05-27 17:10:32 +0700
+Processing by InvoicesController#index as HTML
+  [1m[35mInvoice Load (0.3ms)[0m  SELECT "invoices".* FROM "invoices"
+  Rendered invoices/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 98ms (Views: 93.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:10:32 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 106ms (Views: 94.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:10:47 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 97ms (Views: 93.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 17:10:47 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 17:10:48 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 17:10:48 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 17:10:48 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 17:10:48 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 17:10:48 +0700
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:10:54 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 106ms (Views: 103.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 17:10:55 +0700
+
+
+Started GET "/" for ::1 at 2015-05-27 17:11:55 +0700
+Processing by InvoicesController#index as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT "invoices".* FROM "invoices"
+  Rendered invoices/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 90ms (Views: 88.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:11:56 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/new.html.erb within layouts/application (15.4ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `label_tag' for #<ActionView::Helpers::FormBuilder:0x007fb78333f8f0>):
+    26:         <div class="rightBox">
+    27:           <h1  style="color:red"><str>INVOICE</str></h1>
+    28:           <address>
+    29:             <h4 class="gray">INVOICE No.<%= f.label_tag :number %></h4>
+    30:             <h4 class="gray">Issue Date:<%= f.date_select(:issue_date) %> </h4>
+    31:             <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= f.date_select(:due_date) %>  </span></h4>
+    32:           </address>    
+  app/views/invoices/new.html.erb:29:in `block in _app_views_invoices_new_html_erb__3831242689154796585_70213013781920'
+  app/views/invoices/new.html.erb:9:in `_app_views_invoices_new_html_erb__3831242689154796585_70213013781920'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.5ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (57.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (127.7ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:11:57 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `label_tag' for #<ActionView::Helpers::FormBuilder:0x007fb77f8d82c0>):
+    26:         <div class="rightBox">
+    27:           <h1  style="color:red"><str>INVOICE</str></h1>
+    28:           <address>
+    29:             <h4 class="gray">INVOICE No.<%= f.label_tag :number %></h4>
+    30:             <h4 class="gray">Issue Date:<%= f.date_select(:issue_date) %> </h4>
+    31:             <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= f.date_select(:due_date) %>  </span></h4>
+    32:           </address>    
+  app/views/invoices/new.html.erb:29:in `block in _app_views_invoices_new_html_erb__3831242689154796585_70213048166440'
+  app/views/invoices/new.html.erb:9:in `_app_views_invoices_new_html_erb__3831242689154796585_70213048166440'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (81.6ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (60.6ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (134.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 17:12:06 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 103ms (Views: 101.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 17:12:07 +0700
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:13:19 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `number' for #<ActionView::Helpers::FormBuilder:0x007fb77fd11cb0>):
+    26:         <div class="rightBox">
+    27:           <h1  style="color:red"><str>INVOICE</str></h1>
+    28:           <address>
+    29:             <h4 class="gray">INVOICE No.<%= f.number %></h4>
+    30:             <h4 class="gray">Issue Date:<%= f.date_select(:issue_date) %> </h4>
+    31:             <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= f.date_select(:due_date) %>  </span></h4>
+    32:           </address>    
+  app/views/invoices/new.html.erb:29:in `block in _app_views_invoices_new_html_erb__3831242689154796585_70213048266200'
+  app/views/invoices/new.html.erb:9:in `_app_views_invoices_new_html_erb__3831242689154796585_70213048266200'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (57.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (128.1ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:13:19 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/new.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `number' for #<ActionView::Helpers::FormBuilder:0x007fb77ffa6fe8>):
+    26:         <div class="rightBox">
+    27:           <h1  style="color:red"><str>INVOICE</str></h1>
+    28:           <address>
+    29:             <h4 class="gray">INVOICE No.<%= f.number %></h4>
+    30:             <h4 class="gray">Issue Date:<%= f.date_select(:issue_date) %> </h4>
+    31:             <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= f.date_select(:due_date) %>  </span></h4>
+    32:           </address>    
+  app/views/invoices/new.html.erb:29:in `block in _app_views_invoices_new_html_erb__3831242689154796585_70213012860320'
+  app/views/invoices/new.html.erb:9:in `_app_views_invoices_new_html_erb__3831242689154796585_70213012860320'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (58.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (132.4ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:13:42 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 124ms (Views: 120.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 17:13:42 +0700
+
+
+Started GET "/" for ::1 at 2015-05-27 17:14:23 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 94ms (Views: 93.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:14:24 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 103ms (Views: 100.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 17:14:39 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 88ms (Views: 87.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/invoices/51" for ::1 at 2015-05-27 17:14:45 +0700
+Processing by InvoicesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xxgc5Ej0Yqg+GQLciKttJ/ibrREPdPJLQzUv4KbiJBSW2nHuHSZUihv9MjadSGVwn7vMwzVN+6WAN3XARQGtEQ==", "id"=>"51"}
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1  [["id", 51]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."invoice_id" = $1  [["invoice_id", 51]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "line_items" WHERE "line_items"."id" = $1[0m  [["id", 64]]
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1  [["id", 51]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "invoices" SET "updated_at" = '2015-05-27 10:14:45.789201' WHERE "invoices"."id" = $1[0m  [["id", 51]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("line_items"."amount") FROM "line_items" WHERE "line_items"."invoice_id" = $1  [["invoice_id", 51]]
+  [1m[36mInvoice Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "invoices" WHERE ("invoices"."number" = '007' AND "invoices"."id" != 51) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "invoices" SET "total" = $1, "updated_at" = $2 WHERE "invoices"."id" = $3  [["total", 200], ["updated_at", "2015-05-27 10:14:45.793815"], ["id", 51]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "line_items" WHERE "line_items"."id" = $1[0m  [["id", 63]]
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1  [["id", 51]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "invoices" SET "updated_at" = '2015-05-27 10:14:45.796668' WHERE "invoices"."id" = $1[0m  [["id", 51]]
+  [1m[35m (0.2ms)[0m  SELECT SUM("line_items"."amount") FROM "line_items" WHERE "line_items"."invoice_id" = $1  [["invoice_id", 51]]
+  [1m[36mInvoice Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "invoices" WHERE ("invoices"."number" = '007' AND "invoices"."id" != 51) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "invoices" SET "total" = $1, "updated_at" = $2 WHERE "invoices"."id" = $3  [["total", 0], ["updated_at", "2015-05-27 10:14:45.799744"], ["id", 51]]
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "invoices" WHERE "invoices"."id" = $1[0m  [["id", 51]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/invoices
+Completed 302 Found in 20ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/invoices" for ::1 at 2015-05-27 17:14:45 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 98ms (Views: 97.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:14:47 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 99ms (Views: 96.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 17:14:51 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 91ms (Views: 90.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:15:03 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 93ms (Views: 90.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/invoices" for ::1 at 2015-05-27 17:15:21 +0700
+Processing by InvoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cvoTlRo6gcdbddKqWNSzsCLoHwWmDzaDKS/LihgpdfAjOH6fT+i35X6R4kBNN7vnRch+15w2P23qLZGq+8r89Q==", "invoice"=>{"issue_date(1i)"=>"2015", "issue_date(2i)"=>"5", "issue_date(3i)"=>"27", "due_date(1i)"=>"2015", "due_date(2i)"=>"5", "due_date(3i)"=>"27", "line_items_attributes"=>{"0"=>{"item"=>"item1", "quantity"=>"2", "unit_price"=>"150", "amount"=>""}, "1"=>{"item"=>"item2", "quantity"=>"5", "unit_price"=>"40", "amount"=>""}, "2"=>{"item"=>"", "quantity"=>"", "unit_price"=>"", "amount"=>""}, "3"=>{"item"=>"", "quantity"=>"", "unit_price"=>"", "amount"=>""}}}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mInvoice Exists (0.3ms)[0m  SELECT  1 AS one FROM "invoices" WHERE "invoices"."number" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered invoices/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 101ms (Views: 95.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 17:15:29 +0700
+Processing by InvoicesController#index as HTML
+  [1m[35mInvoice Load (0.3ms)[0m  SELECT "invoices".* FROM "invoices"
+  Rendered invoices/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 84ms (Views: 83.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:15:42 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 108ms (Views: 105.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/invoices" for ::1 at 2015-05-27 17:15:58 +0700
+Processing by InvoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OxxHz908O5RWGbhZW+bIw2/dpNbBlBEap/l4diMKeSRq3irFiO4NtnP9iLNOBcCUCP3FBPutGPRk+yJWwOnwIQ==", "invoice"=>{"number"=>"007", "issue_date(1i)"=>"2015", "issue_date(2i)"=>"5", "issue_date(3i)"=>"27", "due_date(1i)"=>"2015", "due_date(2i)"=>"5", "due_date(3i)"=>"27", "line_items_attributes"=>{"0"=>{"item"=>"item1", "quantity"=>"2", "unit_price"=>"150", "amount"=>""}, "1"=>{"item"=>"item2", "quantity"=>"4", "unit_price"=>"40", "amount"=>""}, "2"=>{"item"=>"", "quantity"=>"", "unit_price"=>"", "amount"=>""}, "3"=>{"item"=>"", "quantity"=>"", "unit_price"=>"", "amount"=>""}}}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mInvoice Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "invoices" WHERE "invoices"."number" = '007' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "invoices" ("number", "issue_date", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["number", "007"], ["issue_date", "2015-05-27 00:00:00.000000"], ["due_date", "2015-05-27 00:00:00.000000"], ["created_at", "2015-05-27 10:15:58.733949"], ["updated_at", "2015-05-27 10:15:58.733949"]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "line_items" ("item", "quantity", "unit_price", "invoice_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["item", "item1"], ["quantity", 2], ["unit_price", 150], ["invoice_id", 55], ["amount", 300], ["created_at", "2015-05-27 10:15:58.735268"], ["updated_at", "2015-05-27 10:15:58.735268"]]
+  [1m[35mInvoice Load (0.1ms)[0m  SELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1  [["id", 55]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "invoices" SET "updated_at" = '2015-05-27 10:15:58.737148' WHERE "invoices"."id" = $1[0m  [["id", 55]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("line_items"."amount") FROM "line_items" WHERE "line_items"."invoice_id" = $1  [["invoice_id", 55]]
+  [1m[36mInvoice Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "invoices" WHERE ("invoices"."number" = '007' AND "invoices"."id" != 55) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "invoices" SET "total" = $1, "updated_at" = $2 WHERE "invoices"."id" = $3  [["total", 300], ["updated_at", "2015-05-27 10:15:58.739954"], ["id", 55]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "line_items" ("item", "quantity", "unit_price", "invoice_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["item", "item2"], ["quantity", 4], ["unit_price", 40], ["invoice_id", 55], ["amount", 160], ["created_at", "2015-05-27 10:15:58.741340"], ["updated_at", "2015-05-27 10:15:58.741340"]]
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1  [["id", 55]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "invoices" SET "updated_at" = '2015-05-27 10:15:58.743508' WHERE "invoices"."id" = $1[0m  [["id", 55]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("line_items"."amount") FROM "line_items" WHERE "line_items"."invoice_id" = $1  [["invoice_id", 55]]
+  [1m[36mInvoice Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "invoices" WHERE ("invoices"."number" = '007' AND "invoices"."id" != 55) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "invoices" SET "total" = $1, "updated_at" = $2 WHERE "invoices"."id" = $3  [["total", 460], ["updated_at", "2015-05-27 10:15:58.746165"], ["id", 55]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/invoices
+Completed 302 Found in 19ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/invoices" for ::1 at 2015-05-27 17:15:58 +0700
+Processing by InvoicesController#index as HTML
+  [1m[35mInvoice Load (0.3ms)[0m  SELECT "invoices".* FROM "invoices"
+  Rendered invoices/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 90ms (Views: 89.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/55" for ::1 at 2015-05-27 17:16:03 +0700
+Processing by InvoicesController#show as HTML
+  Parameters: {"id"=>"55"}
+  [1m[36mInvoice Load (0.2ms)[0m  [1mSELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1[0m  [["id", 55]]
+  [1m[35mLineItem Load (0.2ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."invoice_id" = $1  [["invoice_id", 55]]
+  Rendered invoices/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 110ms (Views: 109.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 17:16:12 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 88ms (Views: 87.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:16:14 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 95ms (Views: 92.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 17:17:18 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 91ms (Views: 90.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:17:19 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 105ms (Views: 102.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/invoices" for ::1 at 2015-05-27 17:17:44 +0700
+Processing by InvoicesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SdTMfZ8j7MWgULTlXs9j25HjcGF3f48+RM9Hgk3RTv8YFqF3yvHa54W0hA9LLGuM9sMRs01GhtCHzR2irjLH+g==", "invoice"=>{"number"=>"008", "issue_date(1i)"=>"2015", "issue_date(2i)"=>"5", "issue_date(3i)"=>"27", "due_date(1i)"=>"2015", "due_date(2i)"=>"5", "due_date(3i)"=>"27", "line_items_attributes"=>{"0"=>{"item"=>"dfsfs", "quantity"=>"2", "unit_price"=>"700", "amount"=>""}, "1"=>{"item"=>"", "quantity"=>"", "unit_price"=>"", "amount"=>""}, "2"=>{"item"=>"", "quantity"=>"", "unit_price"=>"", "amount"=>""}, "3"=>{"item"=>"", "quantity"=>"", "unit_price"=>"", "amount"=>""}}}, "commit"=>"Submit"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mInvoice Exists (0.3ms)[0m  SELECT  1 AS one FROM "invoices" WHERE "invoices"."number" = '008' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "invoices" ("number", "issue_date", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", "008"], ["issue_date", "2015-05-27 00:00:00.000000"], ["due_date", "2015-05-27 00:00:00.000000"], ["created_at", "2015-05-27 10:17:44.575342"], ["updated_at", "2015-05-27 10:17:44.575342"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "line_items" ("item", "quantity", "unit_price", "invoice_id", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["item", "dfsfs"], ["quantity", 2], ["unit_price", 700], ["invoice_id", 56], ["amount", 1400], ["created_at", "2015-05-27 10:17:44.576582"], ["updated_at", "2015-05-27 10:17:44.576582"]]
+  [1m[36mInvoice Load (0.1ms)[0m  [1mSELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1[0m  [["id", 56]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "invoices" SET "updated_at" = '2015-05-27 10:17:44.578371' WHERE "invoices"."id" = $1  [["id", 56]]
+  [1m[36m (0.1ms)[0m  [1mSELECT SUM("line_items"."amount") FROM "line_items" WHERE "line_items"."invoice_id" = $1[0m  [["invoice_id", 56]]
+  [1m[35mInvoice Exists (0.3ms)[0m  SELECT  1 AS one FROM "invoices" WHERE ("invoices"."number" = '008' AND "invoices"."id" != 56) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "invoices" SET "total" = $1, "updated_at" = $2 WHERE "invoices"."id" = $3[0m  [["total", 1400], ["updated_at", "2015-05-27 10:17:44.581198"], ["id", 56]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/invoices
+Completed 302 Found in 12ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/invoices" for ::1 at 2015-05-27 17:17:44 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 90ms (Views: 89.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 17:17:46 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 94ms (Views: 91.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 17:17:49 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 89ms (Views: 88.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 18:00:14 +0700
+Processing by InvoicesController#index as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT "invoices".* FROM "invoices"
+  Rendered invoices/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 163ms (Views: 162.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:00:15 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.5ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/new.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (Missing partial invoices/_invoice with {:locale=>[:en], :formats=>[:html, :xml], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/tdm/Repositories/invoiced/app/views"
+):
+     5:       <li class="active">New</li>
+     6:     </ol>
+     7: 
+     8:    <%= render @invoice %> 
+     9: 
+    10: </div>
+    11: <br /><br /><br />
+  app/views/invoices/new.html.erb:8:in `_app_views_invoices_new_html_erb__3831242689154796585_70213073963300'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (90.6ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (66.5ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (155.8ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:00:16 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Missing partial invoices/_invoice with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/tdm/Repositories/invoiced/app/views"
+):
+     5:       <li class="active">New</li>
+     6:     </ol>
+     7: 
+     8:    <%= render @invoice %> 
+     9: 
+    10: </div>
+    11: <br /><br /><br />
+  app/views/invoices/new.html.erb:8:in `_app_views_invoices_new_html_erb__3831242689154796585_70213073028580'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (74.9ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (61.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (135.8ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:00:47 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Missing partial invoices/_invoice with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/tdm/Repositories/invoiced/app/views"
+):
+     5:       <li class="active">New</li>
+     6:     </ol>
+     7: 
+     8:    <%= render @invoice %> 
+     9: 
+    10: </div>
+    11: <br /><br /><br />
+  app/views/invoices/new.html.erb:8:in `_app_views_invoices_new_html_erb__3831242689154796585_70213073028580'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.7ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (59.8ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (132.0ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:01:28 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/new.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Missing partial invoices/_invoices, application/_invoices with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/tdm/Repositories/invoiced/app/views"
+):
+     5:       <li class="active">New</li>
+     6:     </ol>
+     7: 
+     8:    <%= render partial: "invoices" %> 
+     9: 
+    10: </div>
+    11: <br /><br /><br />
+  app/views/invoices/new.html.erb:8:in `_app_views_invoices_new_html_erb__3831242689154796585_70213019746460'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (58.7ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (131.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:01:50 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/new.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Missing partial invoices/_invoice, application/_invoice with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/tdm/Repositories/invoiced/app/views"
+):
+     5:       <li class="active">New</li>
+     6:     </ol>
+     7: 
+     8:    <%= render partial: "invoice" %> 
+     9: 
+    10: </div>
+    11: <br /><br /><br />
+  app/views/invoices/new.html.erb:8:in `_app_views_invoices_new_html_erb__3831242689154796585_70213081832100'
+
+
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.6ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (59.7ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/tdm/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (134.2ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:03:03 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/_invoice.html.erb (5.5ms)
+  Rendered invoices/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 97ms (Views: 93.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 18:03:03 +0700
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:03:16 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/_invoice.html.erb (4.8ms)
+  Rendered invoices/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 98ms (Views: 95.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 18:03:16 +0700
+
+
+Started GET "/" for ::1 at 2015-05-27 18:03:19 +0700
+Processing by InvoicesController#index as HTML
+  [1m[35mInvoice Load (0.3ms)[0m  SELECT "invoices".* FROM "invoices"
+  Rendered invoices/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 88ms (Views: 87.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/54/edit" for ::1 at 2015-05-27 18:03:20 +0700
+Processing by InvoicesController#edit as HTML
+  Parameters: {"id"=>"54"}
+  [1m[36mInvoice Load (0.2ms)[0m  [1mSELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1[0m  [["id", 54]]
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."invoice_id" = $1  [["invoice_id", 54]]
+  Rendered invoices/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 131ms (Views: 130.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 18:04:28 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 89ms (Views: 88.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/55/edit" for ::1 at 2015-05-27 18:04:30 +0700
+Processing by InvoicesController#edit as HTML
+  Parameters: {"id"=>"55"}
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1  [["id", 55]]
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."invoice_id" = $1[0m  [["invoice_id", 55]]
+  Rendered invoices/_invoice.html.erb (5.8ms)
+  Rendered invoices/edit.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 97ms (Views: 96.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 18:06:19 +0700
+Processing by InvoicesController#index as HTML
+  [1m[35mInvoice Load (0.3ms)[0m  SELECT "invoices".* FROM "invoices"
+  Rendered invoices/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 88ms (Views: 87.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/52/edit" for ::1 at 2015-05-27 18:06:21 +0700
+Processing by InvoicesController#edit as HTML
+  Parameters: {"id"=>"52"}
+  [1m[36mInvoice Load (0.2ms)[0m  [1mSELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1[0m  [["id", 52]]
+  [1m[35mLineItem Load (0.3ms)[0m  SELECT "line_items".* FROM "line_items" WHERE "line_items"."invoice_id" = $1  [["invoice_id", 52]]
+  Rendered invoices/_invoice.html.erb (16.1ms)
+  Rendered invoices/edit.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 108ms (Views: 107.2ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/invoices/52" for ::1 at 2015-05-27 18:06:28 +0700
+Processing by InvoicesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"npGuiQnY9gFk6qnf8mc9jTeMT9prX7hxgRA/BnUPiVLPU8ODXArAI0EOmTXnhDXaUKwuCFFmsZ9CEmUmluwAVw==", "invoice"=>{"number"=>"006", "issue_date(1i)"=>"2015", "issue_date(2i)"=>"5", "issue_date(3i)"=>"27", "due_date(1i)"=>"2015", "due_date(2i)"=>"5", "due_date(3i)"=>"31", "line_items_attributes"=>{"0"=>{"item"=>"bffb", "quantity"=>"2", "unit_price"=>"500", "amount"=>"1000", "id"=>"100"}, "1"=>{"item"=>"fgdgdfg", "quantity"=>"3", "unit_price"=>"100", "amount"=>"400", "id"=>"99"}}}, "commit"=>"Submit", "id"=>"52"}
+  [1m[36mInvoice Load (0.2ms)[0m  [1mSELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1[0m  [["id", 52]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mLineItem Load (0.3ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."invoice_id" = $1 AND "line_items"."id" IN (100, 99)[0m  [["invoice_id", 52]]
+  [1m[35mInvoice Exists (0.4ms)[0m  SELECT  1 AS one FROM "invoices" WHERE ("invoices"."number" = '006' AND "invoices"."id" != 52) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "line_items" SET "quantity" = $1, "amount" = $2, "updated_at" = $3 WHERE "line_items"."id" = $4[0m  [["quantity", 3], ["amount", 300], ["updated_at", "2015-05-27 11:06:28.217594"], ["id", 99]]
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1  [["id", 52]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "invoices" SET "updated_at" = '2015-05-27 11:06:28.219623' WHERE "invoices"."id" = $1[0m  [["id", 52]]
+  [1m[35m (0.1ms)[0m  SELECT SUM("line_items"."amount") FROM "line_items" WHERE "line_items"."invoice_id" = $1  [["invoice_id", 52]]
+  [1m[36mInvoice Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "invoices" WHERE ("invoices"."number" = '006' AND "invoices"."id" != 52) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "invoices" SET "total" = $1, "updated_at" = $2 WHERE "invoices"."id" = $3  [["total", 1300], ["updated_at", "2015-05-27 11:06:28.222466"], ["id", 52]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/invoices
+Completed 302 Found in 13ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/invoices" for ::1 at 2015-05-27 18:06:28 +0700
+Processing by InvoicesController#index as HTML
+  [1m[35mInvoice Load (0.3ms)[0m  SELECT "invoices".* FROM "invoices"
+  Rendered invoices/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 91ms (Views: 90.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices" for ::1 at 2015-05-27 18:08:21 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 88ms (Views: 87.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 18:08:21 +0700
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:08:23 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/_form.html.erb (5.0ms)
+  Rendered invoices/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 126ms (Views: 123.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 18:08:29 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 102ms (Views: 100.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 18:09:03 +0700
+Processing by InvoicesController#index as HTML
+  [1m[35mInvoice Load (0.3ms)[0m  SELECT "invoices".* FROM "invoices"
+  Rendered invoices/_invoice.html.erb (2.5ms)
+  Rendered invoices/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 94ms (Views: 93.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
