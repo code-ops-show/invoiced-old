@@ -47,12 +47,14 @@
           <th class="center">UNIT PRICE</th>
           <th class="center">AMOUNT</th>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+          <% for line_item in @invoice.line_items %>
+            <tr>
+              <td class="center"><%= line_item.item %></td>
+              <td class="center"><%= line_item.quantity %></td>
+              <td class="center"><%= line_item.unit_price %></td>
+              <td class="center"><%= line_item.amount %></td> 
+            </tr>
+          <% end %>
         <tr>
           <td></td>
           <td></td>
