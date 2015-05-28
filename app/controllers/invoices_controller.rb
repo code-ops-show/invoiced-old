@@ -9,8 +9,9 @@ class InvoicesController < ApplicationController
   end
 
   def new
-    last_invoice = Invoice.order(:number).last
-    @invoice = Invoice.new(number: last_invoice.number.succ)
+    # last_invoice = Invoice.order(:number).last
+    # @invoice = Invoice.new(number: last_invoice.number.succ)
+    @invoice = Invoice.new
 
     4.times { @line_items = @invoice.line_items.build }
     # @line_items = @invoice.line_items.build
