@@ -65447,3 +65447,12 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+
+
+Started GET "/invoices/54" for ::1 at 2015-05-28 11:49:34 +0700
+Processing by InvoicesController#show as HTML
+  Parameters: {"id"=>"54"}
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1  [["id", 54]]
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."invoice_id" = $1[0m  [["invoice_id", 54]]
+  Rendered invoices/show.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 165ms (Views: 145.9ms | ActiveRecord: 3.9ms)

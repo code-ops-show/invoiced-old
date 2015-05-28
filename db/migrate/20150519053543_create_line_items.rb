@@ -5,7 +5,6 @@ class CreateLine_items < ActiveRecord::Migration
         t.integer  :quantity
         t.datetime :created_at 
         t.datetime :updated_at 
-        t.integer  :invoice_id
         t.integer  :unit_price
         t.integer  :amount
 
