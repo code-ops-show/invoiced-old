@@ -19,7 +19,7 @@
         <div class="rightBox">
           <h1  style="color:red"><str>INVOICE</str></h1>
           <address>
-            <h4 class="gray">INVOICE No.<%= f.text_field :number  %></h4>
+            <h4 class="gray">INVOICE No.<%= f.text_field :number , readonly: true %></h4>
             <h4 class="gray">Issue Date:<%= f.date_select(:issue_date) %> </h4>
             <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= f.date_select(:due_date) %>  </span></h4>
           </address>    
