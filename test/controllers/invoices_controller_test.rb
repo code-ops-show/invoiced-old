@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class InvoicesControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should get index page" do 
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:invoices)
+    assert_includes(assigns(:invoices), invoices(:invoice_one))
+  end
 end
