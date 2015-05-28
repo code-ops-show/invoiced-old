@@ -65134,3 +65134,316 @@ Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb
 
 
 Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 18:09:03 +0700
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:11:50 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.5ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/_form.html.erb (4.7ms)
+  Rendered invoices/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 97ms (Views: 93.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/invoices/55" for ::1 at 2015-05-27 18:11:56 +0700
+Processing by InvoicesController#show as HTML
+  Parameters: {"id"=>"55"}
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1  [["id", 55]]
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."invoice_id" = $1[0m  [["invoice_id", 55]]
+  Rendered invoices/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 136ms (Views: 134.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/invoices/52" for ::1 at 2015-05-27 18:12:01 +0700
+Processing by InvoicesController#show as HTML
+  Parameters: {"id"=>"52"}
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1  [["id", 52]]
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."invoice_id" = $1[0m  [["invoice_id", 52]]
+  Rendered invoices/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 92ms (Views: 90.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 18:12:03 +0700
+Processing by InvoicesController#index as HTML
+  [1m[35mInvoice Load (0.3ms)[0m  SELECT "invoices".* FROM "invoices"
+  Rendered invoices/_invoice.html.erb (2.2ms)
+  Rendered invoices/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 104ms (Views: 102.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:12:04 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/_form.html.erb (4.8ms)
+  Rendered invoices/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 99ms (Views: 96.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:12:26 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/_form.html.erb (4.8ms)
+  Rendered invoices/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 94ms (Views: 91.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 18:12:26 +0700
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:12:38 +0700
+Processing by InvoicesController#new as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1[0m
+  Rendered invoices/_form.html.erb (5.5ms)
+  Rendered invoices/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 103ms (Views: 99.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 18:12:38 +0700
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:12:53 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/_form.html.erb (4.4ms)
+  Rendered invoices/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 108ms (Views: 105.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-7eaa2eccff0a7402c299f3d6b59429c7cc574346127758372af0ea0a13590515.css?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/invoices.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-68d1a5161d04ca9fe1b9d9f4114d9426c7798bf90f2703a97aca35c8113469bb.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-15ce09eba576e56db3edfd87accc0ff48823df915169e350b4fd97290f96aee1.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/button.self-37c62bff1d75f86f3348b8679873d5156d8b9938b62841038dca21690f4740f1.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-9aaab1a477b9c1156bab751cb8da47f77dace6da88eef8ae830e60f3cff3a8be.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-eeece00cd06a3d7cc071ab7845b549d4991edd0f0895e4be70fe40bac2fb5f4b.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-a3998e7ca949c04cb86b5c635deb0abcc7a24dc02e81be66b8acfef02d811e45.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-f2759e138605770e60526c00c6d86cbb3378da203641f9d6b204c9f0192b9267.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-e1bba7115c90301056ee94c4716de2fcbe4498015def2dab9ff9879f339bd245.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-5ea180afe4404f83fc97d997833f2edefd34475b0b5ddab310e27abc2bbd5f2f.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-7742dca5e6acf313fbb217811b48468282cddf1a9baea5c89ec92e367ef242cb.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-c3b5c16f394ab9c0391db4431aac4f2d2ddf1bba4c5d3228ed343de05ecc8e83.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-2674d99c3ab0415dba0b958a80b3840f70ff6368b155d890306c0291be49453b.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/assets/application.self-44dc72337fbefc4f8c73fc8781b922cf9e4f99f8d068e6563c3820851d9390f6.js?body=1" for ::1 at 2015-05-27 18:12:53 +0700
+
+
+Started GET "/" for ::1 at 2015-05-27 18:12:59 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/_invoice.html.erb (1.9ms)
+  Rendered invoices/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 96ms (Views: 94.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/new" for ::1 at 2015-05-27 18:13:01 +0700
+Processing by InvoicesController#new as HTML
+  [1m[35mInvoice Load (0.4ms)[0m  SELECT  "invoices".* FROM "invoices"  ORDER BY "invoices"."number" DESC LIMIT 1
+  Rendered invoices/_form.html.erb (4.9ms)
+  Rendered invoices/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 100ms (Views: 97.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 18:13:03 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.3ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/_invoice.html.erb (1.9ms)
+  Rendered invoices/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 94ms (Views: 93.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/invoices/53/edit" for ::1 at 2015-05-27 18:13:05 +0700
+Processing by InvoicesController#edit as HTML
+  Parameters: {"id"=>"53"}
+  [1m[35mInvoice Load (0.2ms)[0m  SELECT  "invoices".* FROM "invoices" WHERE "invoices"."id" = $1 LIMIT 1  [["id", 53]]
+  [1m[36mLineItem Load (0.2ms)[0m  [1mSELECT "line_items".* FROM "line_items" WHERE "line_items"."invoice_id" = $1[0m  [["invoice_id", 53]]
+  Rendered invoices/_form.html.erb (5.1ms)
+  Rendered invoices/edit.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 109ms (Views: 107.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 18:13:07 +0700
+Processing by InvoicesController#index as HTML
+  [1m[35mInvoice Load (0.3ms)[0m  SELECT "invoices".* FROM "invoices"
+  Rendered invoices/_invoice.html.erb (2.0ms)
+  Rendered invoices/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 89ms (Views: 88.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-27 18:54:43 +0700
+Processing by InvoicesController#index as HTML
+  [1m[36mInvoice Load (0.4ms)[0m  [1mSELECT "invoices".* FROM "invoices"[0m
+  Rendered invoices/_invoice.html.erb (2.4ms)
+  Rendered invoices/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 146ms (Views: 145.5ms | ActiveRecord: 0.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'invoices'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'line_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
