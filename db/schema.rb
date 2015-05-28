@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150528050153) do
   enable_extension "plpgsql"
 
   create_table "invoices", force: :cascade do |t|
-    t.integer  "number"
+    t.string  "number"
     t.integer  "total"
     t.datetime "issue_date"
     t.datetime "due_date"
