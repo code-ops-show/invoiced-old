@@ -7,6 +7,6 @@ class LineItemTest < ActiveSupport::TestCase
 
 
     
-    assert_equal(200, lineItem.quantity * lineItem.unit_price)
+    assert_equal(200, lineItem.calculate_amount)
   end
 end

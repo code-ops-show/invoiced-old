@@ -18,8 +18,8 @@ class InvoicesControllerTest < ActionController::TestCase
     get :new
 
     assert_response :success
-    assert_not_nil assigns(:invoice).number,"invoice number not found"
-    assert_equal '003' , assigns(:invoice).number,"The invoice number is not auto increment"
+    assert_not_nil @invoice.number,"invoice number not found"
+    assert_equal "001" , @invoice.number,"The invoice number is not correct"
   end
 
   test "should create invoice" do
@@ -48,7 +48,7 @@ class InvoicesControllerTest < ActionController::TestCase
 
     assert_redirected_to invoices_path, "not going to index page after updated"
   end
-  
+
   test "should destroy invoices" do
     assert_difference('Invoice.count', -1) do
       delete :destroy, id: @invoice.id

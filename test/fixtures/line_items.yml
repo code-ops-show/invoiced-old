@@ -1,5 +1,4 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 line_item_one:
   invoice_id: invoice_one
   item: "blahd"

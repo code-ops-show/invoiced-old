@@ -10,10 +10,7 @@ class InvoicesController < ApplicationController
 
   def new
 
-    last_invoice = Invoice.order(:number).last
-    number = last_invoice ? last_invoice.number.succ : "000"
-
-    @invoice = Invoice.new(number: number)
+    @invoice = Invoice.new  
 
     4.times { @line_items = @invoice.line_items.build }
   
@@ -54,7 +51,8 @@ class InvoicesController < ApplicationController
 
  private
     def invoice_params
-      params.require(:invoice).permit(:number, :issue_date, :due_date, :total, line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id])
+      params.require(:invoice).permit(:number, :issue_date, :due_date, :total, 
+                                      line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id])
     end  
 
 end
