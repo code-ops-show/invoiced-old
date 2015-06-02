@@ -1,4 +1,4 @@
-<div class="box">
+<div class="box" >
   <h2>Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -20,9 +20,12 @@
     <% end -%>
 
     <div class="actions">
-      <%= f.submit "Log in" %>
+      <%= f.submit "Log in", :class =>'btn btn-lg btn-primary' %>
     </div>
   <% end %>
-
+  <br />
   <%= render "users/shared/links" %>
 </div>
+<!--Inspired by http://tutorialzine.com/2012/02/apple-like-login-form/ - Apple-like Login Form with CSS 3D Transforms -->
+
+
