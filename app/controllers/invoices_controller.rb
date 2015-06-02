@@ -1,27 +1,27 @@
 class InvoicesController < ApplicationController
-before_action :authenticate_user!
+  before_action :authenticate_user!
   def index
-     @invoices = Invoice.all
+     @invoices = current_user.invoices
   end
 
   def show
-    @invoice = Invoice.find(params[:id])
+    @invoice = current_user.invoices.find(params[:id])
   end
 
   def new
 
-    @invoice = Invoice.new  
+    @invoice = current_user.invoices.new  
 
     4.times { @line_items = @invoice.line_items.build }
   
   end
 
   def edit
-    @invoice = Invoice.find(params[:id])
+    @invoice = current_user.invoices.find(params[:id])
   end
 
   def create
-    @invoice = Invoice.new(invoice_params)
+    @invoice = current_user.invoices.new(invoice_params)
     if @invoice.save
       redirect_to invoices_path, :notice => "Your invoice was saved"
     else
@@ -32,7 +32,7 @@ before_action :authenticate_user!
 
   def update
 
-    @invoice = Invoice.find(params[:id])
+    @invoice = current_user.invoices.find(params[:id])
 
 
     if @invoice.update_attributes(invoice_params)
@@ -44,14 +44,14 @@ before_action :authenticate_user!
   end
 
   def destroy
-    @invoice = Invoice.find(params[:id])
+    @invoice = current_user.invoices.find(params[:id])
     @invoice.destroy
     redirect_to invoices_path, :notice => "Your invoice has been deleted."
   end
 
  private
     def invoice_params
-      params.require(:invoice).permit(:number, :issue_date, :due_date, :total, 
+      params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :user_id, 
                                       line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id])
     end  
 
