@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602104525) do
+ActiveRecord::Schema.define(version: 20150603052711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "address"
+    t.string   "phone_number"
+    t.string   "fax"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "lastname"
+    t.string   "email"
+  end
+
+  add_index "customers", ["user_id"], name: "index_customers_on_user_id", using: :btree
 
   create_table "invoices", force: :cascade do |t|
     t.integer  "total"
@@ -58,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150602104525) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "customers", "users"
   add_foreign_key "invoices", "users"
   add_foreign_key "line_items", "invoices"
 end

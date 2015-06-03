@@ -5,7 +5,10 @@ class InvoicesController < ApplicationController
   end
 
   def show
-    @invoice = current_user.invoices.find(params[:id])
+    # eager load
+    # @invoice = current_user.invoices.find(params[:id]) 
+    # lazy load
+    @invoice = current_user.invoices.where(id: params[:id]).first 
   end
 
   def new
@@ -17,7 +20,7 @@ class InvoicesController < ApplicationController
   end
 
   def edit
-    @invoice = current_user.invoices.find(params[:id])
+    @invoice = current_user.invoices.where(id: params[:id]).first 
   end
 
   def create
@@ -32,7 +35,7 @@ class InvoicesController < ApplicationController
 
   def update
 
-    @invoice = current_user.invoices.find(params[:id])
+    @invoice = current_user.invoices.where(id: params[:id]).first 
 
 
     if @invoice.update_attributes(invoice_params)
@@ -44,7 +47,7 @@ class InvoicesController < ApplicationController
   end
 
   def destroy
-    @invoice = current_user.invoices.find(params[:id])
+    @invoice = current_user.invoices.where(id: params[:id]).first 
     @invoice.destroy
     redirect_to invoices_path, :notice => "Your invoice has been deleted."
   end
@@ -52,7 +55,7 @@ class InvoicesController < ApplicationController
  private
     def invoice_params
       params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :user_id, 
-                                      line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id])
+                                      line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id, :_destroy])
     end  
 
 end
