@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :invoices, dependent: :destroy
+  has_many :customers, dependent: :destroy
+  attachment :logo_image
 end

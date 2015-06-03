@@ -1,1 +1,32 @@
-index.html.erb
+<div class="box">
+<h1>Customer List</h1>
+  <ol class="breadcrumb">
+    <li>Customer</li>
+    <li><%= link_to 'Index', customers_path %></li>
+
+  </ol>
+  <div class="panel panel-default">
+    <table class="table table-striped">
+      <thead>
+        <tr >
+          <th>Name</th>
+          <th>Lastname</th>
+          <th>Tel.</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <% @customers.each do |customer| %>
+        <%= render customer %>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<div class="smallbox">
+  <div class="center">
+    <div class="btn-group">
+      <%= link_to "Add new customer", new_customer_path, :class => "btn btn-primary btn-lg"%>
+    </div>
+  </div>
+</div>

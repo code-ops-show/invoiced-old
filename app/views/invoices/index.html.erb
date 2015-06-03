@@ -1,6 +1,7 @@
 <div class="box">
  <h1>Invoice list</h1>
   <ol class="breadcrumb">
+    <li>Invoice</li>
     <li><%= link_to 'Index', root_path %></li>
   </ol>
   <div class="panel panel-default">
@@ -14,8 +15,9 @@
           <th></th>
         </tr>
       </thead>
-
-      <%= render @invoices %>
+      <% @invoices.each do |invoice| %>
+        <%= render invoice %>
+      <% end %>
     </table>
   </div>
 </div>
