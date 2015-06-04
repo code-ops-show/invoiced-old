@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :invoices, dependent: :destroy
   has_many :customers, dependent: :destroy
+  has_many :invoices, through: :customers
   attachment :logo_image
 end

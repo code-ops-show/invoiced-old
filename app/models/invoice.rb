@@ -1,6 +1,6 @@
 class Invoice < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
-  belongs_to :user
+  belongs_to :customer
 
   validates :number,
             presence: true,

@@ -1,8 +1,10 @@
   <div class="panel panel-default">
-    <%= form_for @invoice do |f| %>  
+    <%= form_for [@customer, @invoice] do |f| %>  
     <div class="row">
       <div class="col-md-8">
-          <img class="resize" src="http://vignette3.wikia.nocookie.net/marvelmovies/images/8/8f/Stark_Industries_logo.png/revision/latest?cb=20131118043005" >
+          <div style="margin-left: 50px">
+          <%= image_tag attachment_url(current_user, :logo_image, :fill, 150, 150, format: "jpg") %>
+          </div>
           <address class="box">
               123 West 43rd Street, New York,<br>
               NY 10036, United States<br>

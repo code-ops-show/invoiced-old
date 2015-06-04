@@ -7,5 +7,6 @@
   <%= link_to 'Edit', edit_customer_path(customer.id) %> &nbsp;&nbsp;
   <%= link_to 'Delete', customer, method: :delete, data: { confirm: "Are you sure?" } %>
   </td>
+  <td><%= link_to 'Invoice', customer_invoices_path(customer) %></td>
 </tr>
 

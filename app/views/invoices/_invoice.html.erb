@@ -4,6 +4,8 @@
   <td><%= invoice.due_date.to_date %></td>
   <td><%= invoice.total %></td>
   <td><%= link_to 'Show', invoice_path(invoice.id) %> &nbsp;&nbsp;
-  <%= link_to 'Edit', edit_invoice_path(invoice.id) %> &nbsp;&nbsp;
-  <%= link_to 'Delete', invoice, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  <% if @customer %>
+  <%= link_to 'Edit', edit_customer_invoice_path(@customer, invoice.id) %> &nbsp;&nbsp;
+  <% end %>
+  <%= link_to 'Delete', invoice, method: :delete, data: { confirm: "Are you sure?" } %></td> &nbsp;&nbsp;
 </tr>
