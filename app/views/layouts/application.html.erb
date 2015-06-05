@@ -18,8 +18,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><%= link_to "Customer", customers_path, :class => "navbar-brand", :style => "margin-left: 50px" %></li>
-            <li><%= link_to "Invoice", invoices_path, :class => "navbar-brand", :style => "margin-left: 50px" %></li>
+            <li class="<%= 'active' if current_page?(customers_path) %>"><%= link_to "Customer", customers_path, :class => "navbar-brand", :style => "margin-left: 50px" %></li>
+            <li class="<%= 'active' if current_page?(invoices_path) %>"><%= link_to "Invoice", invoices_path, :class => "navbar-brand", :style => "margin-left: 50px" %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>       

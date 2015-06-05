@@ -10,7 +10,8 @@ class InvoicesController < ApplicationController
     # @invoice = current_user.invoices.find(params[:id]) 
     # lazy load
     # @invoice = current_user.invoices.where(id: params[:id]).first 
-    @invoice = current_user.invoices.where(id: params[:id]).first 
+    @customer = current_user.customers.where(id: params[:customer_id]).first
+    @invoice = @customer.invoices.where(id: params[:id]).first 
 
   end
 
