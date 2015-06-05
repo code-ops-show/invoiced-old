@@ -24,10 +24,13 @@
               Phone: 45539132 Fax: 3420124<br>
           </address>
           <address class="box">
-            <strong>Custome:</strong><br>
-            Mr.Bruce Wayne<br>
-            NY 10036, United States<br>
-            Phone: 45539132 Fax: 3420124<br>
+            <strong>Custome:</strong>
+            <%= @customer.firstname %> <%= @customer.lastname %><br>
+            <strong>Address:</strong><br>
+            <%= @customer.address %><br>
+            <label for="phone_number">Tel.</label><%= @customer.phone_number %>
+            <label for="fax">Fax.</label><%= @customer.fax %><br>
+            <label for="email">Email:</label><%= @customer.email %>
           </address>
       </div>
       <div class="col-md-4">

@@ -1,5 +1,6 @@
 <div class="container-fluid">
-  <h1>Edit customer information</h1>
+  <br />
+  <h1>Customer information</h1>
   <ol class="breadcrumb">
     <li>Customer</li>
     <li><%= link_to 'Index', customers_path %></li>
@@ -36,5 +37,40 @@
                   </div>
               </div>
       </div>
+  </div>
+</div>
+
+<div class="box">
+ <h1>Invoices belong to this customer</h1><hr />
+ <table class="table table-striped">
+    <thead>
+      <tr >
+        <th>Invoice</th>
+        <th>issue date</th>
+        <th>due date</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <% @customer.invoices.each do |invoice| %>
+      <tr >
+      <td><%= invoice.number %></td>
+      <td><%= invoice.issue_date.to_date %></td>
+      <td><%= invoice.due_date.to_date %></td>
+      <td><%= invoice.total %></td>
+      <td><%= link_to 'Show', customer_invoice_path(@customer,invoice) %> &nbsp;&nbsp;
+          <%= link_to 'Edit', edit_customer_invoice_path(@customer, invoice) %> &nbsp;&nbsp;
+          <%= link_to 'Delete', customer_invoice_path(@customer, invoice), method: :delete, data: { confirm: "Are you sure?" } %>
+      </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<div class="smallbox">
+  <div class="center">
+    <div class="btn-group">
+      <%= link_to "Add new invoice", new_customer_invoice_path(@customer), :class => "btn btn-primary btn-lg" if @customer %>
+    </div>
   </div>
 </div>

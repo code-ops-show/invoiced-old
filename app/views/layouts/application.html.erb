@@ -18,8 +18,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="<%= 'active' if current_page?(customers_path) %>"><%= link_to "Customer", customers_path, :class => "navbar-brand", :style => "margin-left: 50px" %></li>
-            <li class="<%= 'active' if current_page?(invoices_path) %>"><%= link_to "Invoice", invoices_path, :class => "navbar-brand", :style => "margin-left: 50px" %></li>
+            <li class="<%= 'active' if current_page?(customers_path) || current_page?(root_path) %>">
+            <%= link_to "Customer", customers_path, :class => "navbar-brand", :style => "margin-left: 50px" %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>       
@@ -39,14 +39,16 @@
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-</nav>
+  </nav>
+
 </head>
 <body>
-  <div class="wrap">
-    <% flash.each do |key, value| %>
-      <h2><%= value %></h2>
-    <% end %>
-  </div>
+<div class="wrap">
+  <% flash.each do |key, value| %>
+    <br /><br />
+    <h2><%= value %></h2>
+  <% end %>
+</div>
 <%= yield %>
 
 </body>

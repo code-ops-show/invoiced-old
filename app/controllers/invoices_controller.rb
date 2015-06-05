@@ -4,6 +4,7 @@ class InvoicesController < ApplicationController
      @customer = current_user.customers.where(id: params[:customer_id]).first
      @invoices = scoped_invoices
   end
+  helper_method :index
 
   def show
     # eager load
@@ -32,7 +33,7 @@ class InvoicesController < ApplicationController
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.build(invoice_params)
     if @invoice.save
-      redirect_to invoices_path, :notice => "Your invoice was saved"
+      redirect_to customer_path(@customer), :notice => "Your invoice was saved"
     else
       render "new"
     end
@@ -44,7 +45,7 @@ class InvoicesController < ApplicationController
     @invoice = @customer.invoices.where(id: params[:id]).first 
 
     if @invoice.update_attributes(invoice_params)
-      redirect_to invoices_path, :notice => "Your invoice has been updated."
+      redirect_to customer_path(@customer), :notice => "Your invoice has been updated."
     else
       render "edit"
     end
@@ -55,7 +56,7 @@ class InvoicesController < ApplicationController
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.where(id: params[:id]).first 
     if @invoice.destroy
-      redirect_to customer_invoices_path(@customer), :notice => "Your invoice has been deleted."
+      redirect_to customer_path(@customer), :notice => "Your invoice has been deleted."
     else
       # handle failed destroy
     end

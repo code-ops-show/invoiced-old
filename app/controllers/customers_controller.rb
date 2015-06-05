@@ -9,6 +9,8 @@ class CustomersController < ApplicationController
     # @invoice = current_user.invoices.find(params[:id]) 
     # lazy load
     @customer = current_user.customers.where(id: params[:id]).first 
+    @invoices = @customer.invoices.where(id: params[:id]).first 
+
   end
 
   def new
