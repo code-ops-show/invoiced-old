@@ -8,7 +8,29 @@
   </ol>
 
      <%= render 'form' %> 
-
+     
+  <%= form_for [@customer, @invoice] do |f| %>  
+  <div class="panel panel-default">
+    <h2 style="margin-left: 50px" >Payment</h2><hr />
+      <table class="table table-striped" style="wrap-table">
+        <thead>
+          <tr>
+            <th class="center">Date</th>
+            <th class="center">Description</th>
+            <th class="center">Payment Method</th>
+            <th class="center">Amount</th>
+            <th class="center"><%= link_to_add_fields "Add", f, :payments %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= f.fields_for :payments do |builder| %>
+            <%= render "payment_fields", f: builder %>
+          <% end %>
+        </tbody>   
+      </table>
+    <%= f.submit "Submit"%>   
+  </div>
+  <% end %>
 </div>
 
 

@@ -1,0 +1,11 @@
+<tr>
+  <td class="center"><%= f.date_select :date %></td>
+  <td class="center"><%= f.text_field :description %></td>
+  <td class="center"><%= f.text_field :payment_method %></td>
+  <td class="center"><%= f.text_field :amount %></td>
+  <td class="center"></td> 
+  <td class="center"> 
+    <%= f.check_box :_destroy %>
+    <%= f.label :_destroy, "Delete" %>
+  </td>
+</tr>

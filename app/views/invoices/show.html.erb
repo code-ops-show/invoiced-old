@@ -56,6 +56,7 @@
           <th class="center">UNIT PRICE</th>
           <th class="center">AMOUNT</th>
         </tr>
+      </thead>
           <% for line_item in @invoice.line_items %>
             <tr>
               <td class="center"><%= line_item.item %></td>
@@ -82,14 +83,41 @@
           <td class="right"><h4>Total</h4></td>
           <td class="right"><h4><%= @invoice.total + vat %> Baht</h4></td>
         </tr>
-      </thead>
+
     </table>
   </div>
   <br />
 
+
+  <div class="panel panel-default">
+    <h2 style="margin-left: 50px" >Payment</h2><hr />
+      <table class="table table-striped" style="wrap-table">
+        <thead>
+          <tr>
+            <th class="center">Date</th>
+            <th class="center">Description</th>
+            <th class="center">Payment Method</th>
+            <th class="center">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for payment in @invoice.payments %>
+            <tr>
+              <td class="center"><%= payment.date %></td>
+              <td class="center"><%= payment.description %></td>
+              <td class="center"><%= payment.payment_method %></td>
+              <td class="center"><%= payment.amount %></td> 
+            </tr>
+          <% end %>
+        </tbody>      
+      </table>
+
+  </div>
+
   <div class="row">
       <h4><%= link_to 'Back to index', customer_path(@customer.id) %></h4>
   </div>
+
 
 </div>
 

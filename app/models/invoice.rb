@@ -1,5 +1,6 @@
 class Invoice < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
+  has_many :payments, dependent: :destroy
   belongs_to :customer
 
   validates :number,
@@ -8,6 +9,9 @@ class Invoice < ActiveRecord::Base
 
   accepts_nested_attributes_for :line_items, 
                                 reject_if: lambda { |l| l[:item].blank? || l[:quantity].blank? || l[:unit_price].blank? }, 
+                                allow_destroy: true
+  accepts_nested_attributes_for :payments, 
+                                reject_if: lambda { |l| l[:date].blank? || l[:description].blank? || l[:payment_method].blank? || l[:amount].blank? }, 
                                 allow_destroy: true
 
   after_initialize :invoice_number_incrementation

@@ -21,6 +21,7 @@ class InvoicesController < ApplicationController
     @invoice = @customer.invoices.build
 
     4.times { @line_items = @invoice.line_items.build }
+    @payments = @invoice.payments.build
   
   end
 
@@ -65,7 +66,9 @@ class InvoicesController < ApplicationController
 private
   def invoice_params
     params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :customer_id, 
-                                    line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id, :_destroy])
+                                    line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id, :_destroy],
+                                    payments_attributes: [:id, :date, :description, :payment_method, :amount, :invoice_id, :_destroy])
+
   end
 
   def scoped_invoices

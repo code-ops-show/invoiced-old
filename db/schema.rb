@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608051427) do
+ActiveRecord::Schema.define(version: 20150609102532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,18 @@ ActiveRecord::Schema.define(version: 20150608051427) do
 
   add_index "line_items", ["invoice_id"], name: "index_line_items_on_invoice_id", using: :btree
 
+  create_table "payments", force: :cascade do |t|
+    t.date     "date"
+    t.string   "description"
+    t.string   "payment_method"
+    t.integer  "amount"
+    t.integer  "invoice_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "payments", ["invoice_id"], name: "index_payments_on_invoice_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -81,4 +93,5 @@ ActiveRecord::Schema.define(version: 20150608051427) do
   add_foreign_key "customers", "users"
   add_foreign_key "invoices", "customers"
   add_foreign_key "line_items", "invoices"
+  add_foreign_key "payments", "invoices"
 end
