@@ -1,7 +1,7 @@
 <div class="box">
   <ol class="breadcrumb">
-    <li>Invoice</li>
-    <li><%= link_to 'Index', root_path %></li>
+    <li><%= link_to 'Customer', customers_path %></li>
+    <li><%= link_to 'Index', customer_path(@customer.id) %></li>
     <li class="active">Details</li>
   </ol>
   <div class="row">
@@ -88,7 +88,7 @@
   <br />
 
   <div class="row">
-      <h4><%= link_to 'Back to index', root_path %></h4>
+      <h4><%= link_to 'Back to index', customer_path(@customer.id) %></h4>
   </div>
 
 </div>

@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <h1>Edit invoice</h1>
   <ol class="breadcrumb">
-    <li>Invoice</li>
-    <li><%= link_to 'Index', root_path %></li>
+    <li><%= link_to 'Customer', customers_path %></li>
+    <li><%= link_to 'Index', customer_path(@customer.id) %></li>
     <li><%= link_to 'Details', customer_invoice_path(@customer, @invoice) %></li>
     <li class="active">Edit</li>
   </ol>

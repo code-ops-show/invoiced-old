@@ -42,36 +42,42 @@
               <th class="center">QUANTITY</th>
               <th class="center">UNIT PRICE</th>
               <th class="center">AMOUNT</th>
-              <th></th>
+              <th class="center">
+                <%= link_to_add_fields "Add", f, :line_items %>
+              </th>
             </tr>
           </thead>
-          <%= f.fields_for :line_items do |builder| %>
-            <%= render 'lineitem', :builder => builder %> 
-          <% end %>
-          <tr>
-            <td></td>
-            <td></td>
-            <td class="right"><h4>Sub Total</h4></td>
-            <td class="right"><h4><%= @invoice.total%> Baht</h4></td>
-            <td class="center"></td> 
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td class="right"><h4>VAT 7%</h4></td>
-            <td class="right"><h4> Baht</h4></td>
-            <td class="center"></td> 
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td class="right"><h4>Total</h4></td>
-            <td class="right"><h4> Baht</h4></td>
-            <td class="center"></td> 
-          </tr>
+          <tbody>
+            <%= f.fields_for :line_items do |builder| %>
+              <%= render 'line_item_fields', f: builder %> 
+            <% end %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td></td>
+              <td class="right"><h4>Sub Total</h4></td>
+              <td class="right"><h4><%= @invoice.total%> Baht</h4></td>
+              <td class="center"></td> 
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td class="right"><h4>VAT 7%</h4></td>
+              <td class="right"><h4> Baht</h4></td>
+              <td class="center"></td> 
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td class="right"><h4>Total</h4></td>
+              <td class="right"><h4> Baht</h4></td>
+              <td class="center"></td> 
+            </tr>
+          </tfoot>
         </table>
       <%= f.submit "Submit"%>
     <% end %>
   </div>
   <br /><br /><br />
-<%= link_to 'Back to index', root_path %>
+<%= link_to 'Back to index', customer_path(@customer.id) %>
