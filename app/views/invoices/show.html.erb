@@ -99,17 +99,31 @@
             <th class="center">Payment Method</th>
             <th class="center">Amount</th>
           </tr>
+        <% for payment in @invoice.payments %>
         </thead>
         <tbody>
-          <% for payment in @invoice.payments %>
             <tr>
               <td class="center"><%= payment.date %></td>
               <td class="center"><%= payment.description %></td>
               <td class="center"><%= payment.payment_method %></td>
               <td class="center"><%= payment.amount %></td> 
             </tr>
-          <% end %>
-        </tbody>      
+        </tbody> 
+        <% end %>   
+        <tfooter>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="right"><h4>Total Paid</h4></td>
+            <td class="right"><h4><%= @invoice.total_paid %> Baht</h4></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="right"><h4>Balance</h4></td>
+            <td class="right"><h4><%= @invoice.balance %> Baht</h4></td>
+          </tr>
+        </tfooter>  
       </table>
 
   </div>

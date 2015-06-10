@@ -43,8 +43,7 @@ class InvoicesController < ApplicationController
 
   def update
     @customer = current_user.customers.where(id: params[:customer_id]).first
-    @invoice = @customer.invoices.where(id: params[:id]).first 
-
+    @invoice = @customer.invoices.where(id: params[:id]).first
     if @invoice.update_attributes(invoice_params)
       redirect_to customer_path(@customer), :notice => "Your invoice has been updated."
     else
@@ -59,13 +58,13 @@ class InvoicesController < ApplicationController
     if @invoice.destroy
       redirect_to customer_path(@customer), :notice => "Your invoice has been deleted."
     else
-      # handle failed destroy
+      # handle failed destroys
     end
   end
 
 private
   def invoice_params
-    params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :customer_id, 
+    params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :customer_id, :total_paid, :balance, 
                                     line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id, :_destroy],
                                     payments_attributes: [:id, :date, :description, :payment_method, :amount, :invoice_id, :_destroy])
 

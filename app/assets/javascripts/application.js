@@ -21,3 +21,5 @@ function add_fields(link, association, content) {
   var regexp = new RegExp("new_" + association, "g");
   $(link).parents('table').find('tbody').append(content.replace(regexp, new_id));
 };
+
+
