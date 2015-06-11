@@ -4,16 +4,14 @@
     <div class="col-md-8">
       <h1>Customer List</h1>
     </div>
-    <div class="col-md-4">
-      <div class="input-group col-md-12">
-          <input type="text" class="form-control input-lg" placeholder="Search" style=" margin-top: 10px;" />
-          <span class="input-group-btn" >
-              <button class="btn btn-info btn-lg" type="button" style=" margin-top: 10px;">
-                  <i class="glyphicon glyphicon-search"></i>
-              </button>
-          </span>
+      <div class='container'>
+        <%= form_tag customers_path, class: 'navbar-form navbar-left', role: 'search', method: :get do |f| %>
+          <div class='form-group'>
+            <%= text_field_tag :q, params[:q], class: 'form-control' %>
+          </div>
+          <%= button_tag "Search", class: 'btn btn-default', name: nil %>
+        <% end %>
       </div>
-    </div>
   </div>
   <div class="row">
     <ol class="breadcrumb">

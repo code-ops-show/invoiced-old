@@ -1,7 +1,13 @@
 class CustomersController < ApplicationController
  before_action :authenticate_user!
   def index
-     @customers = current_user.customers
+    if params[:q].present?
+      @customers = current_user.customers.search(params[:q]).results
+    else
+      @customers = current_user.customers
+    end
+     # @customers = current_user.customers
+     # @customers = current_user.customers.search((params[:q].present? ? params[:q] : '*')).records
   end
 
   def show
@@ -15,7 +21,7 @@ class CustomersController < ApplicationController
 
   def new
 
-    @customer = current_user.customers.new  
+    @customer = current_user.customers.build
 
   
   end
@@ -25,7 +31,7 @@ class CustomersController < ApplicationController
   end
 
   def create
-    @customer = current_user.customers.new(customer_params)
+    @customer = current_user.customers.build(customer_params)
     if @customer.save
       redirect_to customers_path, :notice => "Your customer information was saved"
     else
