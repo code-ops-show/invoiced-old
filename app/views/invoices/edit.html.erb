@@ -19,7 +19,7 @@
             <th class="center">Description</th>
             <th class="center">Payment Method</th>
             <th class="center">Amount</th>
-            <th class="center"><%= link_to_add_fields "Add", f, :payments %></th>
+            <th class="center"><%= link_to_add_fields "Add" , f, :payments %></th>
           </tr>
         </thead>
         <tbody>
@@ -28,7 +28,9 @@
           <% end %>
         </tbody>   
       </table>
-    <%= f.submit "Submit"%>   
+      <br />
+    <%= f.submit "   Submit   ", :class => "btn btn-success btn-lg center-block"  %>  
+    <br /> 
   </div>
   <% end %>
 </div>

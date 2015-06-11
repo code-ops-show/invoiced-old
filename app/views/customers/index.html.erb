@@ -1,10 +1,26 @@
-<div class="box">
-<h1>Customer List</h1>
-  <ol class="breadcrumb">
-    <li><%= link_to 'Customer', customers_path %></li>
-    <li><%= link_to 'Index', customers_path %></li>
 
-  </ol>
+<div class="box">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Customer List</h1>
+    </div>
+    <div class="col-md-4">
+      <div class="input-group col-md-12">
+          <input type="text" class="form-control input-lg" placeholder="Search" style=" margin-top: 10px;" />
+          <span class="input-group-btn" >
+              <button class="btn btn-info btn-lg" type="button" style=" margin-top: 10px;">
+                  <i class="glyphicon glyphicon-search"></i>
+              </button>
+          </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <ol class="breadcrumb">
+      <li><%= link_to 'Customer', customers_path %></li>
+      <li><%= link_to 'Index', customers_path %></li>
+    </ol>
+  </div>
   <div class="panel panel-default">
     <table class="table table-striped">
       <thead>
