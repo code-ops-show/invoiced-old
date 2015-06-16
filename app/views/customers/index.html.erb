@@ -1,17 +1,28 @@
-
 <div class="box">
   <div class="row">
     <div class="col-md-8">
-      <h1>Customer List</h1>
+      <div class='container'>
+        <h1>Customer List</h1>
+      </div>
     </div>
+    <div class="col-md-4">
       <div class='container'>
         <%= form_tag customers_path, class: 'navbar-form navbar-left', role: 'search', method: :get do |f| %>
-          <div class='form-group'>
-            <%= text_field_tag :q, params[:q], class: 'form-control' %>
-          </div>
-          <%= button_tag "Search", class: 'btn btn-default', name: nil %>
+        <div class='form-group'>
+          <%= text_field_tag :q, params[:q], class: 'form-control' %>
+        </div>
+        <%= button_tag "Search", class: 'btn btn-default', name: nil %>
         <% end %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search by <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Name</a></li>
+            <li><a href="#">Phone number</a></li>
+            <li><a href="#">Email</a></li>
+          </ul>
+        </li>
       </div>
+    </div>
   </div>
   <div class="row">
     <ol class="breadcrumb">
@@ -31,12 +42,11 @@
         </tr>
       </thead>
       <% @customers.each do |customer| %>
-        <%= render customer %>
+      <%= render customer %>
       <% end %>
     </table>
   </div>
 </div>
-
 <div class="smallbox">
   <div class="center">
     <div class="btn-group">
@@ -44,5 +54,3 @@
     </div>
   </div>
 </div>
-
-

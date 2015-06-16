@@ -4,44 +4,41 @@
   <ol class="breadcrumb">
     <li><%= link_to 'Customer', customers_path %></li>
     <li><%= link_to 'Index', customers_path %></li>
-    <li class="active">Details</li>    
+    <li class="active">Details</li>
   </ol>
-
   <div class="row">
-      <div class="col-md-8">
-      </div>
-      <div class="col-md-4">
-        <h3 class="right"><%= link_to 'Edit', edit_customer_path(@customer.id) %> |
-        <%= link_to 'Delete', @customer, method: :delete, data: { confirm: "Are you sure?" } %></h3>
-      </div>
+    <div class="col-md-8">
+    </div>
+    <div class="col-md-4">
+      <h3 class="right"><%= link_to 'Edit', edit_customer_path(@customer.id) %> |
+      <%= link_to 'Delete', @customer, method: :delete, data: { confirm: "Are you sure?" } %></h3>
+    </div>
   </div>
   <div class="container">
-      <div class="row">
-              <div>
-                  <div class="panel panel-default">
-                      <div class="text-center header"><h2>Customer details</h2></div><hr />
-
-                      <div class="panel-body text-center">
-                        <h3><%= @customer.firstname %> <%= @customer.lastname %></h3>
-                        <div><hr />
-                        <label for="address"><h4><u>Address</u></h4></label>
-                        <address>
-                          <%= @customer.address %>
-                        </address>
-                        </div>
-                        <label for="phone_number">Tel.</label><%= @customer.phone_number %>
-                        <label for="fax">Fax.</label><%= @customer.fax %><hr />
-                        <label for="email">Email:</label><%= @customer.email %>
-                      </div>
-                  </div>
-              </div>
+    <div class="row">
+      <div>
+        <div class="panel panel-default">
+          <div class="text-center header"><h2>Customer details</h2></div><hr />
+          <div class="panel-body text-center">
+            <h3><%= @customer.firstname %> <%= @customer.lastname %></h3>
+            <div><hr />
+              <label for="address"><h4><u>Address</u></h4></label>
+              <address>
+                <%= @customer.address %>
+              </address>
+            </div>
+            <label for="phone_number">Tel.</label><%= @customer.phone_number %>
+            <label for="fax">Fax.</label><%= @customer.fax %><hr />
+            <label for="email">Email:</label><%= @customer.email %>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 </div>
-
 <div class="box">
- <h1>Invoices belong to this customer</h1><hr />
- <table class="table table-striped">
+  <h1>Invoices belong to this customer</h1><hr />
+  <table class="table table-striped">
     <thead>
       <tr >
         <th>Invoice</th>
@@ -51,18 +48,17 @@
         <th></th>
       </tr>
     </thead>
-
     <% @customer.invoices.each do |invoice| %>
-      <tr >
+    <tr >
       <td><%= invoice.number %></td>
       <td><%= invoice.issue_date.to_date %></td>
       <td><%= invoice.due_date.to_date %></td>
       <td><%= invoice.total %></td>
       <td><%= link_to 'Show', customer_invoice_path(@customer,invoice) %> &nbsp;&nbsp;
-          <%= link_to 'Edit', edit_customer_invoice_path(@customer, invoice) %> &nbsp;&nbsp;
-          <%= link_to 'Delete', customer_invoice_path(@customer, invoice), method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to 'Edit', edit_customer_invoice_path(@customer, invoice) %> &nbsp;&nbsp;
+        <%= link_to 'Delete', customer_invoice_path(@customer, invoice), method: :delete, data: { confirm: "Are you sure?" } %>
       </td>
-      </tr>
+    </tr>
     <% end %>
   </table>
 </div>

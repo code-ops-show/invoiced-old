@@ -1,87 +1,84 @@
-  <div class="panel panel-default">
-    <%= form_for [@customer, @invoice] do |f| %>  
-    <div class="row">
-      <div class="col-md-8">
-          <div style="margin-left: 50px">
-          <%= image_tag attachment_url(current_user, :logo_image, :fill, 150, 150, format: "jpg") %>
-          </div>
-          <address class="box">
-          <%= current_user.first_name %> <%= current_user.last_name %><br>
-            <strong>Address:</strong><br>
-            <%= @current_user.address %><br>
-            <label for="phone_number">Tel.</label><%= current_user.phone_number %>
-            <label for="fax">Fax.</label><%= current_user.fax %><br>
-            <label for="email">Email:</label><%= current_user.email %>
-          </address>
-          <address class="box">
-            <strong>Custome:</strong>
-            <%= @customer.firstname %> <%= @customer.lastname %><br>
-            <strong>Address:</strong><br>
-            <%= @customer.address %><br>
-            <label for="phone_number">Tel.</label><%= @customer.phone_number %>
-            <label for="fax">Fax.</label><%= @customer.fax %><br>
-            <label for="email">Email:</label><%= @customer.email %>
-          </address>
+<div class="panel panel-default">
+  <%= form_for [@customer, @invoice] do |f| %>
+  <div class="row">
+    <div class="col-md-8">
+      <div style="margin-left: 50px">
+        <%= image_tag attachment_url(current_user, :logo_image, :fill, 150, 150, format: "jpg") %>
       </div>
-      <div class="col-md-4">
-        <div class="rightBox">
-          <h1  style="color:red"><str>INVOICE</str></h1>
-          <address>
-            <h4 class="gray">INVOICE No.<%= f.text_field :number , readonly: true %></h4>
-            <h4 class="gray">Issue Date:<%= f.date_select(:issue_date) %> </h4>
-            <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= f.date_select(:due_date) %>  </span></h4>
-          </address>    
-        </div>    
+      <address class="box">
+        <%= current_user.first_name %> <%= current_user.last_name %><br>
+        <strong>Address:</strong><br>
+        <%= @current_user.address %><br>
+        <label for="phone_number">Tel.</label><%= current_user.phone_number %>
+        <label for="fax">Fax.</label><%= current_user.fax %><br>
+        <label for="email">Email:</label><%= current_user.email %>
+      </address>
+      <address class="box">
+        <strong>Custome:</strong>
+        <%= @customer.firstname %> <%= @customer.lastname %><br>
+        <strong>Address:</strong><br>
+        <%= @customer.address %><br>
+        <label for="phone_number">Tel.</label><%= @customer.phone_number %>
+        <label for="fax">Fax.</label><%= @customer.fax %><br>
+        <label for="email">Email:</label><%= @customer.email %>
+      </address>
+    </div>
+    <div class="col-md-4">
+      <div class="rightBox">
+        <h1  style="color:red"><str>INVOICE</str></h1>
+        <address>
+          <h4 class="gray">INVOICE No.<%= f.text_field :number , readonly: true %></h4>
+          <h4 class="gray">Issue Date:<%= f.date_select(:issue_date) %> </h4>
+          <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= f.date_select(:due_date) %>  </span></h4>
+        </address>
       </div>
-    </div>     
-
-        <table class="table table-striped" style="wrap-table">
-          <thead>
-            <tr>
-              <th class="center">DESCRIPTION</th>
-              <th class="center">QUANTITY</th>
-              <th class="center">UNIT PRICE</th>
-              <th class="center">AMOUNT</th>
-              <th class="center">
-                <%= link_to_add_fields "Add", f, :line_items %>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <%= f.fields_for :line_items do |builder| %>
-              <%= render 'line_item_fields', f: builder %> 
-            <% end %>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td></td>
-              <td></td>
-              <td class="right"><h4>Sub Total</h4></td>
-              <td class="right"><h4><%= @invoice.total%> Baht</h4></td>
-              <td class="center"></td> 
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td class="right"><h4>VAT 7%</h4></td>
-              <td class="right"><h4> Baht</h4></td>
-              <td class="center"></td> 
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td class="right"><h4>Total</h4></td>
-              <td class="right"><h4> Baht</h4></td>
-              <td class="center"></td> 
-            </tr>
-          </tfoot>
-        </table>
-      <%= f.submit "   Submit   ", :class => "btn btn-success btn-lg center-block "  %>
-    <br />
-  </div><br />
-  <% end %>
-
-
+    </div>
+  </div>
+  <table class="table table-striped" style="wrap-table">
+    <thead>
+      <tr>
+        <th class="center">DESCRIPTION</th>
+        <th class="center">QUANTITY</th>
+        <th class="center">UNIT PRICE</th>
+        <th class="center">AMOUNT</th>
+        <th class="center">
+          <%= link_to_add_fields "Add", f, :line_items %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= f.fields_for :line_items do |builder| %>
+      <%= render 'line_item_fields', f: builder %>
+      <% end %>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td></td>
+      <td></td>
+      <td class="right"><h4>Sub Total</h4></td>
+      <td class="right"><h4><%= @invoice.total%> Baht</h4></td>
+      <td class="center"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td class="right"><h4>VAT 7%</h4></td>
+      <td class="right"><h4> Baht</h4></td>
+      <td class="center"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td class="right"><h4>Total</h4></td>
+      <td class="right"><h4> Baht</h4></td>
+      <td class="center"></td>
+    </tr>
+    </tfoot>
+  </table>
+  <%= f.submit "   Submit   ", :class => "btn btn-success btn-lg center-block "  %>
   <br />
+</div><br />
+<% end %>
+<br />
 <%= link_to 'Back to index', customer_path(@customer.id) %>
 <br /><br />

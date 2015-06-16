@@ -26,7 +26,25 @@
           <%= f.fields_for :payments do |builder| %>
             <%= render "payment_fields", f: builder %>
           <% end %>
-        </tbody>   
+        </tbody>
+        <tfooter>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="right"><h4>Total Paid</h4></td>
+            <td class="right"><h4><%= @invoice.total_paid %> Baht</h4></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="right"><h4>Balance</h4></td>
+            <td class="right"><h4><%= @invoice.balance %> Baht</h4></td>
+            <td></td>
+          </tr>
+        </tfooter>    
       </table>
       <br />
     <%= f.submit "   Submit   ", :class => "btn btn-success btn-lg center-block"  %>  
