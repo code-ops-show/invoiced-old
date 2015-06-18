@@ -12,7 +12,7 @@
         <%= fields_for :search_method do |f| %>
         <%= f.label :Search_By %>
         <%#= f.select :search_method, [['Name', 'firstname'], ['Phone Number', 'phone_number'], ['Email', 'email']] %>
-        <%= select_tag :search_method, options_for_select([['Name', 'firstname'], ['Phone Number', 'phone_number'], ['Email', 'email']]) %>
+        <%= select_tag :search_method, options_for_select([['Name', 'firstname'], ['Phone Number', 'phone_number'], ['Email', 'email']], :selected =>params[:search_method]) %>
         <% end %>
           <%= text_field_tag :q, params[:q], class: 'form-control' %>
         </div>
