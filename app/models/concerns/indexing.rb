@@ -5,7 +5,7 @@ module Customers
     included do 
       mapping do 
         indexes :id, index: :not_analyzed
-        indexes :firstname
+        indexes :firstname,  type: 'string' 
         indexes :lastname,  type: 'string'
         indexes :address,  type: 'string'
         indexes :phone_number,  type: 'string'

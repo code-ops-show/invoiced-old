@@ -1,45 +1,38 @@
 <div class="box">
-<div class="container">
+  <div class="container">
     <div class="row">
-                <form class="form-horizontal">
-                      <legend class="text-center header">Customer information</legend>
-
-                </form>
-
+      <form class="form-horizontal">
+        <legend class="text-center header">Customer information</legend>
+      </form>
     </div>
+  </div>
+  <%= form_for @customer do |f| %>
+  <br />
+  <%= f.label :Firstname, :class => "h4" %>
+  <%= f.text_field :firstname ,:class => "form-control input-lg", :placeholder => "Firstname"  %>
+  <br />
+  <%= f.label :Lastname, :class => "h4" %>
+  <%= f.text_field :lastname ,:class => "form-control input-lg", :placeholder => "Lastname"  %>
+  <br />
+  <%= f.label :Email, :class => "h4" %>
+  <%= f.text_field :email ,:class => "form-control input-lg", :placeholder => "Email"  %>
+  <br />
+  <%= f.label :Phoen_number, :class => "h4" %>
+  <%= f.text_field :phone_number ,:class => "form-control input-lg", :placeholder => "Phone number"  %>
+  <br />
+  <%= f.label :Fax, :class => "h4" %>
+  <%= f.text_field :fax ,:class => "form-control input-lg", :placeholder => "Fax number"  %>
+  <br />
+  <%= f.label :Address, :class => "h4" %>
+  <%= f.text_field :address ,:class => "form-control input-lg", :placeholder => "Address"  %>
+  <br />
+  <%= f.submit "Submit" , :class => "btn btn-primary btn-lg center-block " %>
+  <% end %>
 </div>
-
-
-
-                        <%= form_for @customer do |f| %> 
-                          <br />
-                          <%= f.label :Firstname, :class => "h4" %>
-                          <%= f.text_field :firstname ,:class => "form-control input-lg", :placeholder => "Firstname"  %>
-                          <br />
-                          <%= f.label :Lastname, :class => "h4" %>
-                          <%= f.text_field :lastname ,:class => "form-control input-lg", :placeholder => "Lastname"  %>
-                          <br />
-                          <%= f.label :Email, :class => "h4" %>
-                          <%= f.text_field :email ,:class => "form-control input-lg", :placeholder => "Email"  %>
-                          <br />
-                          <%= f.label :Phoen_number, :class => "h4" %>
-                          <%= f.text_field :phone_number ,:class => "form-control input-lg", :placeholder => "Phone number"  %>
-                          <br />
-                          <%= f.label :Fax, :class => "h4" %>
-                          <%= f.text_field :fax ,:class => "form-control input-lg", :placeholder => "Fax number"  %>
-                          <br />  
-                          <%= f.label :Address, :class => "h4" %>
-                          <%= f.text_field :address ,:class => "form-control input-lg", :placeholder => "Address"  %>
-                          <br />
-                          <%= f.submit "Submit" , :class => "btn btn-primary btn-lg center-block " %>  
-                        <% end %> 
-</div>
-
 <style>
-    .header {
-        color: #36A0FF;
-        font-size: 27px;
-        padding: 10px;
-    }
-
+.header {
+color: #36A0FF;
+font-size: 27px;
+padding: 10px;
+}
 </style>

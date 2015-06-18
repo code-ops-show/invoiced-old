@@ -2,7 +2,16 @@ class CustomersController < ApplicationController
  before_action :authenticate_user!
   def index
     if params[:q].present?
-      @customers = current_user.customers.search(params[:q]).records
+      @customers = current_user.customers.custom_search(params[:search_method], params[:q]).records
+      # @customers = current_user.customers.__elasticsearch__.search(
+      #   {
+      #     query: {
+      #       match_phrase_prefix: {
+      #         firstname: params[:q]
+      #       }
+      #     }
+      #   }).records
+      puts @customers.total
     else
       @customers = current_user.customers
     end
