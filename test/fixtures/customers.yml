@@ -1,15 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+customer_one:
+  firstname: Yanin
+  lastname: Vanarangsikul
+  address: 44 sdsfs ghgh
+  phone_number: 33333333
+  fax: 22222222
+  user: user_one
 
-one:
-  name: MyString
-  address: MyString
-  phone_number: MyString
-  fax: MyString
-  user_id: 
-
-two:
-  name: MyString
-  address: MyString
-  phone_number: MyString
-  fax: MyString
-  user_id: 
+customer_two:
+  firstname: Chompassorn
+  lastname: Saetiew
+  address: 22 sdsfs ghgh
+  phone_number: 111111111
+  fax: 000000000
+  user: user_one

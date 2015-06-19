@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+payment_one:
   date: 2015-06-09
-  description: MyString
-  payment_meyhod: MyString
-  amount: 1
-  invoice_id: 
+  description: Payment1
+  payment_method: Cash
+  amount: 100
+  invoice: invoice_one
 
-two:
+payment_two:
   date: 2015-06-09
-  description: MyString
-  payment_meyhod: MyString
-  amount: 1
-  invoice_id: 
+  description: Payment2
+  payment_method: Cheque
+  amount: 200
+  invoice: invoice_two

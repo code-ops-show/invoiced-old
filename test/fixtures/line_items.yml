@@ -1,12 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 line_item_one:
-  invoice_id: invoice_one
+  invoice: invoice_one
   item: "blahd"
   quantity: 1
   unit_price: 200
 
 line_item_two:
-  invoice_id: invoice_two
+  invoice: invoice_two
   item: "fdklfsdkl"
   quantity: 1
   unit_price: 300

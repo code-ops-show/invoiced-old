@@ -6,53 +6,47 @@
     <li><%= link_to 'Details', customer_invoice_path(@customer, @invoice) %></li>
     <li class="active">Edit</li>
   </ol>
-
-     <%= render 'form' %> 
-
-  <%= form_for [@customer, @invoice] do |f| %>  
+  <%= render 'form' %>
+  <%= form_for [@customer, @invoice] do |f| %>
   <div class="panel panel-default">
     <h2 style="margin-left: 50px" >Payment</h2><hr />
-      <table class="table table-striped" style="wrap-table">
-        <thead>
-          <tr>
-            <th class="center">Date</th>
-            <th class="center">Description</th>
-            <th class="center">Payment Method</th>
-            <th class="center">Amount</th>
-            <th class="center"><%= link_to_add_fields "Add" , f, :payments %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= f.fields_for :payments do |builder| %>
-            <%= render "payment_fields", f: builder %>
-          <% end %>
-        </tbody>
-        <tfooter>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="right"><h4>Total Paid</h4></td>
-            <td class="right"><h4><%= @invoice.total_paid %> Baht</h4></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="right"><h4>Balance</h4></td>
-            <td class="right"><h4><%= @invoice.balance %> Baht</h4></td>
-            <td></td>
-          </tr>
-        </tfooter>    
-      </table>
-      <br />
-    <%= f.submit "   Submit   ", :class => "btn btn-success btn-lg center-block"  %>  
-    <br /> 
+    <table class="table table-striped" style="wrap-table">
+      <thead>
+        <tr>
+          <th class="center">Date</th>
+          <th class="center">Description</th>
+          <th class="center">Payment Method</th>
+          <th class="center">Amount</th>
+          <th class="center"><%= link_to_add_fields "Add" , f, :payments %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= f.fields_for :payments do |builder| %>
+        <%= render "payment_fields", f: builder %>
+        <% end %>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="right"><h4>Total Paid</h4></td>
+        <td class="right"><h4><%= @invoice.total_paid %> Baht</h4></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="right"><h4>Balance</h4></td>
+        <td class="right"><h4><%= @invoice.balance %> Baht</h4></td>
+        <td></td>
+      </tr>
+      </tfoot>
+    </table>
+    <br />
+    <%= f.submit "   Submit   ", :class => "btn btn-success btn-lg center-block"  %>
+    <br />
   </div>
   <% end %>
 </div>
-
-
-
-
