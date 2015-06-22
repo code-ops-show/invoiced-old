@@ -16,10 +16,20 @@ module Customers
       def custom_search(method, query)
         __elasticsearch__.search(
           {
-            query: {
-              match_phrase_prefix: build_match_query(method, query)
-            }
+            query: build_query(method, query)
           })
+      end
+
+      def build_query(method, query)
+        if method.present? && query.present?
+          { 
+            match_phrase_prefix: build_match_query(method, query) 
+          }
+        else
+          {
+            match_all: {}
+          }
+        end
       end
 
       def build_match_query(method, query)

@@ -3,9 +3,10 @@
   <td><%= customer.lastname %></td>
   <td><%= customer.phone_number %></td>
   <td><%= customer.email %></td>
-  <td><%= link_to 'Show', customer_path(customer.id) %> &nbsp;&nbsp;
-  <%= link_to 'Edit', edit_customer_path(customer.id) %> &nbsp;&nbsp;
-  <%= link_to 'Delete', customer, method: :delete, data: { confirm: "Are you sure?" } %>
+  <td>
+    <%= link_to 'Show', customer_path(customer.id) %> &nbsp;&nbsp;
+    <%= link_to 'Edit', edit_customer_path(customer.id) %> &nbsp;&nbsp;
+    <%= link_to 'Delete', customer_path(customer.id), method: :delete, data: { confirm: "Are you sure?" } %>
   </td>
 </tr>
 

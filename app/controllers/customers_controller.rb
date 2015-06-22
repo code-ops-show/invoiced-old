@@ -2,12 +2,7 @@ class CustomersController < ApplicationController
  before_action :authenticate_user!
   def index
 
-    if params[:q].present?
-      @customers = current_user.customers.custom_search(params[:search_method], params[:q]).records
-
-    else
-      @customers = current_user.customers
-    end
+    @customers = current_user.customers.custom_search(params[:search_method], params[:q]).results
      # @customers = current_user.customers
      # @customers = current_user.customers.search((params[:q].present? ? params[:q] : '*')).records
   end

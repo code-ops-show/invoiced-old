@@ -1,8 +1,8 @@
 module Customers
   module Indexing
     extend ActiveSupport::Concern
-
     included do 
+      index_name [Rails.env, 'customers'].join('_')
       mapping do 
         indexes :id, index: :not_analyzed
         indexes :firstname

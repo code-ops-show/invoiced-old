@@ -39,7 +39,7 @@
         </tr>
       </thead>
       <% @customers.each do |customer| %>
-        <%= render customer %>
+        <%= render 'customer', customer: customer['_source'] %>
       <% end %>
     </table>
   </div>
