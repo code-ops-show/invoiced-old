@@ -4,6 +4,7 @@ customer_one:
   address: 44 sdsfs ghgh
   phone_number: 33333333
   fax: 22222222
+  email: test1@test.com
   user: user_one
 
 customer_two:
@@ -12,4 +13,5 @@ customer_two:
   address: 22 sdsfs ghgh
   phone_number: 111111111
   fax: 000000000
+  email: test2@test.com
   user: user_one

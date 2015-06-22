@@ -4,23 +4,33 @@ class CustomersControllerTest < ActionController::TestCase
   include Devise::TestHelpers
 
   setup do
-    # @invoice = invoices(:invoice_one)
     @user = users(:user_one)
     sign_in @user
     @customer = customers(:customer_one)
     @invoice = invoices(:invoice_one)
     @line_items = line_items(:line_item_one)
     @payments = payments(:payment_one)
-  end
-
-  test "should get index page" do 
-    get :index, search_method: "firstname", q: "Yan"
     @customer.__elasticsearch__.index_document
-    assert_response :success
-    assert_equal "Yanin" , @customer.firstname,"Customer name result is not correct"
   end
 
-  test "should get new" do
+  test "should get customers index page" do 
+    get :index, search_method: "firstname", q: "Yan"
+    assert_response :success
+    assert_equal "Yanin" , @customer.firstname, "Customer name result is not correct"
+
+  end
+
+  test "Elasticsearch test case phone number" do 
+    get :index, search_method: "phone_number", q: "333"
+    assert_equal "33333333" , @customer.phone_number, "Customer phone number result is not correct"
+  end
+
+  test "Elasticsearch test case email" do 
+    get :index, search_method: "email", q: "test"
+    assert_equal "test1@test.com" , @customer.email, "Customer email result is not correct"
+  end
+
+  test "should get new customer" do
     get :new
     assert_response :success
     assert_not_nil @customer,"customer not found"
@@ -39,7 +49,7 @@ class CustomersControllerTest < ActionController::TestCase
     assert_response :success, "customer not found"
   end
 
-  test "should get edit page" do
+  test "should get edit customer page" do
     get :edit, id: @customer.id
 
     assert_response :success, "invoice not found"

@@ -1,70 +1,64 @@
 require 'test_helper'
 
 class InvoicesControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
 
-  # include Devise::TestHelpers
-  # setup do
-  #   @invoice = invoices(:invoice_one)
-  #   @invoice_2 = invoices(:invoice_two)
-  #   @user = user_one
-  #   sign_in @user
-  # end
+  setup do
+    @user = users(:user_one)
+    sign_in @user
+    @customer = customers(:customer_one)
+    @invoice = invoices(:invoice_one)
+    @line_items = line_items(:line_item_one)
+    @payments = payments(:payment_one)
+  end
 
-  # test "should get index page" do 
-  #   get :index
+  test "should get invoices index page" do 
+    get :index
 
-  #   assert_response :success
-  # end
+    assert_response :success
+  end
 
+  test "should get new invoice" do
+    get :new, customer_id: @customer.id
 
-  # test "should get index page" do 
-  #   get :index
+    assert_response :success
+    # assert_not_nil @invoice.number,"invoice number not found"
+    # assert_equal "001" , @invoice.number,"The invoice number is not correct"
+  end
 
-  #   assert_response :success
-  #   assert_not_nil assigns(:invoices)
-  #   assert_includes(assigns(:invoices), @invoice)
-  # end
+  test "should create invoice" do
+    post(:create, customer_id: @customer.id, invoice: { number: "001" })
 
-  # test "should get new" do
-  #   get :new
+    assert_redirected_to customer_path(@customer)
+    assert_not_nil Invoice.find_by(number: "001")
+  end
 
-  #   assert_response :success
-  #   assert_not_nil @invoice.number,"invoice number not found"
-  #   assert_equal "001" , @invoice.number,"The invoice number is not correct"
-  # end
+  test "should show invoice" do
+    get :show, customer_id: @customer.id, id: @invoice.id
 
-  # test "should create invoice" do
-  #   post(:create, invoice: { number: "001" })
+    assert_response :success, "invoice not found"
+  end
 
-  #   assert_response :success
-  #   assert_not_nil Invoice.find_by(number: "001")
-  # end
+  test "should get edit invoice page" do
+    get :edit, customer_id: @customer.id, id: @invoice.id
 
-  # test "should show invoice" do
-  #   get :show, id: @invoice.id
+    assert_response :success, "invoice not found"
+  end 
 
-  #   assert_response :success, "invoice not found"
-  # end
-  # test "should get edit page" do
-  #   get :edit, id: @invoice.id
+  test "should update invoice" do
+    patch :update, customer_id: @customer.id, id: @invoice.id, invoice: { number: @invoice.number, 
+                                                                         total: @invoice.total,
+                                                                         issue_date: @invoice.issue_date,
+                                                                         due_date: @invoice.due_date }
 
-  #   assert_response :success, "invoice not found"
-  # end 
+    assert_redirected_to customer_path(@customer), "not going to index page after updated"
+  end
 
-  # test "should update invoice" do
-  #   patch :update, id: @invoice.id, invoice: { number: @invoice.number, 
-  #                                              total: @invoice.total,
-  #                                              issue_date: @invoice.issue_date,
-  #                                              due_date: @invoice.due_date }
-
-  #   assert_redirected_to invoices_path, "not going to index page after updated"
-  # end
-
-  # test "should destroy invoices" do
-  #   assert_difference('Invoice.count', -1) do
-  #     delete :destroy, id: @invoice.id
-  #   end
+  test "should destroy invoice" do
+    assert_difference('Invoice.count', -1) do
+      delete :destroy, customer_id: @customer.id, id: @invoice.id
+    end
  
-  #   assert_redirected_to invoices_path
-  # end
+    assert_redirected_to customer_path(@customer), "not going back index page after deleted"
+  end
 end
