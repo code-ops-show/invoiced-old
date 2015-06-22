@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
  before_action :authenticate_user!
   def index
-    binding.pry
+
     if params[:q].present?
       @customers = current_user.customers.custom_search(params[:search_method], params[:q]).records
 
@@ -16,7 +16,6 @@ class CustomersController < ApplicationController
     # eager load
     # @invoice = current_user.invoices.find(params[:id]) 
     # lazy load
-        binding.pry
 
     @customer = current_user.customers.where(id: params[:id]).first 
     @invoices = @customer.invoices.where(id: params[:id]).first 
