@@ -1,8 +1,7 @@
 class CustomersController < ApplicationController
  before_action :authenticate_user!
   def index
-
-    @customers = current_user.customers.custom_search(params[:search_method], params[:q]).results
+    @customers = Customer.custom_search(params[:search_method], params[:q], options).results
      # @customers = current_user.customers
      # @customers = current_user.customers.search((params[:q].present? ? params[:q] : '*')).records
   end
@@ -10,8 +9,8 @@ class CustomersController < ApplicationController
   def show
     # eager load
     # @invoice = current_user.invoices.find(params[:id]) 
-    # lazy load
 
+    # lazy load
     @customer = current_user.customers.where(id: params[:id]).first 
     @invoices = @customer.invoices.where(id: params[:id]).first 
 
@@ -62,4 +61,9 @@ class CustomersController < ApplicationController
       params.require(:customer).permit(:firstname, :lastname, :phone_number, :fax, :address, :email, :user_id )
     end  
 
+    def options
+      {
+        user_id: current_user.id
+      }
+    end
 end

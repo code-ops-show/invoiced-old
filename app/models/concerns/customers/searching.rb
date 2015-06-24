@@ -4,26 +4,18 @@ module Customers
 
     module ClassMethods
 
-      # def search(method, query)
-      #   if method == 'firstname'
-      #     dfsfds
-      #     # name_search(query)
-      #   elsif method == 'email'
-      #     # email_search(query)
-      #   end
-      # end
-
-      def custom_search(method, query)
+      def custom_search(method, query, options)
         __elasticsearch__.search(
           {
-            query: build_query(method, query)
+            query: build_query(method, query),
+            filter: build_filters(options)
           })
       end
 
       def build_query(method, query)
         if method.present? && query.present?
           { 
-            match_phrase_prefix: build_match_query(method, query) 
+            match_phrase_prefix: build_match_query(method, query)
           }
         else
           {
@@ -38,6 +30,14 @@ module Customers
         when 'email' then { email: query }
         when 'phone_number' then { phone_number: query }
         end
+      end
+
+      def build_filters(options)
+        {
+          term: {
+             user_id: options[:user_id]
+          }
+        }
       end
     end
   end
