@@ -7,28 +7,16 @@ module Customers
       def custom_search(method, query, options)
         __elasticsearch__.search(
           {
-            query: build_query(method, query),
+            query: build_multi_match(method, query),
             filter: build_filters(options)
           })
       end
 
-      def build_query(method, query)
-        if method.present? && query.present?
-          { 
-            match_phrase_prefix: build_match_query(method, query)
-          }
-        else
-          {
-            match_all: {}
-          }
-        end
-      end
-
-      def build_match_query(method, query)
+      def build_match_query(method)
         case method
-        when 'firstname' then { firstname: query }
-        when 'email' then { email: query }
-        when 'phone_number' then { phone_number: query }
+        when 'firstname' then [ "firstname", "lastname" ]
+        when 'email' then [ "email" ]
+        when 'phone_number' then [ "phone_number" ]
         end
       end
 
@@ -39,6 +27,27 @@ module Customers
           }
         }
       end
+
+      def build_multi_match(method,query)
+        if method.present? && query.present?  
+          {
+            multi_match: {
+              query: query,
+              type: "phrase_prefix",
+              fields: build_match_query(method)
+             }
+          }
+        else
+          {
+            match_all: {}
+          }
+        end
+      end
+
     end
   end
 end
+
+
+
+
