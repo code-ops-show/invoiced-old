@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
  before_action :authenticate_user!
   def index
     @customers = Customer.custom_search(params[:search_method], params[:q], options).results
+    respond_with @customers
      # @customers = current_user.customers
      # @customers = current_user.customers.search((params[:q].present? ? params[:q] : '*')).records
   end
@@ -25,6 +26,7 @@ class CustomersController < ApplicationController
 
   def edit
     @customer = current_user.customers.where(id: params[:id]).first 
+    respond_with @customer
   end
 
   def create
@@ -43,7 +45,7 @@ class CustomersController < ApplicationController
 
 
     if @customer.update_attributes(customer_params)
-      redirect_to customers_path, :notice => "Your customer information has been updated."
+      redirect_to customers_path
     else
       render "edit_customer_path"
     end

@@ -11,10 +11,6 @@ class InvoiceTest < ActiveSupport::TestCase
     assert_equal(200, @invoice.total)
   end
 
-  test "invoice_number_incrementation" do
-
-  end
-
   test "calculate_total_payment" do
     @invoice.calculate_total_payment    
     assert_equal(100, @invoice.total_paid)

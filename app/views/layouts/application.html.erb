@@ -7,7 +7,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
@@ -17,10 +16,10 @@
           </button>
           <a class="navbar-brand" <%= link_to "INVOICE APPLICATION", customers_path %>  </a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse" style ="margin-right: 1cm">
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if current_page?(customers_path) || current_page?(root_path) %>">
-              <%= link_to "Customer", customers_path, :class => "navbar-brand", :style => "margin-left: 50px" %>
+              <%= link_to "Customer", customers_path, :class => "navbar-brand" %>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -42,7 +41,6 @@
             <% end %>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
     </nav>
     <br /><br />
   </head>
