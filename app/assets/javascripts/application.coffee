@@ -6,3 +6,4 @@
 #= require bootstrap
 # this part boots up the transponder module
 #= require application/loader
+#= require toastr

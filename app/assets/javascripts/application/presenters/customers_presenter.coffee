@@ -15,6 +15,7 @@ class Application.Presenters.CustomersPresenter extends Transponder.Presenter
   create: ->
     $(@element).append(@response.content)
     $("#modal-box").modal('hide')
+    toastr.success(@response.notification)
 
   edit: ->
     $(@element).html(@response)
@@ -23,11 +24,11 @@ class Application.Presenters.CustomersPresenter extends Transponder.Presenter
   update: ->
     $(@element).replaceWith(@response.content)
     $('#modal-box').modal('hide')
-
+    toastr.success(@response.notification)
   destroy: ->
     $(@element).fadeOut 500, ->
       $(@element).remove()
-
+    toastr.info(@response.notification)
     # example
     # @element is the dom element you specified
     # @response is the html fragment rails returned

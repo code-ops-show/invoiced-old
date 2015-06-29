@@ -1,1 +1,4 @@
-["#customer_<%= @customer.id %>", "<%= xms_event %>", { "content": "<%= j render @customer %>"}]
+["#customer_<%= @customer.id %>", "<%= xms_event(action: params[:case] || params[:notify]) %>", 
+  { "content": "<%= j render @customer %>", 
+    "notification" : "<%= j render 'notification' %>" 
+    }]

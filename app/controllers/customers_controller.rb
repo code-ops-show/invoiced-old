@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
- before_action :authenticate_user!
+  respond_to :json, :html, :js
+  before_action :authenticate_user!
+
   def index
     @customers = Customer.custom_search(params[:search_method], params[:q], options).results
     respond_with @customers
@@ -52,6 +54,7 @@ class CustomersController < ApplicationController
   def destroy
     @customer = current_user.customers.where(id: params[:id]).first 
     @customer.destroy
+      respond_with @customer
   end
 
  private
@@ -63,5 +66,17 @@ class CustomersController < ApplicationController
       {
         user_id: current_user.id
       }
+    end
+
+    def notification_response
+      if params[:notify].present? 
+        render params[:notify]
+      else
+        respond_with @customer
+      end
+    end
+
+    def notify_data
+      { resource: 'customers', id: @customer.id, action: action_name, who: session[:who] }
     end
 end
