@@ -20,8 +20,8 @@ class CustomersController < ApplicationController
   def new
 
     @customer = current_user.customers.build
+    respond_with @customer
 
-  
   end
 
   def edit
@@ -32,22 +32,19 @@ class CustomersController < ApplicationController
   def create
     @customer = current_user.customers.build(customer_params)
     if @customer.save
-      redirect_to customers_path, :notice => "Your customer information was saved"
+      respond_with @customer
     else
-      render "new_customer_path"
+      xms_error @customer
     end
  
   end
 
   def update
-
     @customer = current_user.customers.where(id: params[:id]).first 
-
-
     if @customer.update_attributes(customer_params)
-      redirect_to customers_path
+      respond_with @customer
     else
-      render "edit_customer_path"
+      xms_error @contact
     end
 
   end
@@ -55,7 +52,6 @@ class CustomersController < ApplicationController
   def destroy
     @customer = current_user.customers.where(id: params[:id]).first 
     @customer.destroy
-    redirect_to customers_path, :notice => "Your customer information has been deleted."
   end
 
  private

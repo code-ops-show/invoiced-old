@@ -5,17 +5,21 @@ class Application.Presenters.CustomersPresenter extends Transponder.Presenter
 
   index: ->
     $(@element).html(@response)
+  
+  show: ->
+    $(@element).replaceWith(@response)
 
-    # example
-    # @element is the dom element you specified
-    # @response is the html fragment rails returned
-    # $(@element).html(@response)
-    # $(@element).fadeIn(500)
+  new: ->
+    @edit()
+
+  create: ->
+    $(@element).append(@response.content)
+    $("#modal-box").modal('hide')
 
   edit: ->
     $(@element).html(@response)
     $(@element).modal()
-    
+
   update: ->
     $(@element).replaceWith(@response.content)
     $('#modal-box').modal('hide')
@@ -24,3 +28,8 @@ class Application.Presenters.CustomersPresenter extends Transponder.Presenter
     $(@element).fadeOut 500, ->
       $(@element).remove()
 
+    # example
+    # @element is the dom element you specified
+    # @response is the html fragment rails returned
+    # $(@element).html(@response)
+    # $(@element).fadeIn(500)

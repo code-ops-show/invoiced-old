@@ -23,14 +23,14 @@
       <li><%= link_to 'Index', customers_path %></li>
     </ol>
   </div>
-  <div class="panel panel-default" id="customer">
+  <div class="panel panel-default" id="customers">
     <%= render 'customers', customers: @customers %>
   </div>
 </div>
 <div class="smallbox">
   <div class="center">
     <div class="btn-group">
-      <%= link_to "Add new customer", new_customer_path, :class => "btn btn-primary btn-lg"%>
+      <%= link_to "Add new customer", new_customer_path, :class => "btn btn-primary btn-lg", remote: true%>
     </div>
   </div>
   <div id='modal-box' class='modal fade'></div>
