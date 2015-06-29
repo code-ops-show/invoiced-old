@@ -6,3 +6,4 @@ new Application.Presenters.InvoicesPresenter()
 
 
 # services
+new Application.Services.Notification()

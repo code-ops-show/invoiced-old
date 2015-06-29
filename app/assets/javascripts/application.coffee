@@ -4,6 +4,8 @@
 #= require turbolinks
 #= require transponder
 #= require bootstrap
-# this part boots up the transponder module
-#= require application/loader
 #= require toastr
+#= require pusher
+
+#= require application/loader
+# this part boots up the transponder module

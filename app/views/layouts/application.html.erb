@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Invoiced</title>
+    <%= include_gon %>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -44,7 +45,7 @@
     </nav>
     <br /><br />
   </head>
-  <body>
+  <body class='<%= controller_name %> <%= action_name %>'>
     <div class="wrap">
       <% flash.each do |key, value| %>
       <br /><br />

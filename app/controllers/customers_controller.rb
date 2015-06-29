@@ -1,5 +1,4 @@
 class CustomersController < ApplicationController
-  respond_to :json, :html, :js
   before_action :authenticate_user!
 
   def index
@@ -16,7 +15,7 @@ class CustomersController < ApplicationController
     # lazy load
     @customer = current_user.customers.where(id: params[:id]).first 
     @invoices = @customer.invoices.where(id: params[:id]).first 
-
+    notification_response
   end
 
   def new
@@ -35,6 +34,7 @@ class CustomersController < ApplicationController
     @customer = current_user.customers.build(customer_params)
     if @customer.save
       respond_with @customer
+      push_notify
     else
       xms_error @customer
     end
@@ -45,8 +45,9 @@ class CustomersController < ApplicationController
     @customer = current_user.customers.where(id: params[:id]).first 
     if @customer.update_attributes(customer_params)
       respond_with @customer
+      push_notify
     else
-      xms_error @contact
+      xms_error @customer
     end
 
   end
@@ -55,9 +56,10 @@ class CustomersController < ApplicationController
     @customer = current_user.customers.where(id: params[:id]).first 
     @customer.destroy
       respond_with @customer
+      push_notify
   end
 
- private
+private
     def customer_params
       params.require(:customer).permit(:firstname, :lastname, :phone_number, :fax, :address, :email, :user_id )
     end  
@@ -78,5 +80,9 @@ class CustomersController < ApplicationController
 
     def notify_data
       { resource: 'customers', id: @customer.id, action: action_name, who: session[:who] }
+    end
+
+    def push_notify
+      Pusher.trigger_async("customers", "index", notify_data)
     end
 end

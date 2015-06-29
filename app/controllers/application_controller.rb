@@ -4,7 +4,22 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_devise_permitted_parameters, if: :devise_controller?
   respond_to :json, :html, :js
+  
   include Transponder::Transmission
+
+  before_filter :set_gon_pusher
+
+  before_action :set_fake_session
+
+  def set_gon_pusher
+    gon.pusher  = { key: '0ceb1f71fb0348080f2b' }
+  end
+
+  # in a real app you can use current_user.id or session or something
+  def set_fake_session
+    session[:who] ||= SecureRandom.hex(6)
+    gon.who = session[:who]
+  end
 
   protected
   def configure_devise_permitted_parameters
@@ -21,3 +36,4 @@ class ApplicationController < ActionController::Base
     end
   end
 end
+

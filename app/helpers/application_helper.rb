@@ -6,4 +6,8 @@ module ApplicationHelper
     end
     link_to name, "javascript:void(0)", onclick: h("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
   end
+
+  def customers_event
+    params[:scope].present? ? params[:scope] : "index"
+  end
 end

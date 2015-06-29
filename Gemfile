@@ -33,7 +33,8 @@ gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 
 gem 'transponder'
-
+gem 'pusher'
+gem 'gon'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

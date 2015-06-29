@@ -1,4 +1,5 @@
 Application.services_manifest = ->
+  $('body.customers.index').trigger 'application:services:notification'
   # fill in your manifest here
   # example:
   # if you want to trigger a service on your entire app

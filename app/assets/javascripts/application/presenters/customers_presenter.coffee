@@ -29,8 +29,13 @@ class Application.Presenters.CustomersPresenter extends Transponder.Presenter
     $(@element).fadeOut 500, ->
       $(@element).remove()
     toastr.info(@response.notification)
-    # example
-    # @element is the dom element you specified
-    # @response is the html fragment rails returned
-    # $(@element).html(@response)
-    # $(@element).fadeIn(500)
+
+  error: 
+    update: (errors, element) ->
+      for key, value of errors
+        $("input#customer_#{key}").tooltip
+          title: value[0]
+        $("input#customer_#{key}").tooltip('show')
+
+    create: (errors, element) ->
+      @update(errors, element)

@@ -23,9 +23,9 @@
       <li><%= link_to 'Index', customers_path %></li>
     </ol>
   </div>
-  <div class="panel panel-default" id="customers">
+  <%= content_tag :div, id: 'customers', class: 'notification', data: { channel: "customers", event: customers_event} do %>
     <%= render 'customers', customers: @customers %>
-  </div>
+  <% end %>
 </div>
 <div class="smallbox">
   <div class="center">
