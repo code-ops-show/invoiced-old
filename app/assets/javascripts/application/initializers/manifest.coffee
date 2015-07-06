@@ -31,5 +31,21 @@ Application.run_ready = ->
     $(link).parents('table').find('tbody').append content.replace(regexp, new_id)
     return
 
+  $ ->
+    $('#login-form-link').click (e) ->
+      $('#login-form').delay(100).fadeIn 100
+      $('#register-form').fadeOut 100
+      $('#register-form-link').removeClass 'active'
+      $(this).addClass 'active'
+      e.preventDefault()
+
+    $('#register-form-link').click (e) ->
+      $('#register-form').delay(100).fadeIn(100, -> $(@).removeClass('hidden'))
+      $('#login-form').fadeOut 100
+      $('#login-form-link').removeClass 'active'
+      $(this).addClass 'active'
+      e.preventDefault()
+
 $(document).ready Application.run_ready
 $(document).on 'page:load', Application.run_ready
+$.fn.datepicker.defaults.format = "dd/mm/yyyy"

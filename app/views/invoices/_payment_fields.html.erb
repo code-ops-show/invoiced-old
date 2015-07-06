@@ -1,13 +1,17 @@
-<tr>
-  <td class="center"><%= f.date_select :date %></td>
-  <td class="center"><%= f.text_field :description %></td>
-  <td class="center"><%= f.select :payment_method, [['Cash', 'Cash'], ['Cheque', 'Cheque'], ['Credit Card', 'Credit Card']], include_blank: 'Please select' %></td>
-  <td class="center"><%= f.text_field :amount %></td>
-  <td class="center"></td> 
-  <td class="center"> 
-    <%= f.check_box :_destroy %>
-    <%= f.label :_destroy, "Delete" %>
+<tr class='fields'>
+  <td>
+    <%= f.text_field :date,data: { provide: 'datepicker' }, placeholder: "Payment Date", class: "form-control" %>
+  </td>
+  <td>
+    <%= f.text_field :description, placeholder: "Description", class: "form-control" %>
+  </td>
+  <td>
+    <%= f.select :payment_method, [['Cash', 'Cash'], ['Cheque', 'Cheque'], ['Credit Card', 'Credit Card']], include_blank: 'Please select' %>
+  </td>
+  <td>
+    <%= f.text_field :amount, placeholder: "Amount", class: "form-control" %>
+  </td>
+  <td>
+    <%= f.link_to_remove "Remove" %>
   </td>
 </tr>
-
-

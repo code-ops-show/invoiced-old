@@ -45,13 +45,5 @@
     </nav>
     <br /><br />
   </head>
-  <body class='<%= controller_name %> <%= action_name %>'>
-    <div class="wrap">
-      <% flash.each do |key, value| %>
-      <br /><br />
-      <h2><%= value %></h2>
-      <% end %>
-    </div>
     <%= yield %>
-  </body>
 </html>

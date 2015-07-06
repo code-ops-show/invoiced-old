@@ -1,33 +1,39 @@
-<div class="box">
+<div class="container-fluid">
   <ol class="breadcrumb">
     <li><%= link_to 'Customer', customers_path %></li>
     <li><%= link_to 'Index', customer_path(@customer.id) %></li>
     <li class="active">Details</li>
   </ol>
-  <div class="row">
-    <div class="col-md-8">
-    </div>
-    <div class="col-md-4">
-      <h3 class="right"><%= link_to 'Edit', edit_customer_invoice_path(@customer, @invoice) %>  |
-      <%= link_to 'Delete', @invoice, method: :delete, data: { confirm: "Are you sure?" } %></h3>
-    </div>
-  </div>
+
   <div class="panel panel-default">
-    <div class="row">
-      <div class="col-md-8">
-          <div style="margin-left: 50px">
-          <%= image_tag attachment_url(current_user, :logo_image, :fill, 150, 150, format: "jpg") %>
-          </div>
-          <address class="box">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="rightBox">
+        <address>
+          <h4 class="gray">No.<%= @invoice.number %></h4>
+          
+        </address>
+      </div>
+      <div style="margin : auto; text-align: center">
+        <%= image_tag attachment_url(current_user, :logo_image, :fill, 140, 140, format: "jpg") %>
+      </div>
+      <div class="col-xs-6">
+        <address class="box">
+          <h4>Company Name:</h4><br>
           <%= current_user.first_name %> <%= current_user.last_name %><br>
-            <strong>Address:</strong><br>
-            <%= @current_user.address %><br>
-            <label for="phone_number">Tel.</label><%= current_user.phone_number %>
-            <label for="fax">Fax.</label><%= current_user.fax %><br>
-            <label for="email">Email:</label><%= current_user.email %>
-          </address>
+          <strong>Address:</strong><br>
+          <%= @current_user.address %><br>
+          <label for="phone_number">Tel.</label><%= current_user.phone_number %>
+          <label for="fax">Fax.</label><%= current_user.fax %><br>
+          <label for="email">Email:</label><%= current_user.email %>
+        </address>
+      </div>
+      
+      <div class="col-xs-6 text-right">
+        <div class="rightBox">
           <address class="box">
-            <strong>Custome:</strong>
+            <h4>Billed To:</h4><br>
             <%= @customer.firstname %> <%= @customer.lastname %><br>
             <strong>Address:</strong><br>
             <%= @customer.address %><br>
@@ -35,18 +41,16 @@
             <label for="fax">Fax.</label><%= @customer.fax %><br>
             <label for="email">Email:</label><%= @customer.email %>
           </address>
-      </div>
-      <div class="col-md-4">
-        <div class="rightBox">
-          <h1  style="color:red"><str>INVOICE</str></h1>
           <address>
-            <h4 class="gray">INVOICE No. [<span  style="color:red"><%= @invoice.number %></span>]</h4>
-            <h4 class="gray">Issue Date: <%= @invoice.issue_date.to_date %></h4>
-            <h4 class="gray">Due Date:&nbsp;&nbsp;&nbsp;<span  style="color:red"><%= @invoice.due_date.to_date %></span></h4>
-          </address>    
-        </div>    
+            <strong>Issue Date:</strong>
+            <%= @invoice.issue_date %><br>
+            <strong>Due Date:</strong>
+            <%= @invoice.due_date %><br><br>
+          </address>
+        </div>
       </div>
     </div>
+  </div>
 
     <table class="table table-striped" style="wrap-table">
       <thead>
@@ -90,7 +94,10 @@
 
 
   <div class="panel panel-default">
-    <h2 style="margin-left: 50px" >Payment</h2><hr />
+    <address class="box">
+          <br><h4>Payment Information:</h4>
+          
+        </address>
       <table class="table table-striped" style="wrap-table">
         <thead>
           <tr>
@@ -129,7 +136,7 @@
   </div>
 
   <div class="row">
-      <h4><%= link_to 'Back to index', customer_path(@customer.id) %></h4>
+      <h4 align="center"><%= link_to 'Back to index', customer_path(@customer.id) %></h4>
   </div>
 
 
