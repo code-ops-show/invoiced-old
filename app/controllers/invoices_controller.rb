@@ -26,6 +26,7 @@ class InvoicesController < ApplicationController
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.where(id: params[:id]).first
     @payments = @invoice.payments.build
+    @line_items = @invoice.line_items.build
   end
 
   def create
