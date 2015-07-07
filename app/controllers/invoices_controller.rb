@@ -19,14 +19,14 @@ class InvoicesController < ApplicationController
   def new
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.build
-    # @payments = @invoice.payments.build
-    1.times { @line_items = @invoice.line_items.build }
+    @line_items = @invoice.line_items.build
     
   end
 
   def edit
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.where(id: params[:id]).first 
+    @payments = @invoice.payments.build
   end
 
   def create
