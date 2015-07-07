@@ -1,31 +1,106 @@
-<div class="box" >
-  <h2>Log in</h2>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-    <% end -%>
-
-    <div class="actions">
-      <%= f.submit "Log in", :class =>'btn btn-lg btn-primary' %>
-    </div>
-  <% end %>
-  <br />
-  <%= render "users/shared/links" %>
-</div>
 <!--Inspired by http://tutorialzine.com/2012/02/apple-like-login-form/ - Apple-like Login Form with CSS 3D Transforms -->
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-6">
+              <a href="#" class="active" id="login-form-link">Login</a>
+            </div>
+            <div class="col-xs-6">
+              <a href="#" id="register-form-link">Register</a>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+            <%= form_for resource, as: resource_name, url: session_path(resource_name), html: { id: 'login-form' } do |f| %>
+              <!-- <form id="login-form" action="javascript:;" method="post" role="form" style="display: block;"> -->
+                <div class="form-group">
+                   <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "someone@example.com" %>
+                </div>
+                <div class="form-group">
+                   <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "password" %>
+                </div>
+                <div class="form-group text-center">
+                  <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                  <label for="remember"> Remember Me</label>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="text-center">
+                        <%= link_to "Forgot your password?", new_password_path(resource_name), class: "forgot-password" %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- </form> -->
+              <% end %>
+              <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { id: 'register-form', class: 'hidden' } do |f| %>
+              <!-- <form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;"> -->
+                  <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <%= f.text_field :first_name, class: "form-control", placeholder: "first name" %>
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <%= f.text_field :last_name, class: "form-control", placeholder: "last name" %>
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <%= f.text_field :address, autofocus: true, class: "form-control", placeholder: "address" %>
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <%= f.text_field :phone_number, autofocus: true, class: "form-control", placeholder: "telephone" %>
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "someone@example.com" %>
+                  </div>
+                  <div class="form-group">
+                    <label for="key" class="sr-only">Password</label>
+                    <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "password"%>
+                  </div>
+                  <div class="form-group">
+                    <label for="key" class="sr-only">Password Confirmation</label>
+                    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "comfirm password" %>
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="sr-only">Logo</label>
+                    <%= f.label :logo %>
+                    <%= image_tag attachment_url(@user, :logo_image, :fill, 100, 100, format: "jpg") %>
+                    <%= f.attachment_field :logo_image, class: "form-control"%>
+                  </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                    </div>
+                  </div>
+                </div>
+              <!-- </form> -->
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "users/shared/links" %>
 

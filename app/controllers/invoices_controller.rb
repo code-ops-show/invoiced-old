@@ -1,10 +1,10 @@
 class InvoicesController < ApplicationController
   before_action :authenticate_user!
+
   def index
      @customer = current_user.customers.where(id: params[:customer_id]).first
      @invoices = scoped_invoices
   end
-  helper_method :index
 
   def show
     # eager load
@@ -19,15 +19,14 @@ class InvoicesController < ApplicationController
   def new
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.build
-
-    4.times { @line_items = @invoice.line_items.build }
-    @payments = @invoice.payments.build
-  
+    @line_items = @invoice.line_items.build
   end
 
   def edit
     @customer = current_user.customers.where(id: params[:customer_id]).first
-    @invoice = @customer.invoices.where(id: params[:id]).first 
+    @invoice = @customer.invoices.where(id: params[:id]).first
+    @payments = @invoice.payments.build
+    @line_items = @invoice.line_items.build
   end
 
   def create

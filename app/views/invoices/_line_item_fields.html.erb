@@ -1,10 +1,18 @@
-<tr>
-  <td class="center"><%= f.text_field :item %></td>
-  <td class="center"><%= f.text_field :quantity %></td>
-  <td class="center"><%= f.text_field :unit_price %></td>
-  <td class="center"><%= f.text_field :amount, :disabled => true %></td> 
-  <td class="center"> 
-    <%= f.check_box :_destroy %>
-    <%= f.label :_destroy, "Delete" %>
+
+<tr class='fields'>
+  <td>
+    <%= f.text_field :item, placeholder: "Product Name", class: "form-control" %>
+  </td>
+  <td>
+    <%= f.text_field :quantity, placeholder: "Quantity", class: "form-control qty" %>
+  </td>
+  <td>
+    <%= f.text_field :unit_price, placeholder: "Unit Price", class: "form-control price" %>
+  </td>
+  <td>
+    <%= f.text_field :amount, :disabled => true, placeholder: "Amount", class: "form-control total" %>
+  </td>
+  <td>
+    <%= f.link_to_remove "Remove" %>
   </td>
 </tr>

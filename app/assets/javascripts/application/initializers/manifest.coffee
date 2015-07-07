@@ -1,5 +1,7 @@
 Application.services_manifest = ->
   $('body.customers.index').trigger 'application:services:notification'
+  $('body.invoices.new').trigger 'application:services:calculate_amount'
+  $('body.invoices.edit').trigger 'application:services:calculate_amount'
   # fill in your manifest here
   # example:
   # if you want to trigger a service on your entire app
@@ -31,15 +33,28 @@ Application.run_ready = ->
     $(link).parents('table').find('tbody').append content.replace(regexp, new_id)
     return
 
-$(document).ready (e) ->
+  $.fn.datepicker.defaults.format = "dd/mm/yyyy"
+
+  $('#login-form-link').click (e) ->
+    $('#login-form').delay(100).fadeIn 100
+    $('#register-form').fadeOut 100
+    $('#register-form-link').removeClass 'active'
+    $(this).addClass 'active'
+    e.preventDefault()
+
+  $('#register-form-link').click (e) ->
+    $('#register-form').delay(100).fadeIn(100, -> $(@).removeClass('hidden'))
+    $('#login-form').fadeOut 100
+    $('#login-form-link').removeClass 'active'
+    $(this).addClass 'active'
+    e.preventDefault()
+
   $('.search-panel .dropdown-menu').find('a').click (e) ->
     e.preventDefault()
     param = $(this).attr('href').replace('#', '')
     filter = $(this).text()
     $('.search-panel span#search_filter').text filter
     $('.input-group #search_method').val param
-    return
-  return
 
 $(document).ready Application.run_ready
 $(document).on 'page:load', Application.run_ready

@@ -51,13 +51,21 @@
     <% @customer.invoices.each do |invoice| %>
     <tr >
       <td><%= invoice.number %></td>
-      <td><%= invoice.issue_date.to_date %></td>
-      <td><%= invoice.due_date.to_date %></td>
+      <td><%= invoice.issue_date %></td>
+      <td><%= invoice.due_date %></td>
       <td><%= invoice.total %></td>
-      <td><%= link_to 'Show', customer_invoice_path(@customer,invoice) %> |
-      <%= link_to 'Edit', edit_customer_invoice_path(@customer, invoice) %> |
-      <%= link_to 'Delete', customer_invoice_path(@customer, invoice), method: :delete, data: { confirm: "Are you sure?" } %>
+      <td>
+      <div style="margin : auto; text-align: center">
+            <%= link_to 'Show', customer_invoice_path(@customer,invoice), class: "btn btn-info" %>
+            <%= link_to 'Edit', edit_customer_invoice_path(@customer, invoice), class: "btn btn-default" %>
+            <%= link_to 'Delete', customer_invoice_path(@customer, invoice), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+             </div>
       </td>
+      <td>
+          <div style="margin : auto; text-align: center">
+            <%= link_to 'Add payment', edit_customer_invoice_path(@customer, invoice), class: "btn btn-success" %>
+          </div>
+        </td>
     </tr>
     <% end %>
   </table>

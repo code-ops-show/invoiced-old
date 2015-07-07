@@ -37,6 +37,8 @@ gem "refile-mini_magick"
 gem 'transponder'
 gem 'pusher'
 gem 'gon'
+gem 'bootstrap-datepicker-rails'
+gem 'nested_form'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
