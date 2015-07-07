@@ -49,3 +49,4 @@ Application.run_ready = ->
 $(document).ready Application.run_ready
 $(document).on 'page:load', Application.run_ready
 $.fn.datepicker.defaults.format = "dd/mm/yyyy"
+$('.selectpicker').selectpicker();

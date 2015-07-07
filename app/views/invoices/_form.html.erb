@@ -69,87 +69,34 @@
       </tbody>
     </table>
     <%= f.link_to_add 'Add Row', :line_items, data: { target: '#lineitems' }, class: "btn btn-primary pull-right" %>
+    <br><br><h4>Payment Information</h4><br>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">
+            Payment Date
+          </th>
+          <th class="text-center">
+            Description
+          </th>
+          <th class="text-center">
+            Method
+          </th>
+          <th class="text-center">
+            Amount
+          </th>
+        </tr>
+      </thead>
+      <tbody id="payments">
+        <%= f.fields_for :payments, wrapper: false do |item| %>
+        <%= render "payment_fields", f: item %>
+        <% end %>
+      </tbody>
+    </table>
+    <%= f.link_to_add 'Add Row', :payments, data: { target: '#payments' }, class: "btn btn-primary pull-right" %>
   </div>
-  <!--  <tfoot>
-  <tr>
-    <td></td>
-    <td></td>
-    <td class="right"><h4>Sub Total</h4></td>
-    <td class="right"><h4><%= @invoice.total%> Baht</h4></td>
-    <td class="center"></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td class="right"><h4>VAT 7%</h4></td>
-    <td class="right"><h4> Baht</h4></td>
-    <td class="center"></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td class="right"><h4>Total</h4></td>
-    <td class="right"><h4> Baht</h4></td>
-    <td class="center"></td>
-  </tr>
-  </tfoot> -->
-<div class="col-md-12 column">
-  
-  <h4>Payment Information</h4><br>
-
-  <table class="table table-bordered table-hover">
-    <thead>
-      <tr>
-        <th class="text-center">
-          Payment Date
-        </th>
-        <th class="text-center">
-          Description
-        </th>
-        <th class="text-center">
-          Method
-        </th>
-        <th class="text-center">
-          Amount
-        </th>
-      </tr>
-    </thead>
-    <tbody id="payments">
-      <%= f.fields_for :payments, wrapper: false do |item| %>
-      <%= render "payment_fields", f: item %>
-      <% end %>
-    </tbody>
-    
-
-</table>
-
-<%= f.link_to_add 'Add Row', :payments, data: { target: '#payments' }, class: "btn btn-primary pull-right" %>
-</div>
-<!-- <tfoot>
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td class="right"><h4>Total Paid</h4></td>
-  <td class="right"><h4><%= @invoice.total_paid %> Baht</h4></td>
-  <td></td>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td class="right"><h4>Balance</h4></td>
-  <td class="right"><h4><%= @invoice.balance %> Baht</h4></td>
-  <td></td>
-</tr>
-</tfoot> -->
-
-
-<%= f.submit "   Submit   ", :class => "btn btn-success btn-lg center-block "  %>
-<br />
-</div><br />
-<% end %>
-<br />
-
-<br /><br />
+  <%= f.submit "   Submit   ", :class => "btn btn-success btn-lg center-block "  %>
+  <% end %>
+  <br />
+  <br /><br />
 </div>

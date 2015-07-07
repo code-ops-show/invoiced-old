@@ -6,7 +6,7 @@
     <%= f.text_field :description, placeholder: "Description", class: "form-control" %>
   </td>
   <td>
-    <%= f.select :payment_method, [['Cash', 'Cash'], ['Cheque', 'Cheque'], ['Credit Card', 'Credit Card']], include_blank: 'Please select' %>
+    <%= f.select :payment_method, [['Cash', 'Cash'], ['Cheque', 'Cheque'], ['Credit Card', 'Credit Card']], { :include_blank=>true, :prompt =>  'Please Select' }, { :class => 'form-control' } %>
   </td>
   <td>
     <%= f.text_field :amount, placeholder: "Amount", class: "form-control" %>
