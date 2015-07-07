@@ -1,5 +1,6 @@
 Application.services_manifest = ->
   $('body.customers.index').trigger 'application:services:notification'
+  $('body.invoices.new').trigger 'application:services:calculate_amount'
   # fill in your manifest here
   # example:
   # if you want to trigger a service on your entire app
@@ -49,4 +50,3 @@ Application.run_ready = ->
 $(document).ready Application.run_ready
 $(document).on 'page:load', Application.run_ready
 $.fn.datepicker.defaults.format = "dd/mm/yyyy"
-$('.selectpicker').selectpicker();
