@@ -33,6 +33,17 @@ class Application.Services.CalculateAmount extends Transponder.Service
       # console.log field
       # $result.val(sum)
 
+  loadTotal:() ->
+    sum = 0
+    @element.find('.fields').each (_, field) ->
+      total = $(field).find('.total').val()
+      sum += total*1
+    @element.find('.result').text(sum)
+    vat = sum *0.07
+    @element.find('.vat').text(vat)
+    balance = sum + vat
+    @element.find('.balance').text(balance)
+
   keyup: (field) ->
     $field = $(field)
     $field.find('.qty').keyup => @calculate($field)
@@ -42,5 +53,4 @@ class Application.Services.CalculateAmount extends Transponder.Service
     @clickButton()
     @element.find('.fields').each (_, field) =>
       @keyup(field)
-    @element.find('.fields').each (_, field) =>
-      @keyup(field)
+    @loadTotal()

@@ -1,6 +1,7 @@
 Application.services_manifest = ->
   $('body.customers.index').trigger 'application:services:notification'
   $('body.invoices.new').trigger 'application:services:calculate_amount'
+  $('body.invoices.edit').trigger 'application:services:calculate_amount'
   # fill in your manifest here
   # example:
   # if you want to trigger a service on your entire app
