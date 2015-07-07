@@ -1,14 +1,3 @@
-<table class="table table-striped" id="table">
-  <thead>
-    <tr >
-      <th>Name</th>
-      <th>Lastname</th>
-      <th>Tel.</th>
-      <th>Email</th>
-      <th></th>
-    </tr>
-  </thead>
-  <% customers.each do |customer| %>
-    <%= render 'customer', customer: customer %>
-  <% end %>
-</table>
+<% customers.each do |customer| %>
+<%= render 'customer', customer: customer %>
+<% end %>

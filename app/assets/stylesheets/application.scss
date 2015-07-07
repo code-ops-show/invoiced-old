@@ -2,7 +2,7 @@
 @import "bootstrap";
 @import "toastr";
 div.box {
-    margin-top: 100px;
+    margin-top: 30;
     margin-bottom: 100px;
     margin-right: 150px;
     margin-left: 150px;
@@ -10,13 +10,13 @@ div.box {
 div.smallbox {
     margin-top: 50px;
     margin-bottom: 100px;
-    margin-right: 150px;
+    margin-right: 50px;
     margin-left: 50px;
 }
 div.wrap {
     margin-top: 30px;
     margin-bottom: 10px;
-    margin-right: 150px;
+    margin-right: 50px;
     margin-left: 50px;
 }
 img.resize{
@@ -55,6 +55,7 @@ div.wrap-table {
   text-align: right;
   margin-right: 50px;
 }
+
 .bs-docs-example 
 {
     position: relative;
@@ -103,4 +104,67 @@ div.wrap-table {
 #custom-search-input .glyphicon-search{
     font-size: 23px;
 }
+
+.verticalLine {
+    border-left: thick solid #ff0000;
+}
+.aqua{
+  color: #0080ff;
+}
+.orange{
+  color: #f14444
+}
+nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
+nav.navbar-findcond a { color: #0080ff; }
+nav.navbar-findcond ul.navbar-nav a { color: #0080ff; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
+nav.navbar-findcond ul.navbar-nav a:hover,
+nav.navbar-findcond ul.navbar-nav a:visited,
+nav.navbar-findcond ul.navbar-nav a:focus,
+nav.navbar-findcond ul.navbar-nav a:active { background: #fff; }
+nav.navbar-findcond ul.navbar-nav a:hover { border-color: #0080ff; }
+nav.navbar-findcond li.divider { background: #ccc; }
+nav.navbar-findcond button.navbar-toggle { background: #0080ff; border-radius: 2px; }
+nav.navbar-findcond button.navbar-toggle:hover { background: #999; }
+nav.navbar-findcond button.navbar-toggle > span.icon-bar { background: #fff; }
+nav.navbar-findcond ul.dropdown-menu { border: 0; background: #fff; border-radius: 4px; margin: 4px 0; box-shadow: 0 0 4px 0 #ccc; }
+nav.navbar-findcond ul.dropdown-menu > li > a { color: #0080ff; }
+nav.navbar-findcond ul.dropdown-menu > li > a:hover { background: #0080ff; color: #fff; }
+nav.navbar-findcond span.badge { background: #0080ff; font-weight: normal; font-size: 11px; margin: 0 4px; }
+nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #fff; }
+
+
+div.customer {
+  border: 1px solid #eeeeee;
+  padding: 0px;
+  margin: 10px;
+}
+
+div.name-tag {
+  background: #eeeeee;
+  padding: 5px;
+
+}
+
+div.detail {
+  padding-left: 5px;
+}
+
+div.placeholder {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+footer {
+  border-top: 1px solid #eeeeee;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+
 

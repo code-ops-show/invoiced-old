@@ -13,10 +13,11 @@ module Customers
       end
 
       def build_match_query(method)
-        case method
+        case method.presence
         when 'firstname' then [ "firstname", "lastname" ]
         when 'email' then [ "email" ]
         when 'phone_number' then [ "phone_number" ]
+        else ["firstname", "lastname", "email", "phone_number"]
         end
       end
 
@@ -29,7 +30,7 @@ module Customers
       end
 
       def build_multi_match(method,query)
-        if method.present? && query.present?  
+        if query.present?
           {
             multi_match: {
               query: query,

@@ -1,0 +1,33 @@
+<form>
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="input-group">
+      <div class="input-group-btn search-panel">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <span id="search_filter">Filter by</span> <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#firstname">Name</a></li>
+          <li><a href="#phone_number">Phone Number</a></li>
+          <li><a href="#email">Email</a></li>
+        </ul>
+      </div>
+      <%= hidden_field_tag 'search_method', params[:search_method] %>
+      <%= search_field_tag :q, params[:q], class: 'form-control', placeholder: "Search term..." %>
+      <span class="input-group-btn">
+        <%= button_tag "Search", class: 'btn btn-default', name: nil %>
+      </span>
+    </div>
+  </div>
+</form>
+<!-- <div class="col-md-8">
+  <%= form_tag customers_path, class: 'navbar-form navbar-right', role: 'search', method: :get, remote: true do |f| %>
+  <div class='form-group'>
+    <%= fields_for :search_method do |f| %>
+    <%= f.label :Search_By %>
+    <%= select_tag :search_method, options_for_select([['Name', 'firstname'], ['Phone Number', 'phone_number'], ['Email', 'email']], :selected =>params[:search_method]) %>
+    <% end %>
+    <%= text_field_tag :q, params[:q], class: 'form-control' %>
+    <%= button_tag "Search", class: 'btn btn-default', name: nil %>
+  </div>
+  <% end %>
+</div> -->

@@ -31,5 +31,15 @@ Application.run_ready = ->
     $(link).parents('table').find('tbody').append content.replace(regexp, new_id)
     return
 
+$(document).ready (e) ->
+  $('.search-panel .dropdown-menu').find('a').click (e) ->
+    e.preventDefault()
+    param = $(this).attr('href').replace('#', '')
+    filter = $(this).text()
+    $('.search-panel span#search_filter').text filter
+    $('.input-group #search_method').val param
+    return
+  return
+
 $(document).ready Application.run_ready
 $(document).on 'page:load', Application.run_ready

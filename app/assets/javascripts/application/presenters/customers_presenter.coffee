@@ -25,6 +25,7 @@ class Application.Presenters.CustomersPresenter extends Transponder.Presenter
     $(@element).replaceWith(@response.content)
     $('#modal-box').modal('hide')
     toastr.success(@response.notification)
+
   destroy: ->
     $(@element).fadeOut 500, ->
       $(@element).remove()
