@@ -1,9 +1,8 @@
 class Invoice < ActiveRecord::Base
+  belongs_to :customer, touch: true
   has_many :line_items, dependent: :destroy
   has_many :payments, dependent: :destroy
-  belongs_to :customer, touch: true
-  # accepts_nested_attributes_for :line_items, :allow_destroy => true
-  # accepts_nested_attributes_for :payments, :allow_destroy => true
+
   validates :number,
             presence: true,
             uniqueness: true

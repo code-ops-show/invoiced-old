@@ -51,7 +51,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-12 column">
+    <div class="col-md-12 column calculate_amount">
       <table class="table table-bordered table-hover">
         <thead>
           <tr>
@@ -76,9 +76,10 @@
         </tbody>
       </table>
       <%= f.link_to_add 'Add Row', :line_items, data: { target: '#lineitems' }, class: "btn btn-primary pull-right" %>
+      <h4>Sub Total : <span class="result"></span> </h4>
+      <h4>Vat 7% : <span class="vat"></span> </h4>
+      <h4>Balance : <span class="balance"></span> </h4>
     </div>
-    
-  </table>
   <%= f.submit "   Submit   ", :class => "btn btn-success btn-lg center-block "  %>
   <br />
 </div><br />
