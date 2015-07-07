@@ -7,3 +7,4 @@ new Application.Presenters.InvoicesPresenter()
 
 # services
 new Application.Services.Notification()
+new Application.Services.CalculateAmount()
