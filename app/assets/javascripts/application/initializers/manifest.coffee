@@ -33,7 +33,7 @@ Application.run_ready = ->
     $(link).parents('table').find('tbody').append content.replace(regexp, new_id)
     return
 
-  $.fn.datepicker.defaults.format = "dd/mm/yyyy"
+  $.fn.datepicker.defaults.format = "yyyy/mm/dd"
 
   $('#login-form-link').click (e) ->
     $('#login-form').delay(100).fadeIn 100
