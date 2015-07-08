@@ -27,7 +27,6 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
 
-gem "nested_form"
 
 gem 'devise'
 
