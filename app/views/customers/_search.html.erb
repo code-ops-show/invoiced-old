@@ -19,3 +19,15 @@
     </div>
   </div>
 </form>
+<!-- <div class="col-md-8">
+  <%= form_tag customers_path, class: 'navbar-form navbar-right', role: 'search', method: :get, remote: true do |f| %>
+  <div class='form-group'>
+    <%= fields_for :search_method do |f| %>
+    <%= f.label :Search_By %>
+    <%= select_tag :search_method, options_for_select([['Name', 'firstname'], ['Phone Number', 'phone_number'], ['Email', 'email']], :selected =>params[:search_method]) %>
+    <% end %>
+    <%= text_field_tag :q, params[:q], class: 'form-control' %>
+    <%= button_tag "Search", class: 'btn btn-default', name: nil %>
+  </div>
+  <% end %>
+</div> -->
