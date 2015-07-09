@@ -1,0 +1,28 @@
+<%= div_for @customer, class: 'panel panel-default col-md-4' do %>
+  <div class="panel-body text-center">
+    <div class="right">
+      <%= link_to edit_customer_path(customer), remote: true, class: 'btn-xs btn-primary btn' do %>
+        <span class="glyphicon glyphicon-edit"></span>
+      <% end %>
+      <%= link_to customer, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-danger btn-xs" do %>
+      <span class="glyphicon glyphicon-trash"></span>
+      <% end %>
+    </div>
+    <h3><span class="glyphicon glyphicon-user"></span>
+    <%= customer.firstname %> <%= customer.lastname %></h3><hr />
+    <label for="address">
+      <h4>
+      <span class="glyphicon glyphicon-home"></span>
+      Address</h4>
+    </label>
+    <address>
+      <%= customer.address %>
+    </address>
+    <label for="phone_number">
+      <span class="glyphicon glyphicon-phone-alt space"></span>
+    </label><%= customer.phone_number %>
+    <label for="fax">Fax.</label><%= customer.fax %><hr />
+    <label for="email"><span class="glyphicon glyphicon-envelope space"></span></label>
+    <%= customer.email %>
+  </div>
+<% end %>

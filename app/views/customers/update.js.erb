@@ -1,5 +1,5 @@
 ["#customer_<%= @customer.id %>", "<%= xms_event(action: params[:case] || params[:notify]) %>", 
   { 
-  	"content": "<%= j render @customer %>", 
+  	"content": "<%= j render "customers/customer/#{params[:from_action]}", customer: @customer %>", 
     "notification" : "<%= j render 'notification' %>" 
    }]

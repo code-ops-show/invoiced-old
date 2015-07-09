@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "toastr";
 @import "bootstrap-datepicker";
+@import "customers";
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 div.box {
@@ -140,11 +141,7 @@ nav.navbar-findcond span.badge { background: #0088CC; font-weight: normal; font-
 nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #fff; }
 
 
-div.customer {
-  border: 1px solid #eeeeee;
-  padding: 0px;
-  margin-bottom: 20px;
-}
+
 
 div.name-tag {
   background: #eeeeee;
@@ -211,13 +208,13 @@ footer {
     font-family: 'Glyphicons Halflings';
 }
 #login .checkbox .character-checkbox {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    vertical-align: middle;
-    display: inline-block;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  display: inline-block;
 }
 #login .checkbox .label {
     color: #6d6d6d;
@@ -238,15 +235,15 @@ footer {
   :: Inputs & Buttons
   -------------------------------------------------- */
 .form-control {
-    color: #212121;
+  color: #212121;
 }
 .btn-custom {
-    color: #fff;
+  color: #fff;
   background-color: #1fa67b;
 }
 .btn-custom:hover,
 .btn-custom:focus {
-    color: #fff;
+  color: #fff;
 }
 
 /*    --------------------------------------------------
@@ -254,19 +251,19 @@ footer {
   -------------------------------------------------- */
 
 .invoice-title h2, .invoice-title h3 {
-    display: inline-block;
+  display: inline-block;
 }
 
 .table > tbody > tr > .no-line {
-    border-top: none;
+  border-top: none;
 }
 
 .table > thead > tr > .no-line {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .table > tbody > tr > .thick-line {
-    border-top: 2px solid;
+  border-top: 2px solid;
 }
 
 body {

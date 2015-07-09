@@ -16,11 +16,8 @@
       </div>
     </div>
     <hr>
-    <%= content_tag :div, id: 'customers', class: 'notification', data: { channel: "customers", event: customers_event} do %>
-    <%= render 'customers', customers: @customers %>
+    <%= content_tag :div, id: 'customers', class: 'notification clearfix customers-index', data: { channel: "customers", event: customers_event} do %>
+      <%= render 'customers', customers: @customers %>
     <% end %>
-  </div>
-  <div class="smallbox">
-    <div id='modal-box' class='modal fade'></div>
   </div>
 </div>
