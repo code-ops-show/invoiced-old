@@ -8,9 +8,7 @@
   </ol>
   <div class="right" style="margin-left: 100px">
     <address>
-      <%= link_to edit_customer_path(@customer), class: "btn btn-primary btn-primary" do %>
-      <span class='glyphicon glyphicon-edit'></span>
-      <% end %>
+      <a href="#" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span></a>
       <%= link_to @customer, method: :delete, data: { confirm: "Are you sure?" },remote: true, class: "btn btn-primary btn-danger" do %>
       <span class="glyphicon glyphicon-trash"></span>
       <% end %>
@@ -33,7 +31,7 @@
       </label><%= @customer.phone_number %>
       <label for="fax">Fax.</label><%= @customer.fax %><hr />
       <label for="email"><span class="glyphicon glyphicon-envelope space"></span>
-      </label><%= @customer.email %>
+    </label><%= @customer.email %>
   </div>
 </div>
 </div>
@@ -79,3 +77,6 @@
   </div>
 </div>
 </div>Ï
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<%= render 'form' %>
+</div>
