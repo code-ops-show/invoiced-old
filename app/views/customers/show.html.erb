@@ -1,81 +1,83 @@
-<div class="container">
-  <br />
-  <h3><%= @customer.firstname %> <%= @customer.lastname %></h3>
-  <ol class="breadcrumb">
-    <li><%= link_to 'Customer', customers_path %></li>
-    <li><%= link_to 'Index', customers_path %></li>
-    <li class="active">Details</li>
-  </ol>
-  <div class="right" style="margin-left: 100px">
-    <address>
-      <%= link_to edit_customer_path(@customer), class: "btn btn-primary btn-primary" do %>
-      <span class='glyphicon glyphicon-edit'></span>
-      <% end %>
-      <%= link_to @customer, method: :delete, data: { confirm: "Are you sure?" },remote: true, class: "btn btn-primary btn-danger" do %>
-      <span class="glyphicon glyphicon-trash"></span>
-      <% end %>
-    </address>
-  </div>
-  <div class="panel panel-default col-md-4 col-md-push-4">
-    <div class="panel-body text-center">
-      <h3><span class="glyphicon glyphicon-user"></span>
-      <%= @customer.firstname %> <%= @customer.lastname %></h3><hr />
-      <label for="address">
-        <h4>
-        <span class="glyphicon glyphicon-home"></span>
-        Address</h4>
-      </label>
-      <address>
-        <%= @customer.address %>
-      </address>
-      <label for="phone_number">
-        <span class="glyphicon glyphicon-phone-alt space"></span>
-      </label><%= @customer.phone_number %>
-      <label for="fax">Fax.</label><%= @customer.fax %><hr />
-      <label for="email"><span class="glyphicon glyphicon-envelope space"></span>
+<div class="wrapper">
+  <div class="container">
+    <br />
+    <ol class="breadcrumb">
+      <li><%= link_to 'Customer', customers_path %></li>
+      <li><%= link_to 'Index', customers_path %></li>
+      <li class="active">Details</li>
+    </ol>
+    <div class="panel panel-default col-md-4">
+      <div class="panel-body text-center">
+      <div class="right">
+          <%= link_to edit_customer_path(@customer), class: "btn btn-primary btn-primary btn-xs" do %>
+          <span class='glyphicon glyphicon-edit'></span>
+          <% end %>
+          <%= link_to @customer, method: :delete, data: { confirm: "Are you sure?" },remote: true, class: "btn btn-primary btn-danger btn-xs" do %>
+          <span class="glyphicon glyphicon-trash"></span>
+          <% end %>
+      </div>
+        <h3><span class="glyphicon glyphicon-user"></span>
+        <%= @customer.firstname %> <%= @customer.lastname %></h3><hr />
+        <label for="address">
+          <h4>
+          <span class="glyphicon glyphicon-home"></span>
+          Address</h4>
+        </label>
+        <address>
+          <%= @customer.address %>
+        </address>
+        <label for="phone_number">
+          <span class="glyphicon glyphicon-phone-alt space"></span>
+        </label><%= @customer.phone_number %>
+        <label for="fax">Fax.</label><%= @customer.fax %><hr />
+        <label for="email"><span class="glyphicon glyphicon-envelope space"></span>
       </label><%= @customer.email %>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <table class="table table-striped">
+      <thead>
+        <tr >
+          <th>Invoice</th>
+          <th>issue date</th>
+          <th>due date</th>
+          <th>Total</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <% @customer.invoices.each do |invoice| %>
+      <tr >
+        <td><%= invoice.number %></td>
+        <td><%= invoice.issue_date.strftime("%B %d, %Y") %></td>
+        <td><%= invoice.due_date.strftime("%B %d, %Y") %></td>
+        <td><%= invoice.total %></td>
+        <td>
+          <div style="margin : auto; text-align: center">
+            <%= link_to 'Show', customer_invoice_path(@customer,invoice), class: "btn btn-info btn-xs" %>
+            <%= link_to 'Edit', edit_customer_invoice_path(@customer, invoice), class: "btn btn-default btn-xs" %>
+            <%= link_to 'Delete', customer_invoice_path(@customer, invoice), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
+        </td>
+        <td>
+          <div style="margin : auto; text-align: center">
+            <%= link_to edit_customer_invoice_path(@customer, invoice), class: "btn btn-success btn-xs" do %>
+            <span class="glyphicon glyphicon-plus-sign"></span>
+            Add payment
+            <% end %>
+          </div>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+    <div class="smallbox">
+      <div class="center">
+        <%= link_to new_customer_invoice_path(@customer), class: "btn btn-primary btn-success" do %>
+        <span class="glyphicon glyphicon-plus-sign"></span>
+        New Invoice
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 </div>
-<div class="container">
-<h1>Invoices belong to this customer</h1><hr />
-<table class="table table-striped">
-  <thead>
-    <tr >
-      <th>Invoice</th>
-      <th>issue date</th>
-      <th>due date</th>
-      <th>Total</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <% @customer.invoices.each do |invoice| %>
-  <tr >
-    <td><%= invoice.number %></td>
-    <td><%= invoice.issue_date.strftime("%B %d, %Y") %></td>
-    <td><%= invoice.due_date.strftime("%B %d, %Y") %></td>
-    <td><%= invoice.total %></td>
-    <td>
-      <div style="margin : auto; text-align: center">
-        <%= link_to 'Show', customer_invoice_path(@customer,invoice), class: "btn btn-info" %>
-        <%= link_to 'Edit', edit_customer_invoice_path(@customer, invoice), class: "btn btn-default" %>
-        <%= link_to 'Delete', customer_invoice_path(@customer, invoice), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
-      </div>
-    </td>
-    <td>
-      <div style="margin : auto; text-align: center">
-        <%= link_to 'Add payment', edit_customer_invoice_path(@customer, invoice), class: "btn btn-success" %>
-      </div>
-    </td>
-  </tr>
-  <% end %>
-</table>
-</div>
-<div class="smallbox">
-<div class="center">
-  <div class="btn-group">
-    <%= link_to "Add new invoice", new_customer_invoice_path(@customer), :class => "btn btn-primary btn-lg" if @customer %>
-  </div>
-</div>
-</div>Ï
