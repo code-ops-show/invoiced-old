@@ -5,7 +5,8 @@
       <h3 class="modal-title" id="lineModalLabel">Edit <%= @customer.firstname %></h3>
     </div>
     <div class="modal-body">
-      <%= form_for @customer do |f| %>
+      <%= form_for @customer, remote: true do |f| %>
+        <%= hidden_field_tag :from_action, Rails.application.routes.recognize_path(request.referrer)[:action] %>
         <div class="form-group">
           <label for="exampleInputEmail1">First name</label>
           <%= f.text_field :firstname, class: "form-control", placeholder: "First name" %>

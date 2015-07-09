@@ -41,14 +41,18 @@
     <% end %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
     <%= yield %>
-            <div class="push"></div>
+    <div class="push"></div>
+    <div id='modal-box' class='modal fade'></div>
   </body>
   <footer>
     <div class="footer">
-    <div class="container center">
+      <div class="container center">
         <p class="muted credit">© Copyright - Codemy.net- 2015 All Rights Reserved<a href="http://codemy.net/">.</p>
       </div>
-      </div>
+    </div>
   </footer>
 </html>

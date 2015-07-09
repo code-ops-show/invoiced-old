@@ -54,10 +54,16 @@ class CustomersController < ApplicationController
 
   def destroy
     @customer = current_user.customers.where(id: params[:id]).first 
-    @customer.destroy
-      respond_with @customer
-      push_notify
-    
+    if @customer.destroy
+      if request.xhr?
+        respond_with @customer
+        push_notify
+      else
+        sleep 5
+        flash[:success] = "#{@customer.firstname} had been deleted"
+        redirect_to customers_path
+      end
+    end
   end
 
 private
