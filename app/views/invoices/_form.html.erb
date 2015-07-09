@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default calculate_amount">
   <%= nested_form_for [@customer, @invoice] do |f| %>
   <div class="row">
     <div class="col-xs-12">
@@ -41,7 +41,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-12 column calculate_amount">
+  <div class="col-md-12 column">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -110,7 +110,7 @@
             AMOUNT
           </th>
           <th>
-            <%= f.link_to_add '+Add Row', :payments, data: { target: '#payments' } %>
+            <%= f.link_to_add '+Add Row', :payments, data: { target: '#payments' }, class: "add_payment" %>
           </th>
         </tr>
       </thead>
@@ -123,14 +123,14 @@
         <td></td>
         <td></td>
         <td class="right"><h5>Total Paid</h5></td>
-        <td class="right"><h5><%= @invoice.total_paid %> Baht</h5></td>
+        <td class="right"><h5 ><span id="total_paid"><%= @invoice.total_paid %></span> Baht</h5></td>
         <td></td>
       </tr>
       <tr>
         <td></td>
         <td></td>
         <td class="right"><h5>Balance Due</h5></td>
-        <td class="right"><h5><%= @invoice.balance %> Baht</h5></td>
+        <td class="right"><h5><span id="balance_payment"><%= @invoice.balance %></span> Baht</h5></td>
         <td></td>
       </tr>
     </table>

@@ -1,4 +1,4 @@
-<tr class='fields'>
+<tr class='fields_payments'>
   <td>
     <%= f.text_field :date,data: { provide: 'datepicker' }, placeholder: "Payment Date", class: "form-control" %>
   </td>
@@ -9,7 +9,7 @@
     <%= f.select :payment_method, [['Cash', 'Cash'], ['Cheque', 'Cheque'], ['Credit Card', 'Credit Card']], { include_blank: 'Please select' }, { :class => 'form-control' } %>
   </td>
   <td>
-    <%= f.text_field :amount, placeholder: "Amount", class: "form-control" %>
+    <%= f.text_field :amount, placeholder: "Amount", class: "form-control amount" %>
   </td>
   <td>
     <%= f.link_to_remove "Remove" %>
