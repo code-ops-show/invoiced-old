@@ -1,4 +1,4 @@
-<tr class='fields_payments'>
+<tr class='fields fields_payments'>
   <td>
     <%= f.text_field :date, value: (f.object.date.strftime("%B %d, %Y") if f.object.persisted?),data: { provide: 'datepicker' }, placeholder: "Payment Date", class: "form-control" %>
   </td>
