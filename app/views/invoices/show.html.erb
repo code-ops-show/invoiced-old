@@ -42,9 +42,9 @@
                 <%= @customer.email %>
               </address>
               <strong>Issue Date : </strong>
-              <%= @invoice.issue_date %><br>
+              <%= @invoice.issue_date.strftime("%B %d, %Y") %><br>
               <strong>Due Date :</strong>
-              <%= @invoice.due_date %><br><br>
+              <%= @invoice.due_date.strftime("%B %d, %Y") %><br><br>
             </div>
             
           </div>
@@ -105,7 +105,7 @@
         </thead>
         <tbody>
           <tr>
-            <td class="center"><%= payment.date %></td>
+            <td class="center"><%= payment.date.strftime("%B %d, %Y") %></td>
             <td class="center"><%= payment.description %></td>
             <td class="center"><%= payment.payment_method %></td>
             <td class="center"><%= payment.amount %></td>
