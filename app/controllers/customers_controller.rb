@@ -57,6 +57,7 @@ class CustomersController < ApplicationController
     @customer.destroy
       respond_with @customer
       push_notify
+    
   end
 
 private

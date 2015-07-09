@@ -13,7 +13,6 @@ class Application.Presenters.CustomersPresenter extends Transponder.Presenter
     @edit()
 
   create: ->
-    console.log 'create'
     $(@element).append(@response.content)
     $("#modal-box").modal('hide')
     toastr.success(@response.notification)

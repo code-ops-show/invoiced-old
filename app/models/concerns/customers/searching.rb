@@ -8,7 +8,8 @@ module Customers
         __elasticsearch__.search(
           {
             query: build_multi_match(method, query),
-            filter: build_filters(options)
+            filter: build_filters(options),
+            size: 100
           })
       end
 

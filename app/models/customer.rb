@@ -3,6 +3,7 @@ class Customer < ActiveRecord::Base
   include Elasticsearch::Model::Callbacks
   include Customers::Indexing
   include Customers::Searching
+
   validates :firstname,  length: { minimum: 3 }
   validates :lastname,  length: { minimum: 3 }
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }

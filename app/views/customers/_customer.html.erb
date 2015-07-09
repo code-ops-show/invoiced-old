@@ -1,20 +1,18 @@
-<div class="col-md-3">
-  <div class="customer" id="customer_<%= customer.id %>">
-    <div>
-      <div class="name-tag">
-        <%= customer.firstname %>
-        <%= customer.lastname %>
-      </div>
-      <div class="detail">
-        Email: <%= customer.email %><br>
-        Tel. <%= customer.phone_number %>
-        Fax. <%= customer.fax %>
-      </div>
-      <div class="detail">
-        <%= link_to ' Show', customer_path(customer.id), class: 'btn btn-xs btn-default' %>
-        <%= link_to ' Edit', edit_customer_path(customer.id), remote: true, class: 'btn btn-xs btn-default' %>
-        <%= link_to ' Delete', customer_path(customer.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true, class: 'btn btn-xs btn-default' %>
-      </div>
+<div id="customer_<%= customer.id %>" class="col-md-3">
+  <div class='customer'>
+    <div class="name-tag">
+      <%= customer.firstname %>
+      <%= customer.lastname %>
+    </div>
+    <div class="detail">
+      Email: <%= customer.email %><br>
+      Tel. <%= customer.phone_number %>
+      Fax. <%= customer.fax %>
+    </div>
+    <div class="detail right">
+      <%= link_to ' Show', customer_path(customer.id), class: 'btn btn-xs btn-default' %>
+      <%= link_to ' Edit', edit_customer_path(customer.id), remote: true, class: 'btn btn-xs btn-default' %>
+      <%= link_to ' Delete', customer_path(customer.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true, class: 'btn btn-xs btn-default' %>
     </div>
   </div>
 </div>
