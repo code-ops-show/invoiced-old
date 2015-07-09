@@ -6,7 +6,6 @@
     </div>
     <div class="modal-body">
       <%= form_for @customer do |f| %>
-      <form>
         <div class="form-group">
           <label for="exampleInputEmail1">First name</label>
           <%= f.text_field :firstname, class: "form-control", placeholder: "First name" %>
@@ -32,7 +31,7 @@
           <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
         </div>
         <button type="submit" class="btn btn-custom btn-lg center-block" >Submit</button>
-      </form>
       <% end %>
     </div>
   </div>
+</div>
