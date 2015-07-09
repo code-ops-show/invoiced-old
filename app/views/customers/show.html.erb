@@ -53,8 +53,8 @@
   <% @customer.invoices.each do |invoice| %>
   <tr >
     <td><%= invoice.number %></td>
-    <td><%= invoice.issue_date %></td>
-    <td><%= invoice.due_date %></td>
+    <td><%= invoice.issue_date.strftime("%B %d, %Y") %></td>
+    <td><%= invoice.due_date.strftime("%B %d, %Y") %></td>
     <td><%= invoice.total %></td>
     <td>
       <div style="margin : auto; text-align: center">

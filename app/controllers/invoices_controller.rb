@@ -25,7 +25,6 @@ class InvoicesController < ApplicationController
   def edit
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.where(id: params[:id]).first
-    @payments = @invoice.payments.build
   end
 
   def create
