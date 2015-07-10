@@ -1,5 +1,6 @@
-<div class='container'>
-  <br />
+<div class="wrapper">
+  <div class='container'>
+    <br />
     <ol class="breadcrumb">
       <li><%= link_to 'Customer', customers_path %></li>
       <li><%= link_to 'Index', customers_path %></li>
@@ -42,12 +43,13 @@
         </tr>
         <% end %>
       </table>
-      <div class="smallbox">
-        <div class="center">
-          <%= link_to new_customer_invoice_path(@customer), class: "btn btn-primary btn-success" do %>
-          <span class="glyphicon glyphicon-plus-sign"></span>
-          New Invoice
-          <% end %>
+        <div class="smallbox">
+          <div class="center">
+            <%= link_to new_customer_invoice_path(@customer), class: "btn btn-primary btn-success" do %>
+            <span class="glyphicon glyphicon-plus-sign"></span>
+            New Invoice
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
