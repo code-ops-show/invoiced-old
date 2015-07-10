@@ -31,16 +31,19 @@ class CustomersControllerTest < ActionController::TestCase
   end
 
   test "should get new customer" do
-    get :new
-    assert_response :success
+    xhr :get, :new, id: @customer.id, format: :js
+
     assert_not_nil @customer,"customer not found"
   end
 
   test "should create customer" do
-    post(:create, customer: { firstname: "Memphis" })
+    xhr :post,:create, customer: { firstname: "Memphis", lastname: "Depay", 
+        email: "test@test.com", phone_number: "124525", fax: "231231", 
+        address: "23 cassfsd sada" }, from_action: "show", format: :js
+    # post(:create, customer: { firstname: "Memphis" })
 
-    assert_response :redirect
-    assert_not_nil Customer.find_by(firstname: "Memphis")
+    assert_equal "Memphis" , Customer.find_by(firstname: "Memphis").firstname, "Customer name result is not correct" 
+    # assert_not_nil Customer.find_by(firstname: "Memphis")
   end
 
   test "should show customers" do
@@ -50,19 +53,20 @@ class CustomersControllerTest < ActionController::TestCase
   end
 
   test "should get edit customer page" do
-    get :edit, id: @customer.id
+    xhr :get, :edit, id: @customer.id, format: :js
 
-    assert_response :success, "invoice not found"
+    assert_equal "Yanin", @customer.firstname, "Customer name result is not correct"
   end 
 
   test "should update customer" do
-    patch :update, id: @customer.id, customer: { firstname: @customer.firstname, 
+    xhr :patch, :update, id: @customer.id, customer: { firstname: "Barry", 
                                                lastname: @customer.lastname,
                                                address: @customer.address,
                                                phone_number: @customer.phone_number,
-                                               fax: @customer.fax}
+                                               fax: @customer.fax}, from_action: "show", format: :js
 
-    assert_redirected_to customers_path, "not going back index page after updated"
+    customer = customers(:customer_one).reload
+    assert_equal "Barry" , customer.firstname, "Customer name result is not correct"
   end
 
   test "should destroy customer" do
