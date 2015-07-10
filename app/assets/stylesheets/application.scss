@@ -5,27 +5,32 @@
 @import "customers";
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+body {
+  font-family: 'Roboto';
+  padding-top: 60px;
+}
+
 div.box {
-    margin-top: 30;
-    margin-bottom: 100px;
-    margin-right: 150px;
-    margin-left: 150px;
+  margin-top: 30;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 150px;
 }
 div.smallbox {
-    margin-top: 50px;
-    margin-bottom: 100px;
-    margin-right: 50px;
-    margin-left: 50px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 div.wrap {
-    margin-top: 30px;
-    margin-bottom: 10px;
-    margin-right: 50px;
-    margin-left: 50px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 img.resize{
-   width:50%;
-   height:50%;
+  width:50%;
+  height:50%;
 }
 address.box
 {
@@ -44,11 +49,12 @@ td.space {
   width: 90px;
 }
 div.wrap-table {
-    margin-top: 30px;
-    margin-bottom: 10px;
-    margin-right: 50px;
-    margin-left: 50px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
+
 .center{
   text-align: center;
 }
@@ -63,65 +69,9 @@ div.wrap-table {
   margin-right: 50px;
 }
 
-.bs-docs-example 
-{
-    position: relative;
-    margin: 15px 0;
-    padding: 39px 19px 14px;
-    background-color: white;
-    border: 1px solid #DDD;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-}
- 
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-#custom-search-input{
-    padding: 3px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
-}
-
-#custom-search-input input{
-    border: 0;
-    box-shadow: none;
-}
-
-#custom-search-input button{
-    margin: 2px 0 0 0;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #666666;
-    padding: 0 8px 0 10px;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input button:hover{
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input .glyphicon-search{
-    font-size: 23px;
-}
-
-
-.verticalLine {
-    border-left: thick solid #ff0000;
-}
-.aqua{
-  color: #0088CC;
-}
-.orange{
-  color: #f14444
-}
+/*    --------------------------------------------------
+  :: Nav Bar
+  -------------------------------------------------- */
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
 nav.navbar-findcond a { color: #0088CC; }
 nav.navbar-findcond ul.navbar-nav a { color: #0088CC; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
@@ -140,103 +90,35 @@ nav.navbar-findcond ul.dropdown-menu > li > a:hover { background: #0088CC; color
 nav.navbar-findcond span.badge { background: #0088CC; font-weight: normal; font-size: 11px; margin: 0 4px; }
 nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #fff; }
 
-
-
-
-div.name-tag {
-  background: #eeeeee;
-  padding: 5px;
-
+/*    --------------------------------------------------
+  :: Edit Section
+  -------------------------------------------------- */
+#edit {
+  padding-top: 50px
 }
-
-div.detail {
-  padding: 5px;
+#edit .form-wrap {
+  width: 30%;
+  margin: 0 auto;
 }
-
-div.placeholder {
+#edit h1 {
+  color: #1fa67b;
+  font-size: 18px;
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
-h1 {
-  margin-bottom: 30px;
-}
-
-footer {
-  border-top: 1px solid #eeeeee;
-  padding-top: 20px;
+  font-weight: bold;
   padding-bottom: 20px;
 }
+#edit .form-group {
+  margin-bottom: 25px;
+}
 
-/*    --------------------------------------------------
-  :: Login Section
-  -------------------------------------------------- */
-#login {
-    padding-top: 50px
-}
-#login .form-wrap {
-    width: 30%;
-    margin: 0 auto;
-}
-#login h1 {
-    color: #1fa67b;
-    font-size: 18px;
-    text-align: center;
-    font-weight: bold;
-    padding-bottom: 20px;
-}
-#login .form-group {
-    margin-bottom: 25px;
-}
-#login .checkbox {
-    margin-bottom: 20px;
-    position: relative;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-}
-#login .checkbox.show:before {
-    content: '\e013';
-    color: #1fa67b;
-    font-size: 17px;
-    margin: 1px 0 0 3px;
-    position: absolute;
-    pointer-events: none;
-    font-family: 'Glyphicons Halflings';
-}
-#login .checkbox .character-checkbox {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  vertical-align: middle;
-  display: inline-block;
-}
-#login .checkbox .label {
-    color: #6d6d6d;
-    font-size: 13px;
-    font-weight: normal;
-}
-#login .btn.btn-custom {
-    font-size: 14px;
+#edit .btn.btn-custom {
+  font-size: 14px;
   margin-bottom: 20px;
 }
-#login .forget {
-    font-size: 13px;
-  text-align: center;
-  display: block;
-}
 
 /*    --------------------------------------------------
-  :: Inputs & Buttons
+  :: Buttons
   -------------------------------------------------- */
-.form-control {
-  color: #212121;
-}
 .btn-custom {
   color: #fff;
   background-color: #1fa67b;
@@ -246,30 +128,54 @@ footer {
   color: #fff;
 }
 
+.btn-login {
+  background-color: #59B2E0;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #59B2E6;
+}
+.btn-login:hover,
+.btn-login:focus {
+  color: #fff;
+  background-color: #53A3CD;
+  border-color: #53A3CD;
+}
+.forgot-password {
+  text-decoration: underline;
+  color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+  text-decoration: underline;
+  color: #666;
+}
+
+.btn-register {
+  background-color: #1CB94E;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #1CB94A;
+}
+.btn-register:hover,
+.btn-register:focus {
+  color: #fff;
+  background-color: #1CA347;
+  border-color: #1CA347;
+}
+
 /*    --------------------------------------------------
-    :: Footer
+  :: Login Section
   -------------------------------------------------- */
-
-.invoice-title h2, .invoice-title h3 {
-  display: inline-block;
-}
-
-.table > tbody > tr > .no-line {
-  border-top: none;
-}
-
-.table > thead > tr > .no-line {
-  border-bottom: none;
-}
-
-.table > tbody > tr > .thick-line {
-  border-top: 2px solid;
-}
-
-body {
-    font-family: 'Roboto';
-    padding-top: 60px;
-}
 .panel-login {
   border-color: #ccc;
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
@@ -322,64 +228,23 @@ body {
   box-shadow: none;
   border-color: #ccc;
 }
-.btn-login {
-  background-color: #59B2E0;
-  outline: none;
-  color: #fff;
-  font-size: 14px;
-  height: auto;
-  font-weight: normal;
-  padding: 14px 0;
-  text-transform: uppercase;
-  border-color: #59B2E6;
-}
-.btn-login:hover,
-.btn-login:focus {
-  color: #fff;
-  background-color: #53A3CD;
-  border-color: #53A3CD;
-}
-.forgot-password {
-  text-decoration: underline;
-  color: #888;
-}
-.forgot-password:hover,
-.forgot-password:focus {
-  text-decoration: underline;
-  color: #666;
-}
 
-.btn-register {
-  background-color: #1CB94E;
-  outline: none;
-  color: #fff;
-  font-size: 14px;
-  height: auto;
-  font-weight: normal;
-  padding: 14px 0;
-  text-transform: uppercase;
-  border-color: #1CB94A;
-}
-.btn-register:hover,
-.btn-register:focus {
-  color: #fff;
-  background-color: #1CA347;
-  border-color: #1CA347;
-}
-
+/*    --------------------------------------------------
+    :: Footer
+  -------------------------------------------------- */
 *{
 margin: 0;
 }
-html, body {
-height: 100%;
+  html, body {
+  height: 100%;
 }
 .wrapper {
-min-height: 100%;
-height: auto !important;
-height: 100%;
-margin: 0 auto -4em;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
 }
 .footer, .push {
-height: 4em;
-clear: both;
+  height: 4em;
+  clear: both;
 }
