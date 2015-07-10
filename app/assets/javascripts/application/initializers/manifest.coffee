@@ -54,6 +54,11 @@ Application.run_ready = ->
     $('.search-panel span#search_filter').text filter
     $('.input-group #search_method').val param
 
+  $noti = $('#noti')
+  if $noti.length > 0
+    toastr.info($noti.text())
+    $noti.fadeOut 100
+
 $(document).ready Application.run_ready
 $(document).on 'page:load', Application.run_ready
 

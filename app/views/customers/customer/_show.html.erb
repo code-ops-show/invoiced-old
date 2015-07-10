@@ -4,7 +4,7 @@
       <%= link_to edit_customer_path(customer), remote: true, class: 'btn-xs btn-primary btn' do %>
         <span class="glyphicon glyphicon-edit"></span>
       <% end %>
-      <%= link_to customer, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-danger btn-xs" do %>
+      <%= link_to customer, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-danger btn-xs", id: "delete-btn" do %>
       <span class="glyphicon glyphicon-trash"></span>
       <% end %>
     </div>

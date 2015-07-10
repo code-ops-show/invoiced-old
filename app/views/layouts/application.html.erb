@@ -41,9 +41,6 @@
     <% end %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
-    <% end -%>
     <%= yield %>
     <div class="push"></div>
     <div id='modal-box' class='modal fade'></div>
