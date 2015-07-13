@@ -12,12 +12,6 @@ class InvoicesControllerTest < ActionController::TestCase
     @payments = payments(:payment_one)
   end
 
-  test "should get invoices index page" do 
-    get :index
-
-    assert_response :success
-  end
-
   test "should get new invoice" do
     get :new, customer_id: @customer.id
 

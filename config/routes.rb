@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :invoices
   resources :customers do
     get   'scope/:scope',   to: 'customers#index',  as: :scope,   on: :collection
     match 'case/:case',     to: 'customers#update', as: :case,   on: :member, via: [:put, :patch]

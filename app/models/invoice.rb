@@ -14,7 +14,7 @@ class Invoice < ActiveRecord::Base
                                 reject_if: lambda { |l| l[:date].blank? || l[:description].blank? || l[:payment_method].blank? || l[:amount].blank? }, 
                                 allow_destroy: true
 
-  after_initialize :invoice_number_incrementation
+  after_initialize :invoice_number_incrementation, unless: Proc.new { |invoice| invoice.number.present? }
   after_touch :calculate_total, :calculate_total_payment, :calculate_balance
 
   def calculate_total
@@ -23,10 +23,8 @@ class Invoice < ActiveRecord::Base
   end
 
   def invoice_number_incrementation
-    unless number
-      last_invoice = Invoice.order(:number).last
-      self.number = last_invoice ? last_invoice.number.succ : "001"
-    end
+    last_invoice = Invoice.order(:number).last
+    self.number = last_invoice ? last_invoice.number.succ : "001"
   end
 
   def calculate_total_payment
