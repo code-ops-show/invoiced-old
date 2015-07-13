@@ -25,17 +25,18 @@ class Application.Services.CalculateAmount extends Transponder.Service
 
   show_total: (sum) ->
       @element.find('.result').text(sum)
-      vat = sum *0.07
+      vat = sum * vat_value
       @element.find('.vat').text(vat.toFixed(2))
       balance = sum + vat
       @element.find('.balance').text(balance)
 
   loadTotal:() ->
+    vat_value = @element.find('.vat-value').text()
     sum = 0
     @element.find('.fields_line_items').each (_, field) ->
       total = $(field).find('.total').val()
       sum += total*1
-    vat = sum *0.07
+    vat = sum * vat_value
     balance = sum + vat
     @element.find('.result').text(sum)
     @element.find('.vat').text(vat.toFixed(2))
@@ -80,11 +81,13 @@ class Application.Services.CalculateAmount extends Transponder.Service
     @element.find('#balance_payment').text(payment.toFixed(2))
 
   get_subtotal: () ->
+    vat_value = @element.find('.vat-value').text()
     sum = 0
     @element.find('.fields_line_items').each (_, field) ->
       total = $(field).find('.total').val()
       sum += total*1
-    vat = sum *0.07
+    console.log vat_value
+    vat = sum * vat_value
     balance = sum + vat
     return balance
 
