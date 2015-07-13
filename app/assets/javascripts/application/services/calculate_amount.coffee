@@ -16,7 +16,7 @@ class Application.Services.CalculateAmount extends Transponder.Service
     $field.find(".total").val(sum)
     @summation()
 
-  summation:() ->
+  summation: ->
     sum = 0
     @element.find('.fields_line_items').each (_, field) ->
       total = $(field).find('.total').val()
@@ -24,19 +24,18 @@ class Application.Services.CalculateAmount extends Transponder.Service
     @show_total(sum)
 
   show_total: (sum) ->
-      @element.find('.result').text(sum)
-      vat = sum * vat_value
-      @element.find('.vat').text(vat.toFixed(2))
-      balance = sum + vat
-      @element.find('.balance').text(balance)
+    @element.find('.result').text(sum)
+    vat = sum * (@vat_value / 100)
+    @element.find('.vat').text(vat.toFixed(2))
+    balance = sum + vat
+    @element.find('.balance').text(balance)
 
-  loadTotal:() ->
-    vat_value = @element.find('.vat-value').text()
+  loadTotal: ->
     sum = 0
     @element.find('.fields_line_items').each (_, field) ->
       total = $(field).find('.total').val()
       sum += total*1
-    vat = sum * vat_value
+    vat = sum * (@vat_value /100)
     balance = sum + vat
     @element.find('.result').text(sum)
     @element.find('.vat').text(vat.toFixed(2))
@@ -80,18 +79,17 @@ class Application.Services.CalculateAmount extends Transponder.Service
     @element.find('#total_paid').text(total_paid)
     @element.find('#balance_payment').text(payment.toFixed(2))
 
-  get_subtotal: () ->
-    vat_value = @element.find('.vat-value').text()
+  get_subtotal: ->
     sum = 0
     @element.find('.fields_line_items').each (_, field) ->
       total = $(field).find('.total').val()
       sum += total*1
-    console.log vat_value
-    vat = sum * vat_value
+    vat = sum * (@vat_value / 100)
     balance = sum + vat
     return balance
 
   serve: ->
+    @vat_value = @element.find('.vat-value').text() * 1
     @click_button_item()
     @element.find('.fields_line_items').each (_, field) =>
       @key_line_item_up(field)
