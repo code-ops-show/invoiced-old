@@ -7,4 +7,11 @@ class User < ActiveRecord::Base
   has_many :customers, dependent: :destroy
   has_many :invoices, through: :customers
   attachment :logo_image
+
+  after_initialize :init
+
+  def init
+    self.vat  ||= 0
+  end
+
 end
