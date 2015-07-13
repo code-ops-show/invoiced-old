@@ -1,9 +1,9 @@
 <div class="container">
   <h1>Edit invoice</h1>
   <ol class="breadcrumb">
-    <li><%= link_to 'Customer', customers_path %></li>
-    <li><%= link_to 'Index', customer_path(@customer.id) %></li>
-    <li><%= link_to 'Details', customer_invoice_path(@customer, @invoice) %></li>
+    <li><%= link_to 'Customers', customers_path %></li>
+    <li><%= link_to @customer.firstname , customer_path(@customer.id) %></li>
+    <li><%= link_to @invoice.number , customer_invoice_path(@customer, @invoice) %></li>
     <li class="active">Edit</li>
   </ol>
   <%= render 'form' %>

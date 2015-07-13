@@ -2,9 +2,8 @@
   <div class='container'>
     <br />
     <ol class="breadcrumb">
-      <li><%= link_to 'Customer', customers_path %></li>
-      <li><%= link_to 'Index', customers_path %></li>
-      <li class="active">Details</li>
+      <li><%= link_to 'Customers', customers_path %></li>
+      <li class="active"><%= @customer.firstname %></li>
     </ol>
     <%= render 'customers/customer/show', customer: @customer %>
     <div class="col-md-8">

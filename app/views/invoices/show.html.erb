@@ -1,9 +1,9 @@
 <div class="wrapper">
   <div class="container">
     <ol class="breadcrumb">
-      <li><%= link_to 'Customer', customers_path %></li>
-      <li><%= link_to 'Index', customer_path(@customer.id) %></li>
-      <li class="active">Details</li>
+      <li><%= link_to 'Customers', customers_path %></li>
+      <li><%= link_to @customer.firstname , customer_path(@customer.id) %></li>
+      <li class="active"><%= @invoice.number %></li>
     </ol>
     <div class="right" style="margin-left: 100px">
       <address>
