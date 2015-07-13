@@ -33,7 +33,7 @@ class Invoice < ActiveRecord::Base
   end
 
   def calculate_balance
-    self.balance = ((self.total + (self.total * customer.user.vat)) - self.total_paid)
+    self.balance = ((self.total + (self.total * (customer.user.vat/100)) - self.total_paid))
     self.save
   end
 
