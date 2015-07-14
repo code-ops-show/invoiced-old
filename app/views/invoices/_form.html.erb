@@ -81,6 +81,11 @@
         <td class="right"><h5><span class="result"></span> Baht</h5></td>
         <td></td>
       </tr>
+      <tbody id="extras">
+        <%= f.fields_for :extras, wrapper: false do |item| %>
+        <%= render 'extra_fields', f: item %>
+        <% end %>
+      </tbody>
       <tr>
         <td></td>
         <td></td>
@@ -94,6 +99,15 @@
         <td class="right"><h5>Total</h5></td>
         <td class="right"><h5><span class="balance"></span> Baht</h5></td>
         <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <%= f.link_to_add '+Add Extra', :extras, data: { target: '#extras' }, class: "btn btn-default btn-sm" %>
+        </td>
       </tr>
     </table>
     <br>

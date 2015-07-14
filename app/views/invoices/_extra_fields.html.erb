@@ -1,0 +1,17 @@
+<tr class='fields'>
+  <td>
+    <%= f.select :prefix, [['Additive', '1'], ['Subtractive', '0']], { include_blank: 'Please select' }, { :class => 'form-control' } %>
+  </td>
+  <td>
+    <%= f.text_field :name, placeholder: "Extras", class: "form-control" %>
+  </td>
+  <td>
+    <%= f.select :method, [['Percentage', '1'], ['Value', '0']], { include_blank: 'Please select' }, { :class => 'form-control' } %>
+  </td>
+  <td>
+    <%= f.text_field :amount, placeholder: "Amount", class: "form-control" %>
+  </td>
+  <td>
+    <%= f.link_to_remove "Remove" %>
+  </td>
+</tr>

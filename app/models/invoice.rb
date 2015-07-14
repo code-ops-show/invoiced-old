@@ -2,7 +2,7 @@ class Invoice < ActiveRecord::Base
   belongs_to :customer, touch: true
   has_many :line_items, dependent: :destroy
   has_many :payments, dependent: :destroy
-
+has_many :extras, dependent: :destroy
   validates :number,
             presence: true,
             uniqueness: true
@@ -13,6 +13,7 @@ class Invoice < ActiveRecord::Base
   accepts_nested_attributes_for :payments, 
                                 reject_if: lambda { |l| l[:date].blank? || l[:description].blank? || l[:payment_method].blank? || l[:amount].blank? }, 
                                 allow_destroy: true
+  accepts_nested_attributes_for :extras, allow_destroy: true
 
   after_initialize :invoice_number_incrementation, unless: Proc.new { |invoice| invoice.number.present? }
   after_touch :calculate_total, :calculate_total_payment, :calculate_balance
