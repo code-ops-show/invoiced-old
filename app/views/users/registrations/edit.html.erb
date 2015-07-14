@@ -28,11 +28,19 @@
               </div>
             </div>
             <div class="panel panel-default">
-              <div class="panel-heading">Company logo</div>
+              <div class="panel-heading">Company</div>
               <div class="panel-body">
                 <div class="form-group center">
+
                   <%= image_tag attachment_url(@user, :logo_image, :fill, 100, 100, format: "jpg") %>
                   <%= f.attachment_field :logo_image, class: "form-control"%>
+                </div>
+                <div class="form-group center">
+                  <span class="form-inline">
+                    VAT: &nbsp;
+                    <%= f.text_field :vat, class: "form-control", placeholder: "VAT" %>
+                    %
+                  </span>
                 </div>
               </div>
             </div>

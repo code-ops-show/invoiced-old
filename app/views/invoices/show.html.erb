@@ -72,8 +72,8 @@
         <tr>
           <td></td>
           <td></td>
-          <td class="right"><h5>VAT 7%</h5></td>
-          <td ><h5><%= vat = (@invoice.total * 0.07).round(2) %> Baht</h5></td>
+          <td class="right"><h5>VAT <span class="vat-value"><%= current_user.vat %></span>%</h5></td>
+          <td ><h5><%= vat = (@invoice.total * current_user.vat).round(2) %> Baht</h5></td>
         </tr>
         <tr>
           <td></td>

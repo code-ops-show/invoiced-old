@@ -34,7 +34,7 @@ has_many :extras, dependent: :destroy
   end
 
   def calculate_balance
-    self.balance = ((self.total + (self.total * 0.07)) - self.total_paid)
+    self.balance = ((self.total + (self.total * (customer.user.vat/100)) - self.total_paid))
     self.save
   end
 
