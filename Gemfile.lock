@@ -36,6 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_list (0.7.2)
+      activerecord (>= 3.0)
     arel (6.0.0)
     autoprefixer-rails (5.1.11)
       execjs
@@ -229,6 +231,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list
   bootstrap-datepicker-rails
   bootstrap-sass (~> 3.3.4)
   byebug
