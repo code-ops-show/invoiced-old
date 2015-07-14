@@ -1,5 +1,6 @@
 # this is where you require all the files
 #= require jquery
+#= require jquery-ui/sortable
 #= require jquery_ujs
 #= require turbolinks
 #= require transponder

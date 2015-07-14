@@ -1,5 +1,6 @@
 class InvoicesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_extra, only: [:show, :edit, :update, :destroy]
 
   def index
      @customer = current_user.customers.where(id: params[:customer_id]).first
@@ -38,6 +39,14 @@ class InvoicesController < ApplicationController
  
   end
 
+  def update_row_order
+    @invoice = Invoice.find(invoice_params[:invoice_id])
+    @invoice.row_order_position = invoice_params[:row_order_position]
+    @invoice.save
+
+    render noinvoice: true # this is a POST action, updates sent via AJAX, no view rendered
+  end
+
   def update
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.where(id: params[:id]).first
@@ -61,10 +70,14 @@ class InvoicesController < ApplicationController
 
 private
   def invoice_params
-    params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :customer_id, :total_paid, :balance, 
+    params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :customer_id, :total_paid, :balance, :row_order_position,
                                     line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id, :_destroy],
                                     payments_attributes: [:id, :date, :description, :payment_method, :amount, :invoice_id, :_destroy])
 
+  end
+
+  def set_extra
+    @invoice = Invoice.find(params[:id])
   end
 
   def scoped_invoices

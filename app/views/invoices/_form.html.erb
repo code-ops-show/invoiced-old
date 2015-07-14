@@ -49,7 +49,7 @@
     </div>
   </div>
   <div class="col-md-12 column">
-    <table class="table table-hover">
+    <table class="table table-hover" id="sortable">
       <thead>
         <tr>
           <th class="text-center">
@@ -86,7 +86,7 @@
         <%= render 'extra_fields', f: item %>
         <% end %>
       </tbody>
-      <tr>
+      <tr class= "item">
         <td></td>
         <td></td>
         <td class="right"><h5>VAT <span class="vat-value"><%= current_user.vat %></span>%</h5></td>

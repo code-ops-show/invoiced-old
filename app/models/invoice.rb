@@ -3,6 +3,7 @@ class Invoice < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
   has_many :payments, dependent: :destroy
   has_many :extras, dependent: :destroy
+  
   validates :number,
             presence: true,
             uniqueness: true
@@ -36,6 +37,14 @@ class Invoice < ActiveRecord::Base
   def calculate_balance
     self.balance = ((self.total + (self.total * (customer.user.vat/100)) - self.total_paid))
     self.save
+  end
+
+  def update_row_order
+    @invoice = Invoice.find(invoice_params[:invoice_id])
+    @invoice.row_order_position = invoice_params[:row_order_position]
+    @invoice.save
+
+    render noinvoice: true # this is a POST action, updates sent via AJAX, no view rendered
   end
 
 end
