@@ -1,12 +1,12 @@
 <tr class='fields'>
   <td>
-    <%= f.select :prefix, [['Additive', '1'], ['Subtractive', '0']], { include_blank: 'Please select' }, { :class => 'form-control' } %>
+    <%= f.select :prefix, [['Discount', '1'], ['Extra cost', '0']], {:selected => 'Discount'}, { :class => 'form-control' } %>
   </td>
   <td>
     <%= f.text_field :name, placeholder: "Extras", class: "form-control" %>
   </td>
   <td>
-    <%= f.select :method, [['Percentage', '1'], ['Value', '0']], { include_blank: 'Please select' }, { :class => 'form-control' } %>
+    <%= f.select :method, [['Value', '1'], ['Percentage', '0']], {:selected => 'Value'}, { :class => 'form-control' } %>
   </td>
   <td>
     <%= f.text_field :amount, placeholder: "Amount", class: "form-control" %>
