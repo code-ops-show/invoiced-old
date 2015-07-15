@@ -85,8 +85,10 @@
         <%= f.fields_for :extras, wrapper: false do |item| %>
         <%= render 'extra_fields', f: item %>
         <% end %>
+        <%= hidden_field_tag 'id-customer',@customer.id %>
+        <%= hidden_field_tag 'id-invoice',@invoice.id %>        
       </tbody>
-      <tr class= "item">
+      <tr class= "extra">
         <td></td>
         <td></td>
         <td class="right"><h5>VAT <span class="vat-value"><%= current_user.vat %></span>%</h5></td>

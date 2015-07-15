@@ -1,4 +1,4 @@
-<tr data-item-id="<%= f.object.id %>" class="item fields">
+<tr data-item-id="<%= f.object.id %>" class="extra fields">
   <td>
     <%= f.select :prefix, [['Discount', '1'], ['Extra cost', '0']], {:selected => 'Discount'}, { :class => 'form-control' } %>
   </td>
@@ -10,6 +10,7 @@
   </td>
   <td>
     <%= f.text_field :amount, placeholder: "Amount", class: "form-control" %>
+    <%= f.hidden_field :row_order %>
   </td>
   <td>
     <%= f.link_to_remove "Remove" %>

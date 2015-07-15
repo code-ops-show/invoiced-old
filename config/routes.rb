@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     get   'notify/:notify', to: 'customers#show',   as: :notify, on: :member
     resources :invoices
   end
+
+  scope 'invoices/:invoice_id' do 
+    resources :extras, only: [:update]
+  end
   # You can have the root of your site routed with "root"
   root 'customers#index'
   # root 'users#sign_in'
