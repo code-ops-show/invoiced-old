@@ -10,7 +10,7 @@
   </td>
   <td>
     <%= f.text_field :amount, placeholder: "Amount", class: "form-control" %>
-    <%= f.hidden_field :row_order %>
+    <%= f.hidden_field :row_order,class: "extra_val", value: index %>
   </td>
   <td>
     <%= f.link_to_remove "Remove" %>

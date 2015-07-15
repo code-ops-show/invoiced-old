@@ -78,16 +78,22 @@ Application.run_ready = ->
         # highlight the row on drop to indicate an update
         # ui.item.children('td').effect('highlight', {}, 1000)
       update: (e, ui) ->
-        extra_id = ui.item.data('item-id')
-        console.log("id"+extra_id)
-        position = ui.item.index() # this will not work with paginated items, as the index is zero on every page
-        console.log("pos"+position)
-        $.ajax(
-          type: 'PUT'
-          url: "/invoices/#{invoice_id}/extras/#{extra_id}"
-          dataType: 'json'
-          data: { extra: { row_order: position } }
-        )
+
+        extras = $('.extra').each (i, field) ->
+          extra = $(field).find('.extra_val').val()
+          console.log extra
+
+
+        # extra_id = ui.item.data('item-id')
+        # console.log("id"+extra_id)
+        # position = ui.item.index() # this will not work with paginated items, as the index is zero on every page
+        # console.log("pos"+position)
+        # $.ajax(
+        #   type: 'PUT'
+        #   url: "/invoices/#{invoice_id}/extras/#{extra_id}"
+        #   dataType: 'json'
+        #   data: { extra: { row_order: position } }
+        # )
 
 
 
