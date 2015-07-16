@@ -1,6 +1,7 @@
 class InvoicesController < ApplicationController
   before_action :authenticate_user!
 
+
   def index
      @customer = current_user.customers.where(id: params[:customer_id]).first
      @invoices = scoped_invoices
@@ -59,13 +60,16 @@ class InvoicesController < ApplicationController
     end
   end
 
+
 private
   def invoice_params
-    params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :customer_id, :total_paid, :balance, 
+    params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :customer_id, :total_paid, :balance, :row_order_position,
                                     line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id, :_destroy],
-                                    payments_attributes: [:id, :date, :description, :payment_method, :amount, :invoice_id, :_destroy])
+                                    payments_attributes: [:id, :date, :description, :payment_method, :amount, :invoice_id, :_destroy],
+                                    extras_attributes: [:id, :name, :amount, :prefix, :method, :invoice_id, :row_order, :_destroy])
 
   end
+
 
   def scoped_invoices
     if @customer.present?
@@ -76,4 +80,3 @@ private
   end  
 
 end
-

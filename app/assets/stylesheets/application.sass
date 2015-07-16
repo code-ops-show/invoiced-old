@@ -1,9 +1,11 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 @import "toastr"
+
 @import "bootstrap-datepicker"
 @import "customers"
 @import url(http://fonts.googleapis.com/css?family=Roboto)
+@import jquery-ui/sortable
 
 body
   font-family: 'Roboto'
@@ -228,3 +230,8 @@ html, body
 .footer, .push
   height: 4em
   clear: both
+
+.active-item-shadow
+  -webkit-box-shadow: rgba(133, 133, 133, 0.1) 0 0 5px 2px, rgba(133, 133, 133, 0.3) 0 0 2px
+  -moz-box-shadow: rgba(133, 133, 133, 0.1) 0 0 5px 2px, rgba(133, 133, 133, 0.3) 0 0 2px
+  box-shadow: rgba(133, 133, 133, 0.1) 0 0 5px 2px, rgba(133, 133, 133, 0.3) 0 0 2px
