@@ -1,5 +1,7 @@
 class Extra < ActiveRecord::Base
   include RankedModel
-  belongs_to :invoice, :class_name => 'Invoice', touch: true
+  belongs_to :invoice, touch: true
   ranks :row_order
+
+  default_scope { rank(:row_order) }
 end

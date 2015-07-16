@@ -78,11 +78,8 @@ Application.run_ready = ->
         # highlight the row on drop to indicate an update
         # ui.item.children('td').effect('highlight', {}, 1000)
       update: (e, ui) ->
-
-        extras = $('.extra').each (i, field) ->
-          extra = $(field).find('.extra_val').val()
-          console.log extra
-
+        $('.extra').each (i, field) ->
+          $(field).find('.extra_val').val(i)
 
         # extra_id = ui.item.data('item-id')
         # console.log("id"+extra_id)

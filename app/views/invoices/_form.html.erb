@@ -84,18 +84,18 @@
       <tbody id="extras">
         <% index = 0 %>
         <%= f.fields_for :extras, wrapper: false do |item| %>
-        <%= render 'extra_fields', f: item, index: index %>
-        <% index+=1 %>
+          <%= render 'extra_fields', f: item, index: index %>
+        <% index += 1 %>
         <% end %>
-        <%= hidden_field_tag 'id-customer',@customer.id %>
-        <%= hidden_field_tag 'id-invoice',@invoice.id %>        
-      <tr class= "extra">
-        <td></td>
-        <td></td>
-        <td class="right"><h5>VAT <span class="vat-value"><%= current_user.vat %></span>%</h5></td>
-        <td class="right"><h5><span class="vat"></span> Baht</h5></td>
-        <td></td>
-      </tr>
+        <%= hidden_field_tag 'id-customer', @customer.id %>
+        <%= hidden_field_tag 'id-invoice', @invoice.id %>        
+        <tr class= "extra">
+          <td></td>
+          <td></td>
+          <td class="right"><h5>VAT <span class="vat-value"><%= current_user.vat %></span>%</h5></td>
+          <td class="right"><h5><span class="vat"></span> Baht</h5></td>
+          <td></td>
+        </tr>
       </tbody>
       <tr>
         <td></td>
