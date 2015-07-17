@@ -2,10 +2,10 @@
   <td></td>
   <td></td>
   <td class="right">
-    <h5>VAT</h5>
+    <h5>VAT <%= current_user.vat %> % </h5>
   </td>
   <td class="right">
-    <h5><%= f.object.amount %>%</h5>
+    <h5><%= f.object.amount %></h5>
   </td>
   <td>
     <%= f.hidden_field :prefix, value: 0 %>
