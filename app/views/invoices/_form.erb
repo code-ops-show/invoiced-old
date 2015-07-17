@@ -83,7 +83,7 @@
       </tr>
       <tbody id="extras">
         <%= f.fields_for :extras, wrapper: false do |item| %>
-          <% if item.object.name == 'VAT' %>
+          <% if item.object.is_vat %>
             <%= render 'vat_field', f: item %>
           <% else %>
             <%= render 'extra_fields', f: item %>
