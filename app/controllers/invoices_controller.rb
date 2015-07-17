@@ -21,6 +21,7 @@ class InvoicesController < ApplicationController
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.build
     @line_items = @invoice.line_items.build
+    @invoice.extras.build(name: 'VAT', amount: current_user.vat)
   end
 
   def edit
@@ -66,7 +67,7 @@ private
     params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :customer_id, :total_paid, :balance, :row_order_position,
                                     line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id, :_destroy],
                                     payments_attributes: [:id, :date, :description, :payment_method, :amount, :invoice_id, :_destroy],
-                                    extras_attributes: [:id, :name, :amount, :prefix, :method, :invoice_id, :row_order, :_destroy])
+                                    extras_attributes: [:id, :name, :amount, :prefix, :method, :invoice_id, :row_order, :extra_vat ,:_destroy])
 
   end
 

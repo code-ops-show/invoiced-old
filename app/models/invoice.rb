@@ -17,7 +17,6 @@ class Invoice < ActiveRecord::Base
   accepts_nested_attributes_for :extras, reject_if: lambda { |l| l[:name].blank? || l[:amount].blank? || l[:prefix].blank? || l[:method].blank? }, 
                                 allow_destroy: true
 
-
   after_initialize :invoice_number_incrementation, unless: Proc.new { |invoice| invoice.number.present? }
   after_touch :calculate_total, :calculate_total_payment, :calculate_balance
 
