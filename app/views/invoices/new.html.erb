@@ -2,7 +2,7 @@
   <h1>Add new invoice</h1>
   <ol class="breadcrumb">
     <li><%= link_to 'Customer', customers_path %></li>
-    <li><%= link_to 'Index', customer_path(@customer.id) %></li>
+    <li><%= link_to @customer.firstname , customer_path(@customer.id) %></li>
     <li class="active">New</li>
   </ol>
   <%= render "form" %>
