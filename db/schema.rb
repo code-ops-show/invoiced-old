@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714095138) do
+ActiveRecord::Schema.define(version: 20150716110042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150714095138) do
     t.string   "method"
     t.integer  "invoice_id"
     t.integer  "row_order"
+    t.decimal  "extra_vat"
   end
 
   add_index "extras", ["invoice_id"], name: "index_extras_on_invoice_id", using: :btree
