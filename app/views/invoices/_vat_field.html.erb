@@ -8,9 +8,10 @@
     <h5><%= f.object.amount %></h5>
   </td>
   <td>
-    <%= f.hidden_field :prefix, value: 0 %>
+    <%= f.hidden_field :prefix, value: 'cost' %>
     <%= f.hidden_field :name %>
-    <%= f.hidden_field :method, value: 0 %>
+    <%= f.hidden_field :method, value: 'percentage' %>
+    <%= f.hidden_field :extra_value, :value => current_user.vat %>
     <%= f.hidden_field :amount %>
     <%= f.hidden_field :is_vat %>
     <%= f.hidden_field :row_order, class: "extra_val" %>

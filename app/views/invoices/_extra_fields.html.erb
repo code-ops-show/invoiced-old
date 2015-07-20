@@ -1,7 +1,7 @@
 <tr data-item-id="<%= f.object.id %>" class="extra fields">
   <td>
     <label class="sr-only" for="prefix">Prefix</label>
-    <%= f.select :prefix, [['Discount', 'discount'], ['Extra cost', 'cost']], {:selected => 'Discount'}, { :class => 'form-control' } %>
+    <%= f.select :prefix, [['Discount', 'discount'], ['Extra cost', 'cost']], {:default => 'Discount'}, { :class => 'form-control' } %>
   </td>
   <td>
   <label class="sr-only" for="name">name</label>

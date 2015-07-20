@@ -18,10 +18,32 @@ class Invoice < ActiveRecord::Base
                                 allow_destroy: true
 
   after_initialize :invoice_number_incrementation, unless: Proc.new { |invoice| invoice.number.present? }
-  after_touch :calculate_total, :calculate_total_payment, :calculate_balance
+  after_touch :calculate_balance
+
+  def calculate_sub_total
+    self.sub_total = line_items.sum(:amount)
+  end
+
+  def calculate_extras
+    extras.percentage.each do |extra|
+      extra.calculate_amount_after(sub_total)
+      extra.save
+    end
+  end
 
   def calculate_total
-    self.total = line_items.sum(:amount)
+    calculate_sub_total
+    calculate_extras
+    temp = 0
+    extras.each do |extra|
+      case extra.prefix
+      when 'discount'
+        temp = temp - extra.amount
+      when 'cost'
+        temp = temp + extra.amount
+      end
+    end
+    self.total = self.sub_total + temp
     self.save
   end
 
@@ -32,11 +54,13 @@ class Invoice < ActiveRecord::Base
 
   def calculate_total_payment
     self.total_paid = payments.sum(:amount)
-    self.save
   end
 
   def calculate_balance
-    self.balance = ((self.total + (self.total * (customer.user.vat/100)) - self.total_paid))
+    calculate_total
+    calculate_total_payment
+
+    self.balance = self.total - self.total_paid
     self.save
   end
 
@@ -47,5 +71,4 @@ class Invoice < ActiveRecord::Base
 
     render nothing: true # this is a POST action, updates sent via AJAX, no view rendered
   end
-
 end

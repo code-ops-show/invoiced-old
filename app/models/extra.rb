@@ -4,13 +4,17 @@ class Extra < ActiveRecord::Base
   ranks :row_order
 
   default_scope { rank(:row_order) }
+  scope :percentage, -> { where(method: 'percentage') }
+
   before_save :calculate_amount_after
-  def calculate_amount_after
-    case method
-    when 'value'
-      self.amount = extra_value
-    when 'percentage'
-      self.amount = (extra_value / 100) * invoice.total
-    end
+
+  def calculate_amount_after(sub_total = nil)
+    self.amount = 
+      case method
+      when 'value'
+        extra_value
+      when 'percentage'
+        (extra_value / 100) * (sub_total || invoice.sub_total)
+      end
   end
 end

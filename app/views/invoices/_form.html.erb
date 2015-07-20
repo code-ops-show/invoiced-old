@@ -96,7 +96,7 @@
         <td></td>
         <td></td>
         <td class="right"><h5>Total</h5></td>
-        <td class="right"><h5><span class="balance"></span> Baht</h5></td>
+        <td class="right"><h5><%= @invoice.total %></span> Baht</h5></td>
         <td></td>
       </tr>
       <tr>
@@ -150,7 +150,7 @@
         <td></td>
         <td></td>
         <td class="right"><h5>Balance Due</h5></td>
-        <td class="right"><h5><span id="balance_payment"><%= @invoice.balance %></span> Baht</h5></td>
+        <td class="right"><h5><%= @invoice.balance %> Baht</h5></td>
         <td></td>
       </tr>
     </table>

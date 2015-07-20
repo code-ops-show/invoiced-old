@@ -64,7 +64,7 @@ class InvoicesController < ApplicationController
 
 private
   def invoice_params
-    params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :customer_id, :total_paid, :balance, :row_order_position,
+    params.require(:invoice).permit(:number, :issue_date, :due_date, :sub_total, :total, :customer_id, :total_paid, :balance, :row_order_position,
                                     line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id, :_destroy],
                                     payments_attributes: [:id, :date, :description, :payment_method, :amount, :invoice_id, :_destroy],
                                     extras_attributes: [:id, :name, :amount, :prefix, :method, :invoice_id, :row_order, :extra_value, :is_vat ,:_destroy])
