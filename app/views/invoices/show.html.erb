@@ -67,19 +67,36 @@
           <td></td>
           <td></td>
           <td class="right"><h5>Sub Total</h5></td>
-          <td ><h5><%= @invoice.total.round(2) %> Baht</h5></td>
+          <td class="center"><h5><%= @invoice.total.round(2) %> Baht</h5></td>
         </tr>
+        <% for extra in @invoice.extras %>
         <tr>
+          <% if extra.is_vat %>
           <td></td>
           <td></td>
-          <td class="right"><h5>VAT <span class="vat-value"><%= current_user.vat %></span>%</h5></td>
-          <td ><h5><%= vat = (@invoice.total * current_user.vat).round(2) %> Baht</h5></td>
+          <td class="center">VAT <%= current_user.vat %> %</td>
+          <td class="center"><%= extra.amount %></td> 
+          <% else %>
+          <td class="center"><%= extra.prefix %></td>
+          <td class="center"><%= extra.name %></td>
+          <td>
+            <div class="inline center">
+              <% if extra.method == 'percentage' %>
+              <%= extra.extra_value %> %
+              <% else %>
+              <%= extra.extra_value %> Baht
+              <% end %>
+            </div>
+          </td>
+          <td class="center"><%= extra.amount %></td> 
         </tr>
+        <% end %>
+        <% end %>
         <tr>
           <td></td>
           <td></td>
           <td class="right"><h5>Total</h5></td>
-          <td ><h5><%= @invoice.total + vat %> Baht</h5></td>
+          <td class="center"><h5><%= @invoice.total %> Baht</h5></td>
         </tr>
       </table>
     </div>
