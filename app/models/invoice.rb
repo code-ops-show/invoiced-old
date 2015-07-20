@@ -14,7 +14,7 @@ class Invoice < ActiveRecord::Base
   accepts_nested_attributes_for :payments, 
                                 reject_if: lambda { |l| l[:date].blank? || l[:description].blank? || l[:payment_method].blank? || l[:amount].blank? }, 
                                 allow_destroy: true
-  accepts_nested_attributes_for :extras, reject_if: lambda { |l| l[:name].blank? || l[:amount].blank? || l[:prefix].blank? || l[:method].blank? }, 
+  accepts_nested_attributes_for :extras, reject_if: lambda { |l| l[:name].blank? || l[:prefix].blank? || l[:method].blank? }, 
                                 allow_destroy: true
 
   after_initialize :invoice_number_incrementation, unless: Proc.new { |invoice| invoice.number.present? }

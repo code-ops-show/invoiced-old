@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717093732) do
+ActiveRecord::Schema.define(version: 20150719114124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,15 +31,15 @@ ActiveRecord::Schema.define(version: 20150717093732) do
   add_index "customers", ["user_id"], name: "index_customers_on_user_id", using: :btree
 
   create_table "extras", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "name"
     t.integer  "amount"
     t.string   "prefix"
     t.string   "method"
     t.integer  "invoice_id"
     t.integer  "row_order"
-    t.decimal  "extra_vat"
+    t.decimal  "extra_value"
     t.boolean  "is_vat"
   end
 
