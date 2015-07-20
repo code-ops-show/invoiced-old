@@ -1,0 +1,162 @@
+<div class="panel panel-default calculate_amount">
+  <%= nested_form_for [@customer, @invoice] do |f| %>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="rightBox">
+        <address>
+          <h4 class="gray">No.<%= @invoice.number %></h4>
+        </address>
+      </div>
+      
+      <div style="margin-left: 50px">
+        <%= image_tag attachment_url(current_user, :logo_image, :fill, 150, 150, format: "jpg") %>
+      </div>
+      <div class="col-xs-6">
+        <address class="box">
+          
+          <br><h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
+          <h5><%= @current_user.address %></h5>
+          <h5><%= current_user.email %></h5>
+        </address>
+      </div>
+      
+      <div class="col-xs-6 text-right">
+        <div class="rightBox">
+          <address class="box">
+            <h4>Billed To:</h4>
+            <%= @customer.firstname %> <%= @customer.lastname %><br>
+            <%= @customer.address %><br>
+            <%= @customer.phone_number %><br>
+            <%= @customer.email %>
+          </address>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 col-md-push-8" >
+            <% if f.object.persisted? %>
+            <strong>Issue Date:</strong>
+            <%= f.text_field :issue_date, value: f.object.issue_date.strftime("%B %d, %Y"), data: { provide: 'datepicker' }, class: "form-control" %><br>
+            <strong>Due Date:</strong>
+            <%= f.text_field :due_date, value: f.object.due_date.strftime("%B %d, %Y"), data: { provide: 'datepicker' }, class: "form-control" %><br><br>
+            <% else %>
+            <strong>Issue Date:</strong>
+            <%= f.text_field :issue_date, data: { provide: 'datepicker' }, class: "form-control" %><br>
+            <strong>Due Date:</strong>
+            <%= f.text_field :due_date, data: { provide: 'datepicker' }, class: "form-control" %><br><br>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 column">
+    <table class="table table-hover" id="sortable">
+      <thead>
+        <tr>
+          <th class="text-center">
+            DESCRIPTION
+          </th>
+          <th class="text-center">
+            QUANTITY
+          </th>
+          <th class="text-center">
+            UNIT PRICE
+          </th>
+          <th class="text-center">
+            AMOUNT
+          </th>
+          <th>
+            <%= f.link_to_add '+Add Row', :line_items, data: { target: '#lineitems' } %>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="lineitems">
+        <%= f.fields_for :line_items, wrapper: false do |builder| %>
+        <%= render 'line_item_fields', f: builder %>
+        <% end %>
+      </tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="right"><h5>Sub Total</h5></td>
+        <td class="right"><h5><span class="result"></span> Baht</h5></td>
+        <td></td>
+      </tr>
+      <tbody id="extras">
+        <%= f.fields_for :extras, wrapper: false do |item| %>
+          <% if item.object.is_vat %>
+            <%= render 'vat_field', f: item %>
+          <% else %>
+            <%= render 'extra_fields', f: item %>
+          <% end %>
+        <% end %>
+        <%= hidden_field_tag 'id-customer', @customer.id %>
+        <%= hidden_field_tag 'id-invoice', @invoice.id %>
+      </tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="right"><h5>Total</h5></td>
+        <td class="right"><h5><span class="balance"></span> Baht</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <%= f.link_to_add '+Add Extra', :extras, data: { target: '#extras' }, class: "btn btn-default btn-sm" %>
+        </td>
+      </tr>
+    </table>
+    <br>
+  </div>
+  <% if @invoice.persisted? %>
+  <div class="col-md-12 column">
+    <h3>Payment Information</h3><br>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">
+            PAYMENT DATE
+          </th>
+          <th class="text-center">
+            DESCRIPTION
+          </th>
+          <th class="text-center">
+            METHOD
+          </th>
+          <th class="text-center">
+            AMOUNT
+          </th>
+          <th>
+            <%= f.link_to_add '+Add Row', :payments, data: { target: '#payments' }, class: "add_payment" %>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="payments">
+        <%= f.fields_for :payments, wrapper: false do |item| %>
+        <%= render "payment_fields", f: item %>
+        <% end %>
+      </tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="right"><h5>Total Paid</h5></td>
+        <td class="right"><h5 ><span id="total_paid"><%= @invoice.total_paid %></span> Baht</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="right"><h5>Balance Due</h5></td>
+        <td class="right"><h5><span id="balance_payment"><%= @invoice.balance %></span> Baht</h5></td>
+        <td></td>
+      </tr>
+    </table>
+    <br>
+  </div>
+  <% end %>
+  <%= f.submit "Submit", class: "btn btn-success btn-lg center-block" %><br>
+  <% end %>
+</div>
