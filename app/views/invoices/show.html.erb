@@ -67,7 +67,7 @@
           <td></td>
           <td></td>
           <td class="right"><h5>Sub Total</h5></td>
-          <td class="center"><h5><%= @invoice.total.round(2) %> Baht</h5></td>
+          <td class="center"><h5><%= @invoice.sub_total.round(2) %> Baht</h5></td>
         </tr>
         <% for extra in @invoice.extras %>
         <tr>

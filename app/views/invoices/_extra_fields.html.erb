@@ -1,6 +1,6 @@
 <tr data-item-id="<%= f.object.id %>" class="extra fields">
   <td>
-    <%= f.select :prefix, [['Discount', 'discount'], ['Extra cost', 'cost']], {:selected => 'Discount'}, { :class => 'form-control' } %>
+    <%= f.select :prefix, [['Discount', 'discount'], ['Extra cost', 'cost']], {:default => 'Discount'}, { :class => 'form-control' } %>
   </td>
   <td>
     <%= f.text_field :name, placeholder: "Extras", class: "form-control" %>
