@@ -44,7 +44,7 @@ class InvoicesController < ApplicationController
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.where(id: params[:id]).first
     if @invoice.update_attributes(invoice_params)
-      redirect_to customer_path(@customer), :notice => "Your invoice has been updated."
+      redirect_to customer_invoice_path(@customer,@invoice), :notice => "Your invoice has been updated."
     else
       render "edit"
     end
