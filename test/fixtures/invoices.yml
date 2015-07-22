@@ -1,13 +1,13 @@
 invoice_one:
   number: 001
-  total: 200
+  sub_total: 0
   issue_date: 2015-05-19 12:35:42
   due_date: 2015-05-19 12:35:42
   customer: customer_one
 
 invoice_two:
   number: 002
-  total: 230
+  sub_total: 0
   issue_date: 2015-05-19 12:35:42
   due_date: 2015-05-19 12:35:42
   customer: customer_two

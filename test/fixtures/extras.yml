@@ -1,11 +1,17 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+extra_one:
+  invoice: invoice_one
+  name: "Delivery cost"
+  prefix: "cost"
+  extra_value: 100
+  method: "value"
+  amount: 100
+  is_vat: false
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+extra_two:
+  invoice: invoice_two
+  name: "Discount"
+  prefix: "discount"
+  extra_value: 5
+  method: "percentage"
+  amount: 15
+  is_vat: false

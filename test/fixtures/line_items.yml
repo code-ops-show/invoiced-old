@@ -4,9 +4,11 @@ line_item_one:
   item: "blahd"
   quantity: 1
   unit_price: 200
+  amount: 200
 
 line_item_two:
   invoice: invoice_two
   item: "fdklfsdkl"
   quantity: 1
   unit_price: 300
+  amount: 200
