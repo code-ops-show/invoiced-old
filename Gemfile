@@ -32,6 +32,8 @@ gem 'devise'
 
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
+gem "refile-s3"
+
 
 gem 'transponder'
 gem 'pusher'
@@ -45,6 +47,7 @@ gem 'jquery-ui-rails'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'puma'
+gem 'rails_12factor', group: :production
 # Use Unicorn as the app server
 # gem 'unicorn'
 
