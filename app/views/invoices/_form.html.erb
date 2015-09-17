@@ -1,51 +1,55 @@
-<div class="panel panel-default">
+<div class="panel panel-default calculate_amount">
   <%= nested_form_for [@customer, @invoice] do |f| %>
   <div class="row">
     <div class="col-xs-12">
       <div class="rightBox">
         <address>
           <h4 class="gray">No.<%= @invoice.number %></h4>
-          
         </address>
       </div>
-      <div style="margin : auto; text-align: center">
-        <%= image_tag attachment_url(current_user, :logo_image, :fill, 140, 140, format: "jpg") %>
+      
+      <div style="margin-left: 50px">
+        <%= image_tag attachment_url(current_user, :logo_image, :fill, 150, 150, format: "jpg") %>
       </div>
       <div class="col-xs-6">
         <address class="box">
-          <h4>Company Name:</h4><br>
-          <%= current_user.first_name %> <%= current_user.last_name %><br>
-          <strong>Address:</strong><br>
-          <%= @current_user.address %><br>
-          <label for="phone_number">Tel.</label><%= current_user.phone_number %>
-          <label for="fax">Fax.</label><%= current_user.fax %><br>
-          <label for="email">Email:</label><%= current_user.email %>
+          
+          <br><h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
+          <h5><%= @current_user.address %></h5>
+          <h5><%= current_user.email %></h5>
         </address>
       </div>
       
       <div class="col-xs-6 text-right">
         <div class="rightBox">
           <address class="box">
-            <h4>Billed To:</h4><br>
+            <h4>Billed To:</h4>
             <%= @customer.firstname %> <%= @customer.lastname %><br>
-            <strong>Address:</strong><br>
             <%= @customer.address %><br>
-            <label for="phone_number">Tel.</label><%= @customer.phone_number %>
-            <label for="fax">Fax.</label><%= @customer.fax %><br>
-            <label for="email">Email:</label><%= @customer.email %>
+            <%= @customer.phone_number %><br>
+            <%= @customer.email %>
           </address>
-          <address>
+        </div>
+        <div class="row">
+          <div class="col-xs-3 col-md-push-8" >
+            <% if f.object.persisted? %>
             <strong>Issue Date:</strong>
-            <%= f.text_field :issue_date, data: { provide: 'datepicker' } %><br>
+            <%= f.text_field :issue_date, value: f.object.issue_date.strftime("%B %d, %Y"), data: { provide: 'datepicker' }, class: "form-control" %><br>
             <strong>Due Date:</strong>
-            <%= f.text_field :due_date, data: { provide: 'datepicker' } %><br><br>
-          </address>
+            <%= f.text_field :due_date, value: f.object.due_date.strftime("%B %d, %Y"), data: { provide: 'datepicker' }, class: "form-control" %><br><br>
+            <% else %>
+            <strong>Issue Date:</strong>
+            <%= f.text_field :issue_date, data: { provide: 'datepicker' }, class: "form-control" %><br>
+            <strong>Due Date:</strong>
+            <%= f.text_field :due_date, data: { provide: 'datepicker' }, class: "form-control" %><br><br>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="col-md-12 column">
-    <table class="table table-bordered table-hover">
+    <table class="table table-hover" id="sortable">
       <thead>
         <tr>
           <th class="text-center">
@@ -60,6 +64,9 @@
           <th class="text-center">
             AMOUNT
           </th>
+          <th>
+            <%= f.link_to_add '+Add Row', :line_items, data: { target: '#lineitems' } %>
+          </th>
         </tr>
       </thead>
       <tbody id="lineitems">
@@ -67,23 +74,63 @@
         <%= render 'line_item_fields', f: builder %>
         <% end %>
       </tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="right"><h5>Sub Total</h5></td>
+        <td class="right"><h5><span class="result"></span> Baht</h5></td>
+        <td></td>
+      </tr>
+      <tbody id="extras">
+        <%= f.fields_for :extras, wrapper: false do |item| %>
+          <% if item.object.is_vat %>
+            <%= render 'vat_field', f: item %>
+          <% else %>
+            <%= render 'extra_fields', f: item %>
+          <% end %>
+        <% end %>
+        <%= hidden_field_tag 'id-customer', @customer.id %>
+        <%= hidden_field_tag 'id-invoice', @invoice.id %>
+      </tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="right"><h5>Total</h5></td>
+        <td class="right"><h5><%= @invoice.total %></span> Baht</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <%= f.link_to_add '+Add Extra', :extras, data: { target: '#extras' }, class: "btn btn-default btn-sm" %>
+        </td>
+      </tr>
     </table>
-    <%= f.link_to_add 'Add Row', :line_items, data: { target: '#lineitems' }, class: "btn btn-primary pull-right" %>
-    <br><br><h4>Payment Information</h4><br>
-    <table class="table table-bordered table-hover">
+    <br>
+  </div>
+  <% if @invoice.persisted? %>
+  <div class="col-md-12 column">
+    <h3>Payment Information</h3><br>
+    <table class="table table-hover">
       <thead>
         <tr>
           <th class="text-center">
-            Payment Date
+            PAYMENT DATE
           </th>
           <th class="text-center">
-            Description
+            DESCRIPTION
           </th>
           <th class="text-center">
-            Method
+            METHOD
           </th>
           <th class="text-center">
-            Amount
+            AMOUNT
+          </th>
+          <th>
+            <%= f.link_to_add '+Add Row', :payments, data: { target: '#payments' }, class: "add_payment" %>
           </th>
         </tr>
       </thead>
@@ -92,11 +139,24 @@
         <%= render "payment_fields", f: item %>
         <% end %>
       </tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="right"><h5>Total Paid</h5></td>
+        <td class="right"><h5 ><span id="total_paid"><%= @invoice.total_paid %></span> Baht</h5></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="right"><h5>Balance Due</h5></td>
+        <td class="right"><h5><%= @invoice.balance %> Baht</h5></td>
+        <td></td>
+      </tr>
     </table>
-    <%= f.link_to_add 'Add Row', :payments, data: { target: '#payments' }, class: "btn btn-primary pull-right" %>
+    <br>
   </div>
-  <%= f.submit "   Submit   ", :class => "btn btn-success btn-lg center-block "  %>
   <% end %>
-  <br />
-  <br /><br />
+  <%= f.submit "Submit", class: "btn btn-success btn-lg center-block" %><br>
+  <% end %>
 </div>

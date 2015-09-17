@@ -1,15 +1,15 @@
-<tr class='fields'>
+<tr class='fields fields_line_items'>
   <td>
     <%= f.text_field :item, placeholder: "Product Name", class: "form-control" %>
   </td>
   <td>
-    <%= f.text_field :quantity, placeholder: "Quantity", class: "form-control" %>
+    <%= f.text_field :quantity, placeholder: "Quantity", class: "form-control qty" %>
   </td>
   <td>
-    <%= f.text_field :unit_price, placeholder: "Unit Price", class: "form-control" %>
+    <%= f.text_field :unit_price, placeholder: "Unit Price", class: "form-control price" %>
   </td>
   <td>
-    <%= f.text_field :amount, :disabled => true, placeholder: "Amount", class: "form-control" %>
+    <%= f.text_field :amount, :disabled => true, placeholder: "Amount", class: "form-control total" %>
   </td>
   <td>
     <%= f.link_to_remove "Remove" %>

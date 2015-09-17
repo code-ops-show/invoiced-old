@@ -1,79 +1,56 @@
-<div class="container-fluid">
-  <br />
-  <h1>Customer information</h1>
-  <ol class="breadcrumb">
-    <li><%= link_to 'Customer', customers_path %></li>
-    <li><%= link_to 'Index', customers_path %></li>
-    <li class="active">Details</li>
-  </ol>
-  <div class="row">
+<div class="wrapper">
+  <div class='container'>
+    <br />
+    <ol class="breadcrumb">
+      <li><%= link_to 'Customers', customers_path %></li>
+      <li class="active"><%= @customer.firstname %></li>
+    </ol>
+    <%= render 'customers/customer/show', customer: @customer %>
     <div class="col-md-8">
-    </div>
-    <div class="col-md-4">
-      <h3 class="right"><%= link_to 'Edit', edit_customer_path(@customer.id) %> |
-      <%= link_to 'Delete', @customer, method: :delete, data: { confirm: "Are you sure?" } %></h3>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div>
-        <div class="panel panel-default">
-          <div class="text-center header"><h2>Customer details</h2></div><hr />
-          <div class="panel-body text-center">
-            <h3><%= @customer.firstname %> <%= @customer.lastname %></h3>
-            <div><hr />
-              <label for="address"><h4><u>Address</u></h4></label>
-              <address>
-                <%= @customer.address %>
-              </address>
+      <table class="table table-striped">
+        <thead>
+          <tr >
+            <th>Invoice</th>
+            <th>issue date</th>
+            <th>due date</th>
+            <th>Total</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <% @customer.invoices.each do |invoice| %>
+        <tr >
+          <td><%= invoice.number %></td>
+          <td><%= invoice.issue_date.strftime("%B %d, %Y") %></td>
+          <td><%= invoice.due_date.strftime("%B %d, %Y") %></td>
+          <td><%= invoice.total %></td>
+          <td>
+            <div style="margin : auto; text-align: center">
+              <%= link_to 'Show', customer_invoice_path(@customer,invoice), class: "btn btn-info btn-xs" %>
+              <%= link_to 'Edit', edit_customer_invoice_path(@customer, invoice), class: "btn btn-default btn-xs" %>
+              <%= link_to 'Delete', customer_invoice_path(@customer, invoice), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: "Are you sure?" } %>
             </div>
-            <label for="phone_number">Tel.</label><%= @customer.phone_number %>
-            <label for="fax">Fax.</label><%= @customer.fax %><hr />
-            <label for="email">Email:</label><%= @customer.email %>
+          </td>
+          <td>
+            <div style="margin : auto; text-align: center">
+              <%= link_to edit_customer_invoice_path(@customer, invoice), class: "btn btn-success btn-xs" do %>
+              <span class="glyphicon glyphicon-plus-sign"></span>
+              Add payment
+              <% end %>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+        <div class="smallbox">
+          <div class="center">
+            <%= link_to new_customer_invoice_path(@customer), class: "btn btn-primary btn-success" do %>
+            <span class="glyphicon glyphicon-plus-sign"></span>
+            New Invoice
+            <% end %>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="box">
-  <h1>Invoices belong to this customer</h1><hr />
-  <table class="table table-striped">
-    <thead>
-      <tr >
-        <th>Invoice</th>
-        <th>issue date</th>
-        <th>due date</th>
-        <th>Total</th>
-        <th></th>
-      </tr>
-    </thead>
-    <% @customer.invoices.each do |invoice| %>
-    <tr >
-      <td><%= invoice.number %></td>
-      <td><%= invoice.issue_date %></td>
-      <td><%= invoice.due_date %></td>
-      <td><%= invoice.total %></td>
-      <td>
-      <div style="margin : auto; text-align: center">
-            <%= link_to 'Show', customer_invoice_path(@customer,invoice), class: "btn btn-info" %>
-            <%= link_to 'Edit', edit_customer_invoice_path(@customer, invoice), class: "btn btn-default" %>
-            <%= link_to 'Delete', customer_invoice_path(@customer, invoice), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
-             </div>
-      </td>
-      <td>
-          <div style="margin : auto; text-align: center">
-            <%= link_to 'Add payment', edit_customer_invoice_path(@customer, invoice), class: "btn btn-success" %>
-          </div>
-        </td>
-    </tr>
-    <% end %>
-  </table>
-</div>
-<div class="smallbox">
-  <div class="center">
-    <div class="btn-group">
-      <%= link_to "Add new invoice", new_customer_invoice_path(@customer), :class => "btn btn-primary btn-lg" if @customer %>
     </div>
   </div>
 </div>

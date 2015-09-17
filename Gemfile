@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.2.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -27,19 +27,27 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
 
+
 gem 'devise'
 
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
+gem "refile-s3"
+
 
 gem 'transponder'
 gem 'pusher'
 gem 'gon'
 gem 'bootstrap-datepicker-rails'
 gem 'nested_form'
+gem 'acts_as_list'
+gem 'ranked-model'
+gem 'jquery-ui-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'puma'
+gem 'rails_12factor', group: :production
 # Use Unicorn as the app server
 # gem 'unicorn'
 

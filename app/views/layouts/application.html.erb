@@ -3,47 +3,53 @@
   <head>
     <title>Invoiced</title>
     <%= include_gon %>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <%= csrf_meta_tags %>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <% if user_signed_in? %>
+    <nav class="navbar navbar-findcond navbar-fixed-top">
+      <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" <%= link_to "INVOICE APPLICATION", customers_path %>  </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse" style ="margin-right: 1cm">
+          <%= link_to "INVOICED", customers_path, class: "navbar-brand" %>
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if current_page?(customers_path) || current_page?(root_path) %>">
-              <%= link_to "Customer", customers_path, :class => "navbar-brand" %>
+              <%= link_to "Customers", customers_path, :class => "navbar-brand" %>
             </li>
           </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-              <div class="pull-right">
-                <ul class="nav pull-right">
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, <%= current_user.email %><b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="/user/preferences"></i> <%= link_to 'Edit profile', edit_user_registration_path %></a>
-                      </li>
-                      <li class="divider"></li>
-                      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            <% end %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.first_name %> <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/user/preferences"><%= link_to 'Edit profile', edit_user_registration_path %></a></li>
+                <li class="divider"></li>
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+      </div>
     </nav>
-    <br /><br />
+    <% end %>
   </head>
+  <body class="<%= controller_name %> <%= action_name %>">
     <%= yield %>
+    <div class="push"></div>
+    <div id='modal-box' class='modal fade'></div>
+  </body>
+  <footer>
+    <div class="footer">
+      <div class="container center">
+        <p class="muted credit">© Copyright - Codemy.net- 2015 All Rights Reserved<a href="http://codemy.net/">.</p>
+      </div>
+    </div>
+  </footer>
 </html>

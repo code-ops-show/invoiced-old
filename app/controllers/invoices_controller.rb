@@ -1,10 +1,11 @@
 class InvoicesController < ApplicationController
   before_action :authenticate_user!
+
+
   def index
      @customer = current_user.customers.where(id: params[:customer_id]).first
      @invoices = scoped_invoices
   end
-  helper_method :index
 
   def show
     # eager load
@@ -19,14 +20,13 @@ class InvoicesController < ApplicationController
   def new
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.build
-    # @payments = @invoice.payments.build
-    1.times { @line_items = @invoice.line_items.build }
-    
+    @line_items = @invoice.line_items.build
+    @invoice.extras.build(name: 'VAT', is_vat: true)
   end
 
   def edit
     @customer = current_user.customers.where(id: params[:customer_id]).first
-    @invoice = @customer.invoices.where(id: params[:id]).first 
+    @invoice = @customer.invoices.where(id: params[:id]).first
   end
 
   def create
@@ -44,7 +44,7 @@ class InvoicesController < ApplicationController
     @customer = current_user.customers.where(id: params[:customer_id]).first
     @invoice = @customer.invoices.where(id: params[:id]).first
     if @invoice.update_attributes(invoice_params)
-      redirect_to customer_path(@customer), :notice => "Your invoice has been updated."
+      redirect_to customer_invoice_path(@customer,@invoice), :notice => "Your invoice has been updated."
     else
       render "edit"
     end
@@ -61,13 +61,16 @@ class InvoicesController < ApplicationController
     end
   end
 
+
 private
   def invoice_params
-    params.require(:invoice).permit(:number, :issue_date, :due_date, :total, :customer_id, :total_paid, :balance, 
+    params.require(:invoice).permit(:number, :issue_date, :due_date, :sub_total, :total, :customer_id, :total_paid, :balance, :row_order_position,
                                     line_items_attributes: [:id, :item, :quantity, :unit_price, :amount, :invoice_id, :_destroy],
-                                    payments_attributes: [:id, :date, :description, :payment_method, :amount, :invoice_id, :_destroy])
+                                    payments_attributes: [:id, :date, :description, :payment_method, :amount, :invoice_id, :_destroy],
+                                    extras_attributes: [:id, :name, :amount, :prefix, :method, :invoice_id, :row_order, :extra_value, :is_vat ,:_destroy])
 
   end
+
 
   def scoped_invoices
     if @customer.present?
@@ -77,7 +80,4 @@ private
     end
   end  
 
-
-
 end
-

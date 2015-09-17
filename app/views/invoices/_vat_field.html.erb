@@ -1,0 +1,19 @@
+<tr data-item-id="<%= f.object.id %>" class="extra fields">
+  <td></td>
+  <td></td>
+  <td class="right">
+    <h5>VAT <%= current_user.vat %> % </h5>
+  </td>
+  <td class="right">
+    <h5><%= f.object.amount %></h5>
+  </td>
+  <td>
+    <%= f.hidden_field :prefix, value: 'cost' %>
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :method, value: 'percentage' %>
+    <%= f.hidden_field :extra_value, :value => current_user.vat %>
+    <%= f.hidden_field :amount %>
+    <%= f.hidden_field :is_vat %>
+    <%= f.hidden_field :row_order, class: "extra_val" %>
+  </td>
+</tr>

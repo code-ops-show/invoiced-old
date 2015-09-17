@@ -1,0 +1,17 @@
+extra_one:
+  invoice: invoice_one
+  name: "Delivery cost"
+  prefix: "cost"
+  extra_value: 100
+  method: "value"
+  amount: 100
+  is_vat: false
+
+extra_two:
+  invoice: invoice_two
+  name: "Discount"
+  prefix: "discount"
+  extra_value: 5
+  method: "percentage"
+  amount: 15
+  is_vat: false

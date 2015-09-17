@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :customers, dependent: :destroy
   has_many :invoices, through: :customers
+
   attachment :logo_image
 end

@@ -9,13 +9,8 @@ class InvoicesControllerTest < ActionController::TestCase
     @customer = customers(:customer_one)
     @invoice = invoices(:invoice_one)
     @line_items = line_items(:line_item_one)
+    @extra = extras(:extra_one)
     @payments = payments(:payment_one)
-  end
-
-  test "should get invoices index page" do 
-    get :index
-
-    assert_response :success
   end
 
   test "should get new invoice" do
@@ -51,7 +46,7 @@ class InvoicesControllerTest < ActionController::TestCase
                                                                          issue_date: @invoice.issue_date,
                                                                          due_date: @invoice.due_date }
 
-    assert_redirected_to customer_path(@customer), "not going to index page after updated"
+    assert_redirected_to customer_invoice_path(@customer,@invoice), "not going to index page after updated"
   end
 
   test "should destroy invoice" do

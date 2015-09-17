@@ -1,15 +1,15 @@
-<tr class='fields'>
+<tr class='fields fields_payments'>
   <td>
-    <%= f.text_field :date,data: { provide: 'datepicker' }, placeholder: "Payment Date", class: "form-control" %>
+    <%= f.text_field :date, value: (f.object.date.strftime("%B %d, %Y") if f.object.persisted?),data: { provide: 'datepicker' }, placeholder: "Payment Date", class: "form-control" %>
   </td>
   <td>
     <%= f.text_field :description, placeholder: "Description", class: "form-control" %>
   </td>
   <td>
-    <%= f.select :payment_method, [['Cash', 'Cash'], ['Cheque', 'Cheque'], ['Credit Card', 'Credit Card']], { :include_blank=>true, :prompt =>  'Please Select' }, { :class => 'form-control' } %>
+    <%= f.select :payment_method, [['Cash', 'Cash'], ['Cheque', 'Cheque'], ['Credit Card', 'Credit Card']], { include_blank: 'Please select' }, { :class => 'form-control' } %>
   </td>
   <td>
-    <%= f.text_field :amount, placeholder: "Amount", class: "form-control" %>
+    <%= f.text_field :amount, placeholder: "Amount", class: "form-control amount" %>
   </td>
   <td>
     <%= f.link_to_remove "Remove" %>

@@ -5,10 +5,16 @@ class InvoiceTest < ActiveSupport::TestCase
     @customer = customers(:customer_one)
     @invoice = invoices(:invoice_one)
     @line_items = line_items(:line_item_one)
+    @extra = extras(:extra_one)
     @payment = payments(:payment_one)
   end
+  test "calculate_sub_total" do
+    @invoice.calculate_sub_total
+    assert_equal(200, @invoice.sub_total) 
+  end
   test "calculate_total" do 
-    assert_equal(200, @invoice.total)
+    @invoice.calculate_total
+    assert_equal(300, @invoice.total)
   end
 
   test "calculate_total_payment" do
@@ -17,8 +23,8 @@ class InvoiceTest < ActiveSupport::TestCase
   end
 
   test "calculate_balance" do
-    @invoice.calculate_total_payment
     @invoice.calculate_balance
-    assert_equal(114, @invoice.balance)
+
+    assert_equal(200, @invoice.balance)
   end
 end

@@ -1,37 +1,27 @@
-<div class="box">
-  <div class="row">
-    <div class="col-md-8">
-      <h1>Customer List</h1>
-    </div>
-    <div class="col-md-4">
-      <%= form_tag customers_path, class: 'navbar-form navbar-right', role: 'search', method: :get, remote: true do |f| %>
-      <div class='form-group'>
-        <%= fields_for :search_method do |f| %>
-        <%= f.label :Search_By %>
-        <%#= f.select :search_method, [['Name', 'firstname'], ['Phone Number', 'phone_number'], ['Email', 'email']] %>
-        <%= select_tag :search_method, options_for_select([['Name', 'firstname'], ['Phone Number', 'phone_number'], ['Email', 'email']], :selected =>params[:search_method]) %>
-        <% end %>
-        <%= text_field_tag :q, params[:q], class: 'form-control' %>
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3" >
+        <h2 class="aqua">Customer List</h2>
       </div>
-      <%= button_tag "Search", class: 'btn btn-default', name: nil %>
-      <% end %>
+      <div class="col-md-6 clearfix" style="padding-top: 24px;">
+        <%= render 'search' %>
+      </div>
+      <div class="col-md-3 right" style="padding-top: 20px;">
+        <%= link_to new_customer_path, remote: true, class: "btn btn-primary btn-success" do %>
+        <span class="glyphicon glyphicon-plus-sign"></span>
+        <span class="glyphicon glyphicon-user"></span>
+        New Customer
+        <% end %>
+      </div>
     </div>
+    <hr>
+    <%= content_tag :div, id: 'customers', class: 'notification clearfix customers-index', data: { channel: "customers", event: customers_event} do %>
+      <%= render 'customers', customers: @customers %>
+    <% end %>
   </div>
-  <div class="row">
-    <ol class="breadcrumb">
-      <li><%= link_to 'Customer', customers_path %></li>
-      <li><%= link_to 'Index', customers_path %></li>
-    </ol>
-  </div>
-  <%= content_tag :div, id: 'customers', class: 'notification', data: { channel: "customers", event: customers_event} do %>
-    <%= render 'customers', customers: @customers %>
-  <% end %>
 </div>
-<div class="smallbox">
-  <div class="center">
-    <div class="btn-group">
-      <%= link_to "Add new customer", new_customer_path, :class => "btn btn-primary btn-lg", remote: true%>
-    </div>
-  </div>
-  <div id='modal-box' class='modal fade'></div>
-</div>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: name, id: "noti" %>
+<% end %>

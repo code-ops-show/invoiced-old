@@ -1,103 +1,110 @@
-<div class="container-fluid">
-  <ol class="breadcrumb">
-    <li><%= link_to 'Customer', customers_path %></li>
-    <li><%= link_to 'Index', customer_path(@customer.id) %></li>
-    <li class="active">Details</li>
-  </ol>
-
-  <div class="panel panel-default">
-
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="rightBox">
-        <address>
-          <h4 class="gray">No.<%= @invoice.number %></h4>
-          
-        </address>
-      </div>
-      <div style="margin : auto; text-align: center">
-        <%= image_tag attachment_url(current_user, :logo_image, :fill, 140, 140, format: "jpg") %>
-      </div>
-      <div class="col-xs-6">
-        <address class="box">
-          <h4>Company Name:</h4><br>
-          <%= current_user.first_name %> <%= current_user.last_name %><br>
-          <strong>Address:</strong><br>
-          <%= @current_user.address %><br>
-          <label for="phone_number">Tel.</label><%= current_user.phone_number %>
-          <label for="fax">Fax.</label><%= current_user.fax %><br>
-          <label for="email">Email:</label><%= current_user.email %>
-        </address>
-      </div>
-      
-      <div class="col-xs-6 text-right">
-        <div class="rightBox">
-          <address class="box">
-            <h4>Billed To:</h4><br>
-            <%= @customer.firstname %> <%= @customer.lastname %><br>
-            <strong>Address:</strong><br>
-            <%= @customer.address %><br>
-            <label for="phone_number">Tel.</label><%= @customer.phone_number %>
-            <label for="fax">Fax.</label><%= @customer.fax %><br>
-            <label for="email">Email:</label><%= @customer.email %>
-          </address>
-          <address>
-            <strong>Issue Date:</strong>
-            <%= @invoice.issue_date %><br>
-            <strong>Due Date:</strong>
-            <%= @invoice.due_date %><br><br>
-          </address>
+<div class="wrapper">
+  <div class="container" style="padding-top: 20px">
+    <ol class="breadcrumb">
+      <li><%= link_to 'Customers', customers_path %></li>
+      <li><%= link_to @customer.firstname , customer_path(@customer.id) %></li>
+      <li class="active"><%= @invoice.number %></li>
+    </ol>
+    <div class="right" style="margin-left: 100px">
+      <address>
+        <%= link_to "<span class='glyphicon glyphicon-edit'></span>".html_safe, edit_customer_invoice_path(@customer, @invoice), class: "btn btn-primary btn-primary" %>
+        <%= link_to '<span class="glyphicon glyphicon-trash"></span>'.html_safe, customer_invoice_path(@customer, @invoice), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-danger" %>
+      </address>
+    </div>
+    <div class="panel panel-default">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="rightBox">
+            <address>
+              <h4 class="gray">No.<%= @invoice.number %></h4>
+            </address>
+          </div>
+          <div style="margin-left: 50px">
+            <%= image_tag attachment_url(current_user, :logo_image, :fill, 150, 150, format: "jpg") %>
+          </div>
+          <div class="col-xs-6">
+            <address class="box">
+              <br><h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
+              <h5><%= @current_user.address %></h5>
+              <h5><%= current_user.email %></h5>
+            </address>
+          </div>
+          <div class="col-xs-6 text-right">
+            <div class="rightBox">
+              <address class="box">
+                <h4>Billed To:</h4>
+                <%= @customer.firstname %> <%= @customer.lastname %><br>
+                <%= @customer.address %><br>
+                <%= @customer.phone_number %><br>
+                <%= @customer.email %>
+              </address>
+              <strong>Issue Date : </strong>
+              <%= @invoice.issue_date.strftime("%B %d, %Y") %><br>
+              <strong>Due Date :</strong>
+              <%= @invoice.due_date.strftime("%B %d, %Y") %><br><br>
+            </div>
+          </div>
         </div>
       </div>
+      <table class="table table-striped" style="wrap-table">
+        <thead>
+          <tr>
+            <th class="center">DESCRIPTION</th>
+            <th class="center">QUANTITY</th>
+            <th class="center">UNIT PRICE</th>
+            <th class="center">AMOUNT</th>
+          </tr>
+        </thead>
+        <% for line_item in @invoice.line_items %>
+        <tr>
+          <td class="center"><%= line_item.item %></td>
+          <td class="center"><%= line_item.quantity %></td>
+          <td class="center"><%= line_item.unit_price %></td>
+          <td class="center"><%= line_item.amount %></td>
+        </tr>
+        <% end %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="right"><h5>Sub Total</h5></td>
+          <td class="center"><h5><%= @invoice.sub_total.round(2) %> Baht</h5></td>
+        </tr>
+        <% for extra in @invoice.extras %>
+        <tr>
+          <% if extra.is_vat %>
+          <td></td>
+          <td></td>
+          <td class="center">VAT <%= current_user.vat %> %</td>
+          <td class="center"><%= extra.amount %></td> 
+          <% else %>
+          <td class="center"><%= extra.prefix %></td>
+          <td class="center"><%= extra.name %></td>
+          <td>
+            <div class="inline center">
+              <% if extra.method == 'percentage' %>
+              <%= extra.extra_value %> %
+              <% else %>
+              <%= extra.extra_value %> Baht
+              <% end %>
+            </div>
+          </td>
+          <td class="center"><%= extra.amount %></td> 
+        </tr>
+        <% end %>
+        <% end %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="right"><h5>Total</h5></td>
+          <td class="center"><h5><%= @invoice.total %> Baht</h5></td>
+        </tr>
+      </table>
     </div>
-  </div>
-
-    <table class="table table-striped" style="wrap-table">
-      <thead>
-        <tr>
-          <th class="center">DESCRIPTION</th>
-          <th class="center">QUANTITY</th>
-          <th class="center">UNIT PRICE</th>
-          <th class="center">AMOUNT</th>
-        </tr>
-      </thead>
-          <% for line_item in @invoice.line_items %>
-            <tr>
-              <td class="center"><%= line_item.item %></td>
-              <td class="center"><%= line_item.quantity %></td>
-              <td class="center"><%= line_item.unit_price %></td>
-              <td class="center"><%= line_item.amount %></td> 
-            </tr>
-          <% end %>
-        <tr>
-          <td></td>
-          <td></td>
-          <td class="right"><h4>Sub Total</h4></td>
-          <td class="right"><h4><%= @invoice.total.round(2) %> Baht</h4></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td class="right"><h4>VAT 7%</h4></td>
-          <td class="right"><h4><%= vat = (@invoice.total * 0.07).round(2) %> Baht</h4></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td class="right"><h4>Total</h4></td>
-          <td class="right"><h4><%= @invoice.total + vat %> Baht</h4></td>
-        </tr>
-
-    </table>
-  </div>
-  <br />
-
-
-  <div class="panel panel-default">
-    <address class="box">
-          <br><h4>Payment Information:</h4>
-          
-        </address>
+    <br />
+    <div class="panel panel-default">
+      <address class="box">
+        <br><h4>Payment Information:</h4>
+      </address>
       <table class="table table-striped" style="wrap-table">
         <thead>
           <tr>
@@ -106,42 +113,30 @@
             <th class="center">Payment Method</th>
             <th class="center">Amount</th>
           </tr>
-        <% for payment in @invoice.payments %>
+          <% for payment in @invoice.payments %>
         </thead>
-        <tbody>
-            <tr>
-              <td class="center"><%= payment.date %></td>
-              <td class="center"><%= payment.description %></td>
-              <td class="center"><%= payment.payment_method %></td>
-              <td class="center"><%= payment.amount %></td> 
-            </tr>
-        </tbody> 
-        <% end %>   
-        <tfooter>
-          <tr>
-            <td></td>
-            <td></td>
-            <td class="right"><h4>Total Paid</h4></td>
-            <td class="right"><h4><%= @invoice.total_paid %> Baht</h4></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td class="right"><h4>Balance</h4></td>
-            <td class="right"><h4><%= @invoice.balance %> Baht</h4></td>
-          </tr>
-        </tfooter>  
+        <tr>
+          <td class="center"><%= payment.date.strftime("%B %d, %Y") %></td>
+          <td class="center"><%= payment.description %></td>
+          <td class="center"><%= payment.payment_method %></td>
+          <td class="center"><%= payment.amount %></td>
+        </tr>
+        <% end %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="right"><h5>Total Paid</h5></td>
+          <td ><h5><%= @invoice.total_paid %> Baht</h5></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="right"><h5>Balance</h5></td>
+          <td ><h5><%= @invoice.balance %> Baht</h5></td>
+        </tr>
       </table>
-
+    </div>
+    <div class="row">
+      <h4 align="center"><%= link_to 'Back to index', customer_path(@customer.id) %></h4><br><br>
+    </div>
   </div>
-
-  <div class="row">
-      <h4 align="center"><%= link_to 'Back to index', customer_path(@customer.id) %></h4>
-  </div>
-
-
-</div>
-
-
-
-

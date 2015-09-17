@@ -1,0 +1,236 @@
+@import "bootstrap-sprockets"
+@import "bootstrap"
+@import "toastr"
+
+@import "bootstrap-datepicker"
+@import "customers"
+@import "jquery-ui/sortable"
+
+body
+  font-family: 'Roboto'
+  padding-top: 60px
+
+div
+  &.box
+    margin-top: 30
+    margin-bottom: 100px
+    margin-right: 150px
+    margin-left: 150px
+  &.smallbox
+    margin-top: 50px
+    margin-bottom: 100px
+    margin-right: 50px
+    margin-left: 50px
+  &.wrap
+    margin-top: 30px
+    margin-bottom: 10px
+    margin-right: 50px
+    margin-left: 50px
+
+img.resize
+  width: 50%
+  height: 50%
+
+address.box
+  margin-left: 50px
+
+.gray
+  color: gray
+
+.no-border
+  border: 0
+
+.space
+  padding: 5px
+
+td.space
+  width: 90px
+
+div.wrap-table
+  margin-top: 30px
+  margin-bottom: 10px
+  margin-right: 50px
+  margin-left: 50px
+
+.center
+  text-align: center
+
+.left
+  text-align: left
+
+.right
+  text-align: right
+
+.rightBox
+  text-align: right
+  margin-right: 50px
+
+nav.navbar-findcond
+  background: #fff
+  border-color: #ccc
+  box-shadow: 0 0 2px 0 #ccc
+  a
+    color: #0088CC
+  ul.navbar-nav a
+    color: #0088CC
+    border-style: solid
+    border-width: 0 0 2px 0
+    border-color: #fff
+    &:hover, &:visited, &:focus, &:active
+      background: #fff
+    &:hover
+      border-color: #0088CC
+  li.divider
+    background: #ccc
+  button.navbar-toggle
+    background: #0088CC
+    border-radius: 2px
+    &:hover
+      background: #999
+    > span.icon-bar
+      background: #fff
+  ul.dropdown-menu
+    border: 0
+    background: #fff
+    border-radius: 4px
+    margin: 4px 0
+    box-shadow: 0 0 4px 0 #ccc
+    > li > a
+      color: #0088CC
+      &:hover
+        background: #0088CC
+        color: #fff
+  span.badge
+    background: #0088CC
+    font-weight: normal
+    font-size: 11px
+    margin: 0 4px
+    &.new
+      background: rgba(255, 0, 0, 0.8)
+      color: #fff
+
+#edit
+  padding-top: 50px
+  .form-wrap
+    width: 30%
+    margin: 0 auto
+  h1
+    color: #1fa67b
+    font-size: 18px
+    text-align: center
+    font-weight: bold
+    padding-bottom: 20px
+  .form-group
+    margin-bottom: 25px
+  .btn.btn-custom
+    font-size: 14px
+    margin-bottom: 20px
+
+.btn-custom
+  color: #fff
+  background-color: #1fa67b
+  &:hover, &:focus
+    color: #fff
+
+.btn-login
+  background-color: #59B2E0
+  outline: none
+  color: #fff
+  font-size: 14px
+  height: auto
+  font-weight: normal
+  padding: 14px 0
+  text-transform: uppercase
+  border-color: #59B2E6
+  &:hover, &:focus
+    color: #fff
+    background-color: #53A3CD
+    border-color: #53A3CD
+
+.forgot-password
+  text-decoration: underline
+  color: #888
+  &:hover, &:focus
+    text-decoration: underline
+    color: #666
+
+.btn-register
+  background-color: #1CB94E
+  outline: none
+  color: #fff
+  font-size: 14px
+  height: auto
+  font-weight: normal
+  padding: 14px 0
+  text-transform: uppercase
+  border-color: #1CB94A
+  &:hover, &:focus
+    color: #fff
+    background-color: #1CA347
+    border-color: #1CA347
+
+.panel-login
+  border-color: #ccc
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2)
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2)
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2)
+  > .panel-heading
+    color: #00415d
+    background-color: #fff
+    border-color: #fff
+    text-align: center
+    a
+      text-decoration: none
+      color: #666
+      font-weight: bold
+      font-size: 15px
+      -webkit-transition: all 0.1s linear
+      -moz-transition: all 0.1s linear
+      transition: all 0.1s linear
+      &.active
+        color: #029f5b
+        font-size: 18px
+    hr
+      margin-top: 10px
+      margin-bottom: 0px
+      clear: both
+      border: 0
+      height: 1px
+      background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0))
+      background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0))
+      background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0))
+      background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0))
+  input
+    &[type="text"], &[type="email"], &[type="password"]
+      height: 45px
+      border: 1px solid #ddd
+      font-size: 16px
+      -webkit-transition: all 0.1s linear
+      -moz-transition: all 0.1s linear
+      transition: all 0.1s linear
+    &:hover, &:focus
+      outline: none
+      -webkit-box-shadow: none
+      -moz-box-shadow: none
+      box-shadow: none
+      border-color: #ccc
+
+  margin: 0
+
+html, body
+  height: 100%
+
+.wrapper
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  margin: 0 auto -4em
+
+.footer, .push
+  height: 4em
+  clear: both
+
+.active-item-shadow
+  -webkit-box-shadow: rgba(133, 133, 133, 0.1) 0 0 5px 2px, rgba(133, 133, 133, 0.3) 0 0 2px
+  -moz-box-shadow: rgba(133, 133, 133, 0.1) 0 0 5px 2px, rgba(133, 133, 133, 0.3) 0 0 2px
+  box-shadow: rgba(133, 133, 133, 0.1) 0 0 5px 2px, rgba(133, 133, 133, 0.3) 0 0 2px

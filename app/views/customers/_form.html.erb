@@ -1,35 +1,38 @@
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h2 class="modal-title">Customer information</h2>
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+      <h3 class="modal-title" id="lineModalLabel">Edit <%= @customer.firstname %></h3>
     </div>
     <div class="modal-body">
       <%= form_for @customer, remote: true do |f| %>
-      <br />
-      <%= f.label :Firstname, :class => "h4" %>
-      <%= f.text_field :firstname ,:class => "form-control input-lg", :placeholder => "Firstname"  %>
-      <br />
-      <%= f.label :Lastname, :class => "h4" %>
-      <%= f.text_field :lastname ,:class => "form-control input-lg", :placeholder => "Lastname"  %>
-      <br />
-      <%= f.label :Email, :class => "h4" %>
-      <%= f.text_field :email ,:class => "form-control input-lg", :placeholder => "Email"  %>
-      <br />
-      <%= f.label :Phone_number, :class => "h4" %>
-      <%= f.text_field :phone_number ,:class => "form-control input-lg", :placeholder => "Phone number"  %>
-      <br />
-      <%= f.label :Fax, :class => "h4" %>
-      <%= f.text_field :fax ,:class => "form-control input-lg", :placeholder => "Fax number"  %>
-      <br />
-      <%= f.label :Address, :class => "h4" %>
-      <%= f.text_area :address ,:class => "form-control input-lg", :placeholder => "Address"  %>
-      <br />
-      <%= f.submit "Submit" , :class => "btn btn-primary btn-lg center-block " %>
+        <%= hidden_field_tag :from_action, Rails.application.routes.recognize_path(request.referrer)[:action] %>
+        <div class="form-group">
+          <label for="exampleInputEmail1">First name</label>
+          <%= f.text_field :firstname, class: "form-control", placeholder: "First name" %>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Last name</label>
+          <%= f.text_field :lastname, class: "form-control", placeholder: "Last name" %>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Address</label>
+          <%= f.text_field :address, class: "form-control", placeholder: "Address" %>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Telephone</label>
+          <%= f.text_field :phone_number, class: "form-control", placeholder: "Telephone" %>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Fax</label>
+          <%= f.text_field :fax, class: "form-control", placeholder: "Fax" %>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+        </div>
+        <button type="submit" class="btn btn-custom btn-lg center-block" >Submit</button>
       <% end %>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    </div>
-  </div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
+  </div>
+</div>

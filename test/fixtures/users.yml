@@ -5,6 +5,7 @@ user_one:
   address: "123 asds fdfg erew f"
   phone_number: 9999999
   fax: 8888888
+  vat: 7
 
 user_two: 
   email: "test2@example.comm"
@@ -13,3 +14,4 @@ user_two:
   address: "123 asds fdfg erew f"
   phone_number: 77777777
   fax: 666666666
+  vat: 7

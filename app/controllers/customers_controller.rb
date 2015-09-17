@@ -4,15 +4,9 @@ class CustomersController < ApplicationController
   def index
     @customers = Customer.custom_search(params[:search_method], params[:q], options).results
     respond_with @customers
-     # @customers = current_user.customers
-     # @customers = current_user.customers.search((params[:q].present? ? params[:q] : '*')).records
   end
 
   def show
-    # eager load
-    # @invoice = current_user.invoices.find(params[:id]) 
-
-    # lazy load
     @customer = current_user.customers.where(id: params[:id]).first 
     @invoices = @customer.invoices.where(id: params[:id]).first 
     notification_response
@@ -55,8 +49,17 @@ class CustomersController < ApplicationController
   def destroy
     @customer = current_user.customers.where(id: params[:id]).first 
     @customer.destroy
-      respond_with @customer
-      push_notify
+
+    respond_with do |format|
+      format.js do
+        respond_with @customer
+        push_notify
+      end
+      format.html do
+        Customer.__elasticsearch__.refresh_index!
+        redirect_to customers_path, flash: { success: "#{@customer.firstname} has been deleted" }
+      end
+    end
   end
 
 private
