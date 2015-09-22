@@ -13,6 +13,15 @@ module Customers
           })
       end
 
+      def explain_search(method, query, options, customer_id)
+        query_filters = build_multi_match(method, query)
+
+        __elasticsearch__.client.explain index: Customer.index_name, type: Customer.document_type, id: customer_id,  body: (
+          {
+            query: query_filters
+          })
+      end
+
       def build_match_query(method)
         case method.presence
         when 'firstname' then [ "firstname", "lastname" ]
