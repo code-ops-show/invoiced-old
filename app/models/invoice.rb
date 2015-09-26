@@ -25,7 +25,7 @@ class Invoice < ActiveRecord::Base
   def ensure_issue_and_due_date_exists
     if self.issue_date.nil? and self.due_date.nil?
       self.issue_date = Date.today
-      self.due_Date   = Date.tomorrow
+      self.due_date   = Date.tomorrow
     end
   end
 
