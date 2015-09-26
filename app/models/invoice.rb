@@ -20,6 +20,15 @@ class Invoice < ActiveRecord::Base
   after_initialize :invoice_number_incrementation, unless: Proc.new { |invoice| invoice.number.present? }
   after_touch :calculate_balance
 
+  before_create :ensure_issue_and_due_date_exists
+
+  def ensure_issue_and_due_date_exists
+    if self.issue_date.nil? and self.due_date.nil?
+      self.issue_date = Date.today
+      self.due_Date   = Date.tomorrow
+    end
+  end
+
   def calculate_sub_total
     self.sub_total = line_items.sum(:amount)
   end
