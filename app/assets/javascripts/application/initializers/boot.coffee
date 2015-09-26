@@ -3,6 +3,7 @@
 # presenters
 new Application.Presenters.CustomersPresenter()
 new Application.Presenters.InvoicesPresenter()
+new Application.Presenters.ExplainsPresenter()
 
 
 # services

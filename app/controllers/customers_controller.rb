@@ -1,8 +1,10 @@
 class CustomersController < ApplicationController
   before_action :authenticate_user!
+  require 'json'
 
   def index
     @customers = Customer.custom_search(params[:search_method], params[:q], options).results
+    
     respond_with @customers
   end
 
