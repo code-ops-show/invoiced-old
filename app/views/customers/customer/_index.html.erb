@@ -9,10 +9,18 @@
       Tel. <%= customer.phone_number %>
       Fax. <%= customer.fax %>
     </div>
-    <div class="detail right">
-      <%= link_to ' Show', customer_path(customer.id), class: 'btn btn-xs btn-default' %>
-      <%= link_to ' Edit', edit_customer_path(customer.id), remote: true, class: 'btn btn-xs btn-default' %>
-      <%= link_to ' Delete', customer_path(customer.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true, class: 'btn btn-xs btn-default' %>
+    <div class="customer-rows">
+      <div class="detail left col-md-1">
+        <%= link_to customer_explains_path(customer.id, search_method: params[:search_method], q: params[:q]), remote: true,class: 'btn btn-xs btn-info left' do %>
+          Debug
+          <span class="glyphicon glyphicon-search"></span>
+        <% end %>  
+      </div>
+      <div class="detail right">
+        <%= link_to ' Show', customer_path(customer.id), class: 'btn btn-xs btn-default' %>
+        <%= link_to ' Edit', edit_customer_path(customer.id), remote: true, class: 'btn btn-xs btn-default' %>
+        <%= link_to ' Delete', customer_path(customer.id), method: :delete, data: { confirm: "Are you sure?" }, remote: true, class: 'btn btn-xs btn-default' %>
+      </div>
     </div>
   </div>
 </div>
