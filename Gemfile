@@ -35,6 +35,7 @@ gem 'devise'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 gem "refile-s3"
+gem 'newrelic_rpm'
 
 
 gem 'transponder'
